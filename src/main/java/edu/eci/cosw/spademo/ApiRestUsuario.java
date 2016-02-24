@@ -1,8 +1,7 @@
 package edu.eci.cosw.spademo;
 
 
-import edu.eci.cosw.API.Operaciones;
-import edu.eci.cosw.API.Usuario;
+import edu.eci.cosw.clases.Usuario;
 import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import edu.eci.cosw.interfaces.OperacionUsuario;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -29,10 +29,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/usuarios")
 
-public class ApiRest{
+public class ApiRestUsuario{
     
     @Autowired
-    private Operaciones operacion;
+    private OperacionUsuario operacion;
     
     
     @RequestMapping(method= RequestMethod.GET)

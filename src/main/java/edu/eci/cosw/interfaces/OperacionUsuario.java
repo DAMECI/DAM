@@ -1,5 +1,6 @@
-package edu.eci.cosw.API;
+package edu.eci.cosw.interfaces;
 
+import edu.eci.cosw.clases.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  *
  * @author DiegoBecerra
  */
-public interface Operaciones {
+public interface OperacionUsuario {
     public List<Usuario> getUsuarios();
     public void addUsuario(Usuario u);
 }

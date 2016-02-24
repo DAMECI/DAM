@@ -1,4 +1,4 @@
-package edu.eci.cosw.spademo;
+package edu.eci.cosw.main;
 
 import java.io.IOException;
 import java.security.Principal;

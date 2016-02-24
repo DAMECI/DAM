@@ -1,5 +1,6 @@
 package edu.eci.cosw.spademo;
 
+import edu.eci.cosw.main.DemoApplication;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.web.WebAppConfiguration;

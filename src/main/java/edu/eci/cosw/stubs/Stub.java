@@ -3,23 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.cosw.spademo;
+package edu.eci.cosw.stubs;
 
-import edu.eci.cosw.API.Operaciones;
-import edu.eci.cosw.API.Usuario;
+import edu.eci.cosw.clases.Usuario;
 import ch.qos.logback.classic.util.ContextInitializer;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import edu.eci.cosw.interfaces.OperacionUsuario;
 
 /**
  *
  * @author 2087151
  */
 @Service
-public class Stub implements Operaciones{
+public class Stub implements OperacionUsuario{
     private List<Usuario> usuarios= new ArrayList<Usuario>() ;    
 
     @Override
