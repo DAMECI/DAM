@@ -24,7 +24,7 @@ public class Cancha {
             this.Reservado = Reservado;
          }
 
-    public int getId() {
+    public int getIdCancha() {
         return IdCancha;
     }
 
