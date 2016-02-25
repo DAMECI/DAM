@@ -19,7 +19,7 @@ import edu.eci.cosw.interfaces.OperacionUsuario;
  * @author 2087151
  */
 @Service
-public class Stub implements OperacionUsuario{
+public class StubUsuario implements OperacionUsuario{
     private List<Usuario> usuarios= new ArrayList<Usuario>() ;    
 
     @Override
@@ -30,5 +30,16 @@ public class Stub implements OperacionUsuario{
     @Override
     public void addUsuario(Usuario u) {
         usuarios.add(u);  
+    }
+    
+    @Override
+    public Usuario getUsuarioByEmail(String email){
+        Usuario aux = new Usuario();
+        for(int i=0; i<usuarios.size(); i++){
+            if(usuarios.get(i).getEmail().equals(email)){
+                aux = usuarios.get(i);
+            }
+        }
+        return aux;
     }
 }

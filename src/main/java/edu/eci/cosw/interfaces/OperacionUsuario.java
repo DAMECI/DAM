@@ -18,5 +18,6 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 public interface OperacionUsuario {
     public List<Usuario> getUsuarios();
+    public Usuario getUsuarioByEmail(String email);
     public void addUsuario(Usuario u);
 }
