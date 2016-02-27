@@ -1,14 +1,14 @@
 'use strict';
 
-describe('myApp.view4 module', function() {
+describe('myApp.Visualizar module', function() {
 
-  beforeEach(module('myApp.view4'));
+  beforeEach(module('myApp.Visualizar'));
 
-  describe('view4 controller', function(){
+  describe('Visualizar controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body
-      var view4Ctrl = $controller('View4Ctrl');
+      var view4Ctrl = $controller('ControladorVisualizacion');
       expect(view4Ctrl).toBeDefined();
     }));
 

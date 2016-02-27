@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.view4', ['ngRoute'])
+angular.module('myApp.Visualizar', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view4', {
-    templateUrl: 'view4/view4.html',
-    controller: 'ControladorLogin'
+  $routeProvider.when('/Visualizar', {
+    templateUrl: 'Visualizar/Visualizar.html',
+    controller: 'ControladorVisualizacion'
   });
 }])
 
-	.controller('ControladorLogin',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
+	.controller('ControladorVisualizacion',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
                                
 		var authenticate = function (credentials, callback) {
 
