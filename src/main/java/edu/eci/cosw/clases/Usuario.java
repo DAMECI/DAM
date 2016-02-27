@@ -11,6 +11,7 @@ package edu.eci.cosw.clases;
  */
 public class Usuario {
 
+    private String idCliente;
     private String Nombre;
     private String Apellido;
     private String Telefono;
@@ -21,13 +22,22 @@ public class Usuario {
     public Usuario(){
     }
     
-    public Usuario(String Nombre, String Apellido, String Telefono, String Email, String Password){
+    public Usuario(String idCliente, String Nombre, String Apellido, String Telefono, String Email, String Password){
+        this.idCliente = idCliente;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
         this.Telefono = Telefono;
         this.Email = Email;
         this.Password = Password;
         
+    }
+
+    public String getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(String idCliente) {
+        this.idCliente = idCliente;
     }
     
     public String getNombre() {
@@ -69,8 +79,4 @@ public class Usuario {
     public void setPassword(String Password) {
         this.Password = Password;
     }
-  
-  
-    
-    
 }

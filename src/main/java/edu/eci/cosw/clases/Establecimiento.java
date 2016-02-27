@@ -18,7 +18,7 @@ public class Establecimiento {
     private String RazonSocial;
     private String Direccion;
     private String Telefono;
-    private List<Cancha>  canchas;
+    private List<Cancha> canchas;
     private List<Calificacion> calificaciones;
 
     public Establecimiento(){}

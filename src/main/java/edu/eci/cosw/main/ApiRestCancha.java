@@ -34,7 +34,7 @@ public class ApiRestCancha {
             return operacionCanchas.getCanchas(); 
     }
          
-    @RequestMapping(method= RequestMethod.GET, value="/{idcancha}")
+    @RequestMapping(method= RequestMethod.GET, value="/{idCancha}")
     public Cancha getCanchaById(@PathVariable int idCancha){
         return operacionCanchas.getCanchaByIdCancha(idCancha);
     }

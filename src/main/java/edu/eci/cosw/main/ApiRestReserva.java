@@ -34,7 +34,7 @@ public class ApiRestReserva {
             return operacionReserva.getReservas(); 
     }
     
-    @RequestMapping(method= RequestMethod.GET, value="/{idreserva}")
+    @RequestMapping(method= RequestMethod.GET, value="/{idReserva}")
     public Reserva getCanchaById(@PathVariable int idReserva){
         return operacionReserva.getReservaByIdreserva(idReserva);
     }

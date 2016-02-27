@@ -34,9 +34,9 @@ public class ApiRestCalificacion {
             return operacionCalificacion.getCalificaciones(); 
     }
      
-    @RequestMapping(method= RequestMethod.GET, value="/{idcalifica}")
-    public Calificacion getCanchaById(@PathVariable int idCalificacion){
-        return operacionCalificacion.getCalificacionByIdCalificacion(idCalificacion);
+    @RequestMapping(method= RequestMethod.GET, value="/{idCalifica}")
+    public Calificacion getCanchaById(@PathVariable int idCalifica){
+        return operacionCalificacion.getCalificacionByIdCalificacion(idCalifica);
     }
     
     @RequestMapping(method= RequestMethod.POST)

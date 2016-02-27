@@ -22,9 +22,9 @@ public class StubReserva implements OperacionReserva{
     private List<Reserva>  reservas = new ArrayList<Reserva>();
     {
         reservas.add(new Reserva(new Date(201531), 20.000, 1, 
-                new Usuario("a", "b", "11111", "ab@gmail.com", "12345"), 2.5));
+                new Usuario("2","a", "b", "11111", "ab@gmail.com", "12345"), 2.5));
         reservas.add(new Reserva(new Date(242016), 20.000, 2, 
-                new Usuario("aa", "bb", "11111", "aabb@gmail.com", "12345"), 2.0));
+                new Usuario("3","aa", "bb", "11111", "aabb@gmail.com", "12345"), 2.0));
     }    
 
     @Override
