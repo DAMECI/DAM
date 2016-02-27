@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author 2087151
  */
-public interface OperacionesEstablecimiento {
+public interface OperacionEstablecimiento {
     
         public List<Establecimiento> getEstablecimientos();
         public Establecimiento getEstablecimientoByNIT(String NIT);

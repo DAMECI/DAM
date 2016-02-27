@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.cosw.services;
+package edu.eci.cosw.main;
 
 import java.security.Principal;
 import org.springframework.web.bind.annotation.RequestMapping;

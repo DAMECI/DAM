@@ -3,16 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.cosw.stubs;
+package edu.eci.cosw.main;
 
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.interfaces.OperacionCancha;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import edu.eci.cosw.interfaces.OperacionUsuario;
 
 /**
  *
@@ -20,7 +17,11 @@ import edu.eci.cosw.interfaces.OperacionUsuario;
  */
 @Service
 public class StubCancha implements OperacionCancha{
-    private List<Cancha> canchas= new ArrayList<Cancha>() ;    
+    private List<Cancha> canchas= new ArrayList<Cancha>();
+    {
+        canchas.add(new Cancha(1,false));
+        canchas.add(new Cancha(2,false));
+    }
 
 
     @Override
@@ -35,7 +36,7 @@ public class StubCancha implements OperacionCancha{
     }
 
     @Override
-    public Cancha getCanchaByIdcancha(int IdCancha) {
+    public Cancha getCanchaByIdCancha(int IdCancha) {
         Cancha aux = new Cancha();
         for(int i=0; i<canchas.size(); i++){
             if(canchas.get(i).getIdCancha() == IdCancha){

@@ -1,6 +1,6 @@
 package edu.eci.cosw.interfaces;
 
-import edu.eci.cosw.clases.Cancha;
+import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
  *
  * @author DiegoBecerra
  */
-public interface OperacionCancha {
-    public List<Cancha> getCanchas();
-    public Cancha getCanchaByIdCancha(int IdCancha);
-    public void addCancha(Cancha c);
+public interface OperacionCalificacion {
+    public List<Calificacion> getCalificaciones();
+    public Calificacion getCalificacionByIdCalificacion(int IdCalificacion);
+    public void addCalificacion(Calificacion c);
 }

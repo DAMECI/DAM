@@ -5,6 +5,8 @@
  */
 package edu.eci.cosw.clases;
 
+import java.util.List;
+
 /**
  *
  * @author 2087151
@@ -12,17 +14,15 @@ package edu.eci.cosw.clases;
 public class Cancha {
     
     private int IdCancha;
-        private boolean Reservado;
-       // private List<Reserva> Reserva;
+    private boolean Reservado;
+    private List<Reserva> Reserva;
 
+    public Cancha(){}
 
-        public Cancha(){
-        }
-
-        public Cancha(int IdCancha, boolean Reservado){
-            this.IdCancha= IdCancha;
-            this.Reservado = Reservado;
-         }
+    public Cancha(int IdCancha, boolean Reservado){
+        this.IdCancha= IdCancha;
+        this.Reservado = Reservado;
+    }
 
     public int getIdCancha() {
         return IdCancha;
@@ -40,6 +40,11 @@ public class Cancha {
         this.Reservado = Reservado;
     }
     
-        
-    
+    public List<Reserva> getReserva() {
+        return Reserva;
+    }
+
+    public void setReserva(Reserva reserva) {
+        Reserva.add(reserva);
+    }
 }

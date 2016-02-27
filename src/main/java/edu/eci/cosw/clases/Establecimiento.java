@@ -26,10 +26,8 @@ public class Establecimiento {
     public Establecimiento(String NIT, String RazonSocial, String Direccion, String Telefono){
         this.NIT = NIT;
         this.RazonSocial= RazonSocial;
-     
         this.Direccion = Direccion;
         this.Telefono = Telefono;
-
     }
            
 
@@ -63,6 +61,22 @@ public class Establecimiento {
 
     public void setTelefono(String Telefono) {
         this.Telefono = Telefono;
+    }
+
+    public List<Cancha> getCanchas() {
+        return canchas;
+    }
+
+    public void setCanchas(Cancha cancha) {
+        canchas.add(cancha);
+    }
+
+    public List<Calificacion> getCalificaciones() {
+        return calificaciones;
+    }
+
+    public void setCalificaciones(Calificacion calificacion) {
+        calificaciones.add(calificacion);
     }
             
           

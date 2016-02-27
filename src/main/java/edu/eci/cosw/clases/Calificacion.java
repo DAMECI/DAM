@@ -56,7 +56,4 @@ public class Calificacion {
     public void setUsuarioCalifica(Usuario usuarioCalifica) {
         this.usuarioCalifica = usuarioCalifica;
     }
-  
-    
-    
 }

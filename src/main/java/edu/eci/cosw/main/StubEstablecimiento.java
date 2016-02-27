@@ -3,26 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.cosw.stubs;
+package edu.eci.cosw.main;
 
-import edu.eci.cosw.clases.Usuario;
-import ch.qos.logback.classic.util.ContextInitializer;
 import edu.eci.cosw.clases.Establecimiento;
 import java.util.ArrayList;
 import java.util.List;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import edu.eci.cosw.interfaces.OperacionUsuario;
-import edu.eci.cosw.interfaces.OperacionesEstablecimiento;
+import edu.eci.cosw.interfaces.OperacionEstablecimiento;
 
 /**
  *
  * @author 2087151
  */
 @Service
-public class StubEstablecimiento implements OperacionesEstablecimiento{
-    private List<Establecimiento>  establecimientos = new ArrayList<Establecimiento>() ;    
+public class StubEstablecimiento implements OperacionEstablecimiento{
+    private List<Establecimiento>  establecimientos = new ArrayList<Establecimiento>();
+    {
+        establecimientos.add(new Establecimiento("1542-4", "Cancha5", "calle 170 #13-1", "12333"));
+        establecimientos.add(new Establecimiento("2541-1", "RealMadrid", "cra 1 #1-1", "12333"));
+        establecimientos.add(new Establecimiento("8954-0", "Emirates", "cra 20 #2-2", "12333"));
+    }    
 
     @Override
     public List<Establecimiento> getEstablecimientos() {
@@ -39,7 +39,7 @@ public class StubEstablecimiento implements OperacionesEstablecimiento{
         }
         return aux;
     }
-
+    
     @Override
     public void addEstablecimiento(Establecimiento e) {
        establecimientos.add(e);
