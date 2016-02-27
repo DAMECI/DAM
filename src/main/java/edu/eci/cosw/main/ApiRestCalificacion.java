@@ -42,6 +42,6 @@ public class ApiRestCalificacion {
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addCalificacion(@RequestBody Calificacion c){
              operacionCalificacion.addCalificacion(c); 
-         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+         return new ResponseEntity<Calificacion>(HttpStatus.ACCEPTED);
     }
 }

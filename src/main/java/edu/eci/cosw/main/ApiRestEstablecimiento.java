@@ -42,6 +42,6 @@ public class ApiRestEstablecimiento{
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addEstablecimiento(@RequestBody Establecimiento e){
              operacionEstablecimiento.addEstablecimiento(e); 
-         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+         return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
     }
 }

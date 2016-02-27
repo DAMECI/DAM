@@ -41,6 +41,6 @@ public class ApiRestUsuario{
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addTarea(@RequestBody Usuario u){
              operacion.addUsuario(u); 
-         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+         return new ResponseEntity<Usuario>(HttpStatus.ACCEPTED);
     }
 }
