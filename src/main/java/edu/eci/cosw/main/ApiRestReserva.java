@@ -34,7 +34,7 @@ public class ApiRestReserva {
             return operacionReserva.getReservas(); 
     }
     
-    @RequestMapping(method= RequestMethod.GET, value="/{idreserva}")
+    @RequestMapping(method= RequestMethod.GET, value="/{idReserva}")
     public Reserva getCanchaById(@PathVariable int idReserva){
         return operacionReserva.getReservaByIdreserva(idReserva);
     }
@@ -42,6 +42,6 @@ public class ApiRestReserva {
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addReserva(@RequestBody Reserva r){
              operacionReserva.addReserva(r); 
-         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+         return new ResponseEntity<Reserva>(HttpStatus.ACCEPTED);
     }
 }

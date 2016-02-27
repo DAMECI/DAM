@@ -30,10 +30,11 @@ public class StubEstablecimiento implements OperacionEstablecimiento{
     }
 
     @Override
-    public Establecimiento getEstablecimientoByNIT(String NIT) {
+    public Establecimiento getEstablecimientoByNit(String nit) {
         Establecimiento aux = new Establecimiento();
+        System.out.println("NIT:" +nit);
         for(int i=0; i<establecimientos.size(); i++){
-            if(establecimientos.get(i).getNIT().equals(NIT)){
+            if(establecimientos.get(i).getNIT().equals(nit)){
                 aux = establecimientos.get(i);
             }
         }

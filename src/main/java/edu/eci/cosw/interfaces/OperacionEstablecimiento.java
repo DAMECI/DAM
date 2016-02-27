@@ -16,7 +16,7 @@ import java.util.List;
 public interface OperacionEstablecimiento {
     
         public List<Establecimiento> getEstablecimientos();
-        public Establecimiento getEstablecimientoByNIT(String NIT);
+        public Establecimiento getEstablecimientoByNit(String nit);
         public void addEstablecimiento(Establecimiento e);
     
 }

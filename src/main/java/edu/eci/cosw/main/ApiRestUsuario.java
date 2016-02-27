@@ -33,14 +33,14 @@ public class ApiRestUsuario{
             return operacion.getUsuarios(); 
     }
         
-    @RequestMapping(method= RequestMethod.GET, value="/{email}")
-    public Usuario getUsuarioByEmail(@PathVariable String email){
-        return operacion.getUsuarioByEmail(email);
+    @RequestMapping(method= RequestMethod.GET, value="/{id}")
+    public Usuario getUsuarioByEmail(@PathVariable String id){
+        return operacion.getUsuarioById(id);
     }
     
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addTarea(@RequestBody Usuario u){
              operacion.addUsuario(u); 
-         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+         return new ResponseEntity<Usuario>(HttpStatus.ACCEPTED);
     }
 }

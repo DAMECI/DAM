@@ -3,9 +3,9 @@
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
   'ngRoute',
-  'myApp.view2',
-  'myApp.view3',
-  'myApp.view4',
+  'myApp.vistaRegistrar',
+  'myApp.vistaFiltrar',
+  'myApp.vistaLogIn',
   'services.modulo',
   'myApp.version'
 ]).

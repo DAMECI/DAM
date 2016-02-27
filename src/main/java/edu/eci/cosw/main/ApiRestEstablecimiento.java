@@ -32,15 +32,16 @@ public class ApiRestEstablecimiento{
          public List<Establecimiento> getEstablecimientos(){
             return operacionEstablecimiento.getEstablecimientos(); 
     }
-    
-    @RequestMapping(method= RequestMethod.GET, value="/{nit}")
-    public Establecimiento getEstablecimientoById(@PathVariable String nitEstablecimiento){
-    return operacionEstablecimiento.getEstablecimientoByNIT(nitEstablecimiento);
+         
+    @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}")
+    public Establecimiento getEstablecimientoByNit(@PathVariable String nitEstablecimiento){
+        System.err.println("Api:"+nitEstablecimiento);
+        return operacionEstablecimiento.getEstablecimientoByNit(nitEstablecimiento);
     }
     
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addEstablecimiento(@RequestBody Establecimiento e){
              operacionEstablecimiento.addEstablecimiento(e); 
-         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+         return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
     }
 }
