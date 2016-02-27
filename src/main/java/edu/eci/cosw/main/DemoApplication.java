@@ -43,7 +43,7 @@ public class DemoApplication {
 	protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		@Override
                 protected void configure(AuthenticationManagerBuilder builder) throws Exception {
-                    builder.inMemoryAuthentication().withUser("user").password("password").roles("USER");
+                    builder.inMemoryAuthentication().withUser("dam").password("dam123").roles("USER");
                 }
                 
             @Override

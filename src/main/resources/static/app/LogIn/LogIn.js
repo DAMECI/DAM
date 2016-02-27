@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('myApp.view4', ['ngRoute'])
+angular.module('myApp.vistaLogIn', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view4', {
-    templateUrl: 'view4/view4.html',
+  $routeProvider.when('/LogIn', {
+    templateUrl: 'LogIn/LogIn.html',
     controller: 'ControladorLogin'
   });
 }])
