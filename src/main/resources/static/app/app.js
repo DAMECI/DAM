@@ -6,6 +6,7 @@ angular.module('myApp', [
   'myApp.vistaRegistrar',
   'myApp.vistaFiltrar',
   'myApp.vistaLogIn',
+  'myApp.Visualizar',
   'services.modulo',
   'myApp.version'
 ]).
