@@ -8,18 +8,20 @@ angular.module('myApp.Visualizar', ['ngRoute'])
     controller: 'ControladorVisualizacion'
   });
 }])
-
-.controller('ControladorVisualizacion',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
+.controller('ControladorVisualizacion',['$scope','Establecimiento',function ($scope,Establecimiento) {
                 google.load('maps', '2', {callback: simple});
-               var map;
-               function simple() {
+                console.log(Establecimiento.query().toString());
+        	$scope.establecimientos= Establecimiento.query();
+                var map;
+                function simple() {
                    if (GBrowserIsCompatible()) {
                        var map = new GMap2(document.getElementById("map1"));
-                       map.setCenter(new GLatLng(20.0972, -81.6503), 4);
+                       map.setCenter(new GLatLng(4.61, -74.08), 4);
                    }
-               }
-               window.onload = function () {
+                }
+                window.onload = function () {
                    simple();
-               }                          
-		
+                }                          
+
+               
 }]);

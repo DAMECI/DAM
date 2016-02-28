@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/establecimientos")
-
 public class ApiRestEstablecimiento{
     
     @Autowired

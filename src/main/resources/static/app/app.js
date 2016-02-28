@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.vistaLogIn',
   'myApp.Visualizar',
   'services.modulo',
+  'services.Establecimientos',
   'myApp.version'
 ]).
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
