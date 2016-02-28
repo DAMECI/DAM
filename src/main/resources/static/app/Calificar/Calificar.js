@@ -10,9 +10,14 @@ angular.module('myApp.Calificar', ['ngRoute'])
 }])
 
 .controller('ControladorVisualizacion',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
-       $scope.establecimiento;
+       
+       
        $scope.buscarEstablecimiento = function () {
-           
+           $scope.establecimiento;
+       $scope.Observacion;       
+       var Calificacion = {"IdCalificacion":1,"Puntaje":0, "Observacion":$scope.Observacion};
+       var Establecimiento = {"NIT":"","RazonSocial":"", "Direccion":"", "Telefono":""};
+       
        };
 		
 }]);
