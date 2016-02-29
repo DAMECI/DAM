@@ -3,17 +3,17 @@
     padding:0px;
 }
 
-/*#header{
+#header{
     margin:auto;
     width:800px;
     font-family:Arial, Helvetica, sans-serif;
 }
 
-ul, ol {
+esLista ul, ol {
     list-style:none;
 }
 
-.esLista, li a {
+.esLista li a {
     background-color:#FFFFFF;
     color:#FF8000;
     padding:15px 30px;
@@ -40,4 +40,18 @@ ul, ol {
 
 .esLista li ul li {
     position:relative;
-}*/
+}
+
+input[id^="ubicacion"] + label {
+display: block;
+width: 200px;
+margin: 0 auto;
+padding: 5px 20px;
+background: #e1a;
+cursor: pointer;
+}
+
+input[id^="ubicacion"]:checked + label {
+color: #333;
+background: #ccc;
+}

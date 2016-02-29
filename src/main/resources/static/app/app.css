@@ -7,7 +7,7 @@
  left: 0px;
  width: 30px;
  height: 40px;
- background: #3a7999;
+ background: #5D9438;
  color: #f2f2f2;
  padding: 10px;
  font-size: 15px;
@@ -24,7 +24,7 @@
  left: 20px;
  width: 30px;
  height: 40px;
- background: #3a7999;
+ background: #5D9438;
  color: #f2f2f2;
  padding: 10px;
  font-size: 15px;
@@ -41,7 +41,7 @@
  left: 40px;
  width: 30px;
  height: 40px;
- background: #3a7999;
+ background: #5D9438;
  color: #f2f2f2;
  padding: 10px;
  font-size: 15px;
@@ -58,7 +58,7 @@
  left: 60px;
  width: 30px;
  height: 40px;
- background: #3a7999;
+ background: #5D9438;
  color: #f2f2f2;
  padding: 10px;
  font-size: 15px;
@@ -75,7 +75,7 @@
  left: 80px;
  width: 30px;
  height: 40px;
- background: #3a7999;
+ background: #5D9438;
  color: #f2f2f2;
  padding: 10px;
  font-size: 15px;
@@ -85,6 +85,9 @@
  transition: all 500ms ease;
  width: 10%;
 }
+
+
+
 .logOut {
  border: none;
  position: absolute;
@@ -92,7 +95,7 @@
  left: 100px;
  width: 30px;
  height: 40px;
- background: #3a7999;
+ background: #5D9438;
  color: #f2f2f2;
  padding: 10px;
  font-size: 15px;
@@ -146,7 +149,7 @@
  left: 100px;
  width: 40px;
  height: 40px;
- background: #3a7999;
+ background: #5D9438;
  color: #f2f2f2;
  padding: 10px;
  font-size: 18px;
