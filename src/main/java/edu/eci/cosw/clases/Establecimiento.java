@@ -23,11 +23,12 @@ public class Establecimiento {
 
     public Establecimiento(){}
 
-    public Establecimiento(String NIT, String RazonSocial, String Direccion, String Telefono){
+    public Establecimiento(String NIT, String RazonSocial, String Direccion, String Telefono, List<Cancha> canchas){
         this.NIT = NIT;
         this.RazonSocial= RazonSocial;
         this.Direccion = Direccion;
         this.Telefono = Telefono;
+        this.canchas = canchas;
     }
            
 

@@ -5,8 +5,18 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
         return $resource('/usuarios',{},{
         GET : { method: 'GET', isArray: true}
         });
+    })
 
+    .factory('estService', function ($resource) {
+        return $resource('/establecimientos',{},{
+        GET : { method: 'GET', isArray: true}
+        });
+    })
+    
+    
+    .factory('canchaService', function ($resource) {
+        return $resource('/establecimientos/canchas',{},{
+        GET : { method: 'GET', isArray: true}
     });
-	
-	
-	
+    
+});

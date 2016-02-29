@@ -14,14 +14,16 @@ import java.util.List;
 public class Cancha {
     
     private int IdCancha;
+    private Double precio;
     private boolean Reservado;
     private List<Reserva> Reserva;
 
     public Cancha(){}
 
-    public Cancha(int IdCancha, boolean Reservado){
+    public Cancha(int IdCancha, Double precio, boolean Reservado){
         this.IdCancha= IdCancha;
         this.Reservado = Reservado;
+        this.precio = precio;
     }
 
     public int getIdCancha() {
@@ -32,6 +34,14 @@ public class Cancha {
         this.IdCancha = IdCancha;
     }
 
+    public Double getPrecio(){
+        return precio;
+    }
+    
+    public void setPrecio(Double precio){
+        this.precio = precio;
+    }
+    
     public boolean isReservado() {
         return Reservado;
     }

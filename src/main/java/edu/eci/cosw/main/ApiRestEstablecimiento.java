@@ -1,6 +1,7 @@
 package edu.eci.cosw.main;
 
 
+import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,12 +32,16 @@ public class ApiRestEstablecimiento{
     @RequestMapping(method= RequestMethod.GET)
          public List<Establecimiento> getEstablecimientos(){
             return operacionEstablecimiento.getEstablecimientos(); 
-    }
+    }         
          
     @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}")
     public Establecimiento getEstablecimientoByNit(@PathVariable String nitEstablecimiento){
-        System.err.println("Api:"+nitEstablecimiento);
         return operacionEstablecimiento.getEstablecimientoByNit(nitEstablecimiento);
+    }
+    
+    @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}/{idCancha}")
+    public List<Cancha> getCanchaEstablecimiento(@PathVariable int idCancha){
+        return operacionEstablecimiento.getCanchasEstablecimiento(idCancha);
     }
     
     @RequestMapping(method= RequestMethod.POST)

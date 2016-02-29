@@ -9,6 +9,7 @@ import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.interfaces.OperacionCancha;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import org.springframework.stereotype.Service;
 
 /**
@@ -19,8 +20,8 @@ import org.springframework.stereotype.Service;
 public class StubCancha implements OperacionCancha{
     private List<Cancha> canchas= new ArrayList<Cancha>();
     {
-        canchas.add(new Cancha(1,false));
-        canchas.add(new Cancha(2,false));
+        canchas.add(new Cancha(1,30.000,false));
+        canchas.add(new Cancha(2,40.000,false));
     }
 
 
@@ -44,5 +45,18 @@ public class StubCancha implements OperacionCancha{
             }
         }
         return aux;
+    }
+    
+    @Override
+    public List<Cancha> getCanchaPrecio(Double precio){
+        System.out.println("Precio: "+precio);
+        List<Cancha> canchasPrecio= new ArrayList<>();
+        for(int i=0; i<canchas.size(); i++){
+            System.out.println("Precio11"+canchas.get(i).getPrecio().toString());
+            System.out.println("Precio11"+canchas.get(i).getPrecio());
+            if(Objects.equals(canchas.get(i).getPrecio(), precio))
+                canchasPrecio.add(canchas.get(i));
+        }
+        return canchasPrecio;
     }
 }

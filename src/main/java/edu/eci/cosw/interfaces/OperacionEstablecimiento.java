@@ -6,6 +6,7 @@
 package edu.eci.cosw.interfaces;
 
 
+import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
 import java.util.List;
 
@@ -17,6 +18,6 @@ public interface OperacionEstablecimiento {
     
         public List<Establecimiento> getEstablecimientos();
         public Establecimiento getEstablecimientoByNit(String nit);
-        public void addEstablecimiento(Establecimiento e);
-    
+        public void addEstablecimiento(Establecimiento e);    
+        public List<Cancha> getCanchasEstablecimiento(int idCancha);
 }

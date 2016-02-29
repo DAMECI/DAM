@@ -9,8 +9,7 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
   });
 }])
 
-	.controller('ControladorLogin',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
-                               
+	.controller('ControladorLogin',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {                                         
 		var authenticate = function (credentials, callback) {
 
                 var headers = credentials ? {authorization: "Basic "

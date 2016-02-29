@@ -33,8 +33,8 @@ public class Reserva {
         this.tiempo = tiempo;
     }
     
-    public Date getFechaReserva() {
-        return FechaReserva;
+    public String getFechaReserva() {       
+        return FechaReserva.toString();
     }
 
     public void setFechaReserva(Date FechaReserva) {

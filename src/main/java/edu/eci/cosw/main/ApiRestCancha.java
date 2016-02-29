@@ -38,6 +38,12 @@ public class ApiRestCancha {
     public Cancha getCanchaById(@PathVariable int idCancha){
         return operacionCanchas.getCanchaByIdCancha(idCancha);
     }
+    
+    @RequestMapping(method= RequestMethod.GET, value="/{idCancha}/{precio}")
+    public List<Cancha> getCanchaPrecio(@PathVariable Double precio){
+        System.out.println("PrecioEstaCancha"+precio);
+        return operacionCanchas.getCanchaPrecio(precio);
+    }
          
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addCancha(@RequestBody Cancha c){

@@ -21,4 +21,5 @@ public interface OperacionCancha {
     public List<Cancha> getCanchas();
     public Cancha getCanchaByIdCancha(int IdCancha);
     public void addCancha(Cancha c);
+    public List<Cancha> getCanchaPrecio(Double precio);
 }
