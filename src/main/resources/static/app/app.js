@@ -6,7 +6,10 @@ angular.module('myApp', [
   'myApp.vistaRegistrar',
   'myApp.vistaFiltrar',
   'myApp.vistaLogIn',
+  'myApp.Visualizar',
+  'myApp.Calificar',
   'services.modulo',
+  'services.Establecimientos',
   'myApp.version'
 ]).
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {

@@ -48,6 +48,6 @@ public class ApiRestCancha {
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addCancha(@RequestBody Cancha c){
              operacionCanchas.addCancha(c); 
-         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+         return new ResponseEntity<Cancha>(HttpStatus.ACCEPTED);
     }
 }

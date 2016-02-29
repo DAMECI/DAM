@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
 @RequestMapping("/establecimientos")
-
 public class ApiRestEstablecimiento{
     
     @Autowired
@@ -47,6 +46,6 @@ public class ApiRestEstablecimiento{
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addEstablecimiento(@RequestBody Establecimiento e){
              operacionEstablecimiento.addEstablecimiento(e); 
-         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+         return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
     }
 }

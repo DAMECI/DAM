@@ -42,6 +42,6 @@ public class ApiRestReserva {
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addReserva(@RequestBody Reserva r){
              operacionReserva.addReserva(r); 
-         return new ResponseEntity<>(HttpStatus.ACCEPTED);
+         return new ResponseEntity<Reserva>(HttpStatus.ACCEPTED);
     }
 }

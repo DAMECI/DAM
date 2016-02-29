@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class Establecimiento {
     
-    
     private String NIT;
     private String RazonSocial;
     private String Direccion;
