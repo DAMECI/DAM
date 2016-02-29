@@ -2,20 +2,32 @@
 <table> 
     <tr>
         <td>
-            <div id="map1" style="width:360px;height:200px;border:2px solid blue;">
+            <input id="dirrecionManual" style="width:490px;" >
+        </td>
+        <td>
+            <button id="Buscar" >Buscar</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <div id="map1" style="width:500px;height:300px;border:2px solid blue;">
 
             </div>            
         </td>
-    
-            <td>
-                <table>
+            <td valign="top">
+   
+                <table border='1'>
                     <tr>
-                        <td>
-                            asas
-                        </td>
+                        <td>Nit</td>
+                        <td>Razón Social</td>
+                        <td>Dirección</td>
+                        <td>Telefono</td>
                     </tr>
                     <tr ng-repeat="x in establecimientos">
                         <td>{{ x.nit }}</td>
+                        <td>{{ x.razonSocial }}</td>
+                        <td>{{ x.direccion }}</td>
+                        <td>{{ x.telefono }}</td>
                     </tr>
                 </table>
             </td>
