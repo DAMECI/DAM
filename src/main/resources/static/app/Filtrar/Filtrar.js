@@ -49,44 +49,31 @@ angular.module('myApp.vistaFiltrar', ['ngRoute'])
     };	
     
     $scope.ordenPrecio = function(){
-        var aux = {nombreEstablecimiento:"", numCancha:0, precio:0};
+        var aux = {nombreEstablecimiento:"", telefono:"", direccion:"", numCancha:0, precio:0};
         var canchas = [];
         var lista = [];
          $scope.listado = estService.query(function(data){
             lista=data;
             for (var i = 0; i < lista.length; i++){
              for (var j = 0; j < lista[i].canchas.length; j++) {                
-                 aux={nombreEstablecimiento:lista[i].razonSocial, numCancha:lista[i].canchas[j].idCancha, precio:lista[i].canchas[j].precio};
+                 aux={nombreEstablecimiento:lista[i].razonSocial, telefono:lista[i].telefono, direccion:lista[i].direccion,
+                     numCancha:lista[i].canchas[j].idCancha, precio:lista[i].canchas[j].precio};
                      canchas.push(aux);
                  }
             } $scope.canchas=canchas;
         });  
     };   
-     $scope.filtrarUbicacion = function(address){
-     var output = document.getElementById("map_canvas");
-        if (!navigator.geolocation){
-          output.innerHTML = "<p>Geolocation is not supported by your browser</p>";
-          return;
-        }
-
-        function success(position) {
-          var latitude  = position.coords.latitude;
-          var longitude = position.coords.longitude;
-
-          output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
-
-          var img = new Image();
-          img.src = "http://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
-
-          output.appendChild(img);
+     $scope.filtrarUbicacion = function(){
+        
+        var latitude;
+        var longitude;
+             function success(position) {
+                latitude  = position.coords.latitude;
+                longitude = position.coords.longitude;
+                console.log("Latitude "+latitude+" Longitud:"+longitude);     
+           };
+           navigator.geolocation.getCurrentPosition(success);
+           
+           
         };
-
-        function error() {
-          output.innerHTML = "Unable to retrieve your location";
-        };
-
-        output.innerHTML = "<p>Locating…</p>";
-
-        navigator.geolocation.getCurrentPosition(success, error);
-     };
 }]);

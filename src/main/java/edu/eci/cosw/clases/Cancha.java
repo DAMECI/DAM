@@ -14,13 +14,13 @@ import java.util.List;
 public class Cancha {
     
     private int IdCancha;
-    private Double precio;
+    private String precio;
     private boolean Reservado;
     private List<Reserva> Reserva;
 
     public Cancha(){}
 
-    public Cancha(int IdCancha, Double precio, boolean Reservado){
+    public Cancha(int IdCancha, String precio, boolean Reservado){
         this.IdCancha= IdCancha;
         this.Reservado = Reservado;
         this.precio = precio;
@@ -34,11 +34,11 @@ public class Cancha {
         this.IdCancha = IdCancha;
     }
 
-    public Double getPrecio(){
+    public String getPrecio(){
         return precio;
     }
     
-    public void setPrecio(Double precio){
+    public void setPrecio(String precio){
         this.precio = precio;
     }
     

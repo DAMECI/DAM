@@ -31,7 +31,7 @@
                 <td>Direccion: {{todo.direccion}}</td>
                 <td>Telefono: {{todo.telefono}}</td>    
                 <td> Cancha: {{todo.numCancha}}</td> 
-                <td> Precio: $ {{todo.precio}}.000</td>                      
+                <td> Precio:  {{todo.precio}}</td>                      
             </tbody>
             
           </table>
@@ -40,18 +40,26 @@
             <tbody>
          <tr ng-repeat="todo in canchas | orderBy:'precio'">
              <td> {{todo.nombreEstablecimiento}}</td>
+             <td> {{todo.direccion}}</td>
+             <td>{{todo.telefono}}</td> 
              <td> {{todo.numCancha}}</td>
-             <td> ${{todo.precio}}.000</td>
+             <td>{{todo.precio}}</td>
         </tr>
         </tbody>
             
           </table>
         
-        <li><a href="" id="ubicacion" type="checkbox">Ubicacion</a></li>
-            <input ng-model="address" placeholder="Enter your Address" type ="text" />
-            <input id="search" type="button" value ="Search" ng-click="filtrarUbicacion(address)"/> 
-            <div id="map_canvas" style="width:100%; height:100%"></div>
-        
+        <li><a href="">Establecimientos cercanos</a></li>
+            <ul>
+                <li><a href="" ng-click="filtrarUbicacion()">Desde mi Ubicación</a>                    
+                    <div id="map1" style="width:100%; height:100%"></div>
+                </li>
+                <li><a href="" ng-click="">Ingresar ubicacion</a>
+                    <input ng-model="address" placeholder="Enter your Address" type ="text" />
+                    <input id="search" type="button" value ="Search" ng-click="filtrarUbicacionByAddress(address)"/> 
+                    <div id="map1" style="width:100%; height:100%"></div>
+                </li>
+           </ul> 
     </ul>
 </div>
 </body>

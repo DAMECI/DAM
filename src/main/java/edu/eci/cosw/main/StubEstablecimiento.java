@@ -21,14 +21,14 @@ public class StubEstablecimiento implements OperacionEstablecimiento{
     private List<Establecimiento>  establecimientos = new ArrayList<>();
     {
         List<Cancha> canchasEs1 = new ArrayList<>();
-        canchasEs1.add(new Cancha(15421,30.000,true));
-        canchasEs1.add(new Cancha(15422,30.000,true));
+        canchasEs1.add(new Cancha(15421,"30.000",true));
+        canchasEs1.add(new Cancha(15422,"30.000",true));
         List<Cancha> canchasEs2 = new ArrayList<>();
-        canchasEs2.add(new Cancha(25411,50.000,true));
-        canchasEs2.add(new Cancha(25412,50.000,true));
+        canchasEs2.add(new Cancha(25411,"50.000",true));
+        canchasEs2.add(new Cancha(25412,"50.000",true));
         List<Cancha> canchasEs3 = new ArrayList<>();
-        canchasEs3.add(new Cancha(89541,40.000,true));
-        canchasEs3.add(new Cancha(89542,30.000,true));
+        canchasEs3.add(new Cancha(89541,"40.000",true));
+        canchasEs3.add(new Cancha(89542,"30.000",true));
         establecimientos.add(new Establecimiento("1542-4", "Cancha5", "calle 170 #13-1", "12333",canchasEs1));
         establecimientos.add(new Establecimiento("2541-1", "RealMadrid", "cra 1 #1-1", "12333", canchasEs2));
         establecimientos.add(new Establecimiento("8954-0", "Emirates", "cra 20 #2-2", "12333", canchasEs3));

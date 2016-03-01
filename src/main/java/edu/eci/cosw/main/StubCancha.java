@@ -20,8 +20,8 @@ import org.springframework.stereotype.Service;
 public class StubCancha implements OperacionCancha{
     private List<Cancha> canchas= new ArrayList<Cancha>();
     {
-        canchas.add(new Cancha(1,30.000,false));
-        canchas.add(new Cancha(2,40.000,false));
+        canchas.add(new Cancha(1,"30.000",false));
+        canchas.add(new Cancha(2,"40.000",false));
     }
 
 
@@ -48,12 +48,9 @@ public class StubCancha implements OperacionCancha{
     }
     
     @Override
-    public List<Cancha> getCanchaPrecio(Double precio){
-        System.out.println("Precio: "+precio);
+    public List<Cancha> getCanchaPrecio(Double precio){        
         List<Cancha> canchasPrecio= new ArrayList<>();
-        for(int i=0; i<canchas.size(); i++){
-            System.out.println("Precio11"+canchas.get(i).getPrecio().toString());
-            System.out.println("Precio11"+canchas.get(i).getPrecio());
+        for(int i=0; i<canchas.size(); i++){           
             if(Objects.equals(canchas.get(i).getPrecio(), precio))
                 canchasPrecio.add(canchas.get(i));
         }
