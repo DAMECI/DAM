@@ -12,18 +12,27 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                 console.log('Entro visualizacion');
         	$scope.establecimientos= Establecimiento.query();
                 google.load('maps', '2', {callback: simple});
+                
                 function simple() {
                    if (GBrowserIsCompatible()) {
                        var map = new GMap2(document.getElementById("map1"));
-                       map.setCenter(new GLatLng(40.466997, -3.705482), 11);
+                       map.setCenter(new GLatLng(4.6203798, -74.1096943), 11);
                        map.setUIToDefault();
-                       
-                        var point = new GLatLng(4.710031, -74.077945);
-                        var marker = new GMarker(point);  
-                        map.addOverlay(marker);         
-                        marker.openInfoWindowHtml('Hello, <strong>World!</strong>');
+                       var geocoder = new google.maps.Geocoder();
+                       for(var index = 0; index < $scope.establecimientos.length; index++) {
+                           geocoder.geocode({ 'address': $scope.establecimientos[index].direccion}, geocodeResult,map);
+                           alert(index);
+                        } 
                    }
                 }
+                
+                function geocodeResult(results, status,map) {
+                    var point = new GLatLng(4.6203798, -74.1096943);
+                    var marker = new GMarker(point);  
+                    map.addOverlay(marker); 
+                }
+
+                
                 window.onload = function () {
                    simple();
                 }                          
