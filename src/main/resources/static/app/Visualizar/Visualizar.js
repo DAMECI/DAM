@@ -8,7 +8,7 @@ angular.module('myApp.Visualizar', ['ngRoute'])
     controller: 'CtrVisualizador'
   });
 }])
-.controller('CtrVisualizador',['$scope','Establecimiento','estService', '$filter',function ($scope,Establecimiento,estService, $filter) {
+.controller('CtrVisualizador',['$scope','Establecimiento','estService', '$filter','$location',function ($scope,Establecimiento,estService, $filter,$location) {
                 console.log('Entro visualizacion');
         	$scope.establecimientos= Establecimiento.query();
                 google.load('maps', '2', {callback: simple});
@@ -71,7 +71,7 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                             for (var i = 0; i < lista[index].canchas.length; i++) {                     
                                 if(lista[index].canchas[i].precio < max && lista[index].canchas[i].precio >=min){
                                     aux={nombreEstablecimiento:lista[index].razonSocial, telefono:lista[index].telefono, direccion:lista[index].direccion,
-                                        numCancha:lista[index].canchas[i].idCancha, precio:lista[index].canchas[i].precio};
+                                        numCancha:lista[index].canchas[i].idCancha, precio:lista[index].canchas[i].precio,nit:lista[index].nit};
                                     establecimientos.push(aux);
 
                                 }
@@ -80,7 +80,13 @@ angular.module('myApp.Visualizar', ['ngRoute'])
 
                     });     
                 };	
-
+                
+                $scope.irCalificar=function(nit){
+                    var establecimiento=document.getElementById("establecimiento")
+                    establecimiento.value=nit;
+                    $location.path("/Calificar");
+                }
+                
                 $scope.ordenPrecio = function(){
                     var aux = {nombreEstablecimiento:"", telefono:"", direccion:"", numCancha:0, precio:0};
                     var canchas = [];

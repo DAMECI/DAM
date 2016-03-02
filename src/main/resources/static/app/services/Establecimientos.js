@@ -13,5 +13,5 @@ angular.module('services.Establecimientos', ['ngRoute','ngResource'])
                 isArray: true               
             }
         });
-
+        
     });

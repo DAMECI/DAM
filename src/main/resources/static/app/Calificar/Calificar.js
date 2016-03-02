@@ -19,12 +19,17 @@ angular.module('myApp.Calificar', ['ngRoute'])
         visualizar.style.visibility = 'hidden';
         logOut.style.visibility = 'hidden';
         logIn.style.visibility = 'visible';
+
         registrar.style.visibility = 'visible';        
         var aux = {nombreEstablecimiento:"", telefono:"", direccion:"", numCancha:0, precio:0};
         $scope.establecimiento = "";
         $scope.Observacion= "";
         var establecimientos = [];
         
+
+        registrar.style.visibility = 'visible';
+        console.log(document.getElementById("establecimiento").valueOf());
+
         $scope.buscarEstablecimiento = function () {
             console.log("Buscando Establecimiento");
             var lista = [];
@@ -42,7 +47,7 @@ angular.module('myApp.Calificar', ['ngRoute'])
        
        $scope.Puntaje = function (valor) {
             calificacion = valor;
-                    alert("Tu puntuación para el lugar:" + establecimientos[0].nombreEstablecimiento + "fue: " + calificacion );
+                    alert("Tu puntuación para el lugar: " + establecimientos[0].nombreEstablecimiento + " fue: " + calificacion );
        };       
        
        $scope.Calificacion = function () {
