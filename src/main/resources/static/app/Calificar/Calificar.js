@@ -18,6 +18,7 @@ angular.module('myApp.Calificar', ['ngRoute'])
         logOut.style.visibility = 'hidden';
         logIn.style.visibility = 'visible';
         registrar.style.visibility = 'visible';
+        console.log(document.getElementById("establecimiento").valueOf());
         $scope.buscarEstablecimiento = function () {
            $scope.establecimiento;
        $scope.Observacion;       
