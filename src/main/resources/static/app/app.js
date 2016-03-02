@@ -13,7 +13,7 @@ angular.module('myApp', [
   'myApp.version'
 ]).
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
-  $routeProvider.otherwise({redirectTo: '/login'});
+  $routeProvider.otherwise({redirectTo: '#/LogIn'});
   $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 }])
 

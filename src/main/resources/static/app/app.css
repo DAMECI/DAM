@@ -4,7 +4,7 @@
  border: none;
  position: absolute;
  top: 10px;
- left: 0px;
+ left: 20px;
  width: 30px;
  height: 40px;
  background: #5D9438;
@@ -21,7 +21,7 @@
  border: none;
  position: absolute;
  top: 10px;
- left: 20px;
+ left: 0px;
  width: 30px;
  height: 40px;
  background: #5D9438;
@@ -55,7 +55,7 @@
  border: none;
  position: absolute;
  top: 10px;
- left: 60px;
+ left: 0px;
  width: 30px;
  height: 40px;
  background: #5D9438;
@@ -92,7 +92,7 @@
  border: none;
  position: absolute;
  top: 10px;
- left: 100px;
+ left: 20px;
  width: 30px;
  height: 40px;
  background: #5D9438;

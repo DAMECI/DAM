@@ -10,7 +10,11 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
 }])
 
 	.controller('ControladorLogin',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {                                         
-		var authenticate = function (credentials, callback) {
+		var visualizar = document.getElementById('Visualizar');
+                var logOut = document.getElementById('Logout');
+                var logIn = document.getElementById('Login');
+                var registrar = document.getElementById('Registrar');
+                var authenticate = function (credentials, callback) {
 
                 var headers = credentials ? {authorization: "Basic "
                             + btoa(credentials.username + ":" + credentials.password)
@@ -18,7 +22,7 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
 
                 $http.get('user', {headers: headers}).success(function (data) {
                     if (data.name) {
-                        $rootScope.authenticated = true;
+                        $rootScope.authenticated = true;         
                     } else {
                         $rootScope.authenticated = false;
                     }
@@ -41,9 +45,17 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
                     if ($rootScope.authenticated) {
                         $location.path("/");
                         $scope.error = false;
+                         visualizar.style.visibility = 'visible';
+                         logOut.style.visibility = 'visible';
+                         logIn.style.visibility = 'hidden';
+                         registrar.style.visibility = 'hidden';
                     } else {
                         $location.path("/login");
                         $scope.error = true;
+                        visualizar.style.visibility = 'hidden';
+                        logOut.style.visibility = 'hidden';
+                        logIn.style.visibility = 'visible';
+                        registrar.style.visibility = 'visible';
                     }
                 });
             };

@@ -15,13 +15,12 @@
 <body>
    
     <ul class="menu" ng-controller="ControladorLogOut">      
-    
-    <a href="#/Registrar" class="Registro">Registro</a>
-    <a href="#/LogIn" class="LogIn">LogIn</a>
-    <a href="#Calificar" class="Calificar">Calificar</a>
-    <a href="#Visualizar" class="Establecimientos" >Establecimientos</a>
-    <a href="#/Filtrar" class="Filtrar">Filtrar</a>
-    <a href="" ng-click="logout()" class="logOut">LogOut</a>
+    <a id="Login" href="#/LogIn" class="LogIn" >LogIn</a>
+    <a id="Registrar" href="#/Registrar" class="Registro">Registro</a>
+    <a id="Calificar" href="#Calificar" class="Calificar" style="visibility:hidden">Calificar</a>
+    <a id="Visualizar" href="#Visualizar" class="Establecimientos" style="visibility:hidden">Establecimientos</a>
+    <a id="Filtran" href="#/Filtrar" class="Filtrar" style="visibility:hidden">Filtrar</a>
+    <a id="Logout" href="" ng-click="logout()" class="logOut" style="visibility:hidden">LogOut</a>
   </ul>
 
   <!--[if lt IE 7]>
