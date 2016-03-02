@@ -9,7 +9,7 @@ angular.module('myApp.vistaRegistrar', ['ngRoute'])
   });
 }])
 
-.controller('RegistrarCtrl', ['$scope', 'usersService', function ($scope, usersService) {  
+.controller('RegistrarCtrl', ['$scope', 'usersService','$location', function ($scope, usersService,$location) {  
     $scope.idCliente ="";  
     $scope.nombre ="";
     $scope.apellido ="";
@@ -20,7 +20,16 @@ angular.module('myApp.vistaRegistrar', ['ngRoute'])
         var user = {"idCliente":$scope.idCliente,"nombre":$scope.Nombre, "apellido":$scope.Apellido, 
             "telefono":$scope.Telefono, "email":$scope.Email, "password":$scope.Password};
         usersService.save(user,function(){
-            console.info("usuario Agregado");
+                var visualizar = document.getElementById('Visualizar');
+                var logOut = document.getElementById('Logout');
+                var logIn = document.getElementById('Login');
+                var registrar = document.getElementById('Registrar');
+                console.info("usuario Agregado");
+                visualizar.style.visibility = 'visible';
+                logOut.style.visibility = 'visible';
+                logIn.style.visibility = 'hidden';
+                registrar.style.visibility = 'hidden';
+                $location.path("/Visualizar");
         });
     };
 }]);

@@ -18,18 +18,25 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
 }])
 
 .controller('ControladorLogOut',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
-        $location.path("/login");
-        console.log("Salio");
         $scope.logout = function () {
-        console.log("Salio");
+            var visualizar = document.getElementById('Visualizar');
+            var logOut = document.getElementById('Logout');
+            var logIn = document.getElementById('Login');
+            var registrar = document.getElementById('Registrar');
         $http.post('/logout', {}).success(function () {
             $rootScope.authenticated = false;
-            $location.path("/login");
+            $location.path("/LogIn");
+            visualizar.style.visibility = 'hidden';
+            logOut.style.visibility = 'hidden';
+            logIn.style.visibility = 'visible';
+            registrar.style.visibility = 'visible';
         }).error(function (data) {
-            console.log("Salio");
-             console.log("noSalio");
+             $location.path("/LogIn");
             $rootScope.authenticated = false;
+            visualizar.style.visibility = 'hidden';
+            logOut.style.visibility = 'hidden';
+            logIn.style.visibility = 'visible';
+            registrar.style.visibility = 'visible';
         });
-        console.log("Salio");
     };
 }]);
