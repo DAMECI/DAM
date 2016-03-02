@@ -13,17 +13,18 @@ angular.module('myApp', [
   'myApp.version'
 ]).
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
-  $routeProvider.otherwise({redirectTo: '#/LogIn'});
+  $routeProvider.otherwise({redirectTo: '/LogIn'});
   $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 }])
 
 .controller('ControladorLogOut',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
+        $location.path("/login");
         console.log("Salio");
-                $scope.logout = function () {
-            console.log("Salio");
+        $scope.logout = function () {
+        console.log("Salio");
         $http.post('/logout', {}).success(function () {
-        $rootScope.authenticated = false;
-        $location.path("/");
+            $rootScope.authenticated = false;
+            $location.path("/login");
         }).error(function (data) {
             console.log("Salio");
              console.log("noSalio");
