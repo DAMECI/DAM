@@ -1,4 +1,4 @@
-<html>
+<html ng-controller="ControladorCalificar">
     <head>        
         <style>
     .ec-stars-wrapper {
@@ -34,41 +34,62 @@
 
     </head>    
     <body>
-        <table>
+        <div>
+                <table>
             <tr>
                 <td>
                     <label class="color1">Establecimiento: </label>
-                    <input type="text" name="TXEstablecimiento"  ng-model="$scope.establecimiento" />        
+                    <input type="text" name="TXEstablecimiento"  ng-model="establecimiento" />        
                 </td>
                 <td>
-                    <input type="button"  value="Aceptar" ng-submit="buscarEstablecimiento()" />
+                    <input type="button"  value="Aceptar" ng-click="buscarEstablecimiento()" />
                 </td>
             </tr>
+            
             <tr>
-                
-                <td class="ec-stars-wrapper" colspan="2" >
-                    <br/>
-                    <br/>
-                    <a href="#Calificar" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
-                    <a href="#Calificar" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-                    <a href="#Calificar" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-                    <a href="#Calificar" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-                    <a href="#Calificar" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+                <td>
+                    <table border="1" class="colortablas5">
+                                        <tr>
+                                            <td>Nombre Establecimiento</td>
+                                            <td>Direccion</td>
+                                            <td>Telefono</td>    
+                                            <td> Cancha</td> 
+                                            <td> Precio</td>               
+                                            <td> Calificación</td>               
+
+                                        </tr>
+                                     <tr ng-repeat="todo in estable">                
+                                        <td>{{todo.nombreEstablecimiento}}</td>
+                                        <td>{{todo.direccion}}</td>
+                                        <td>{{todo.telefono}}</td>    
+                                        <td>{{todo.numCancha}}</td> 
+                                        <td>{{todo.precio}}</td>
+                                        <td class="ec-stars-wrapper" colspan="2" >
+                                            <a ng-click="Puntaje(1)" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
+                                            <a ng-click="Puntaje(2)" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
+                                            <a ng-click="Puntaje(3)" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
+                                            <a ng-click="Puntaje(4)" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
+                                            <a ng-click="Puntaje(5)" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+                                        </td>
+                                     </tr>
+                                </table>
                 </td>
-            </tr>
+            </tr>           
             <tr>
                 
                 <td  colspan="2">
                     <label class="color2">Observación: </label>
-                    <textarea name="TXObservacion">    
+                    <textarea name="TXObservacion" ng-model="Observacion">    
                     </textarea>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="button" name="BEnviarCal" value="Enviar Calificación"  />                    
+                    <input type="button" name="BEnviarCal" value="Enviar Calificación" ng-click="Calificacion()"  />                    
                 </td>
             </tr>
         </table>        
+        </div>
+        
     </body>
 </html>

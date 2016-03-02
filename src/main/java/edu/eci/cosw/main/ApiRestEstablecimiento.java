@@ -1,6 +1,7 @@
 package edu.eci.cosw.main;
 
 
+import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
 import java.util.List;
@@ -46,6 +47,13 @@ public class ApiRestEstablecimiento{
     @RequestMapping(method= RequestMethod.POST)
          public ResponseEntity<?> addEstablecimiento(@RequestBody Establecimiento e){
              operacionEstablecimiento.addEstablecimiento(e); 
+         return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
+    }
+         
+         
+    @RequestMapping(method= RequestMethod.POST, value="/AddCalificacion")
+         public ResponseEntity<?> addCalificacionAEstablecimiento(@RequestBody Calificacion c){
+             operacionEstablecimiento.addCalificacion(c); 
          return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
     }
 }

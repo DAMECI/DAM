@@ -15,6 +15,7 @@ public class Calificacion {
     private int Puntaje;
     private String Observacion;
     private Usuario usuarioCalifica;
+    private String NitEstablecimiento;
     
     public Calificacion(){}
     
@@ -56,4 +57,14 @@ public class Calificacion {
     public void setUsuarioCalifica(Usuario usuarioCalifica) {
         this.usuarioCalifica = usuarioCalifica;
     }
+    
+    
+    public String getNitEstablecimiento() {
+        return NitEstablecimiento;
+    }
+
+    public void setNitEstablecimiento(String NitEstablecimiento) {
+        this.NitEstablecimiento = NitEstablecimiento;
+    }
+    
 }

@@ -5,6 +5,7 @@
  */
 package edu.eci.cosw.main;
 
+import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
 import java.util.ArrayList;
@@ -65,5 +66,14 @@ public class StubEstablecimiento implements OperacionEstablecimiento{
     @Override
     public void addEstablecimiento(Establecimiento e) {
        establecimientos.add(e);
+    }
+    
+    @Override
+    public void addCalificacion(Calificacion c) {
+       for (int i = 0; i < establecimientos.size(); i++) {
+            if(establecimientos.get(i).getNIT() == c.getNitEstablecimiento()){
+                establecimientos.get(i).setCalificaciones(c);
+            }
+       }
     }
 }

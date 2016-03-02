@@ -388,6 +388,8 @@ border: none;
     border:#000; 
     color:#000;
 }
+
+
 .colortablas4{
     position: absolute;
     top: 550px;
@@ -397,6 +399,11 @@ border: none;
     color:#000;
 }
  
+.colortablas5{
+    background:#FAF4F4;
+    border:#000; 
+    color:#000;
+}
 
 
 
