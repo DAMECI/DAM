@@ -54,14 +54,16 @@
                                             <td>Direccion</td>
                                             <td>Telefono</td>    
                                             <td> Cancha</td> 
-                                            <td> Precio</td>                      
+                                            <td> Precio</td>        
+                                            <td> Calificar</td>        
                                         </tr>
                                      <tr ng-repeat="todo in estable">                
                                         <td>{{todo.nombreEstablecimiento}}</td>
                                         <td>{{todo.direccion}}</td>
                                         <td>{{todo.telefono}}</td>    
                                         <td>{{todo.numCancha}}</td> 
-                                        <td>{{todo.precio}}</td>                      
+                                        <td>{{todo.precio}}</td>
+                                        <td><a href="#/Calificar">Calificar</a></td>
                                      </tr>
                                 </table>
                                 <table class="table table-striped table-hover">
@@ -72,6 +74,7 @@
                                             <td>{{todo.telefono}}</td> 
                                             <td> {{todo.numCancha}}</td>
                                             <td>{{todo.precio}}</td>
+                                            <td><a href="#/Calificar">Calificar</a></td>
                                        </tr>
                                     </tbody>
                                 </table>
