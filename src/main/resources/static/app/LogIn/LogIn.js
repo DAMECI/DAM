@@ -43,12 +43,12 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
                 
                 authenticate($scope.credentials, function () {                        
                     if ($rootScope.authenticated) {
-                        $location.path("/");
                         $scope.error = false;
                          visualizar.style.visibility = 'visible';
                          logOut.style.visibility = 'visible';
                          logIn.style.visibility = 'hidden';
                          registrar.style.visibility = 'hidden';
+                         $location.path("/Visualizar");
                     } else {
                         $location.path("/login");
                         $scope.error = true;
