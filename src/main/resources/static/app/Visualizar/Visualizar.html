@@ -1,38 +1,82 @@
 <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyBD_hs2HhO-gDJvBsft1WKr9lwOEcBpTGQ"></script>
-<table> 
+<table>
     <tr>
-       
-        <td>
-            <input id="dirrecionManual" style="width:490px;" >
-        </td>
-        <td>
-            <button id="Buscar" >Buscar</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div id="map1" style="width:500px;height:300px;border:2px solid blue;">
-
-            </div>            
-        </td>
-            <td valign="top">
-   
-                <table border='1'>
+        <td valign="top">
+            <div>
+                <table>
                     <tr>
-                        <td>Nit</td>
-                        <td>Razón Social</td>
-                        <td>Dirección</td>
-                        <td>Telefono</td>
-                    </tr>
-                    <tr ng-repeat="x in establecimientos">
-                        <td>{{ x.nit }}</td>
-                        <td>{{ x.razonSocial }}</td>
-                        <td>{{ x.direccion }}</td>
-                        <td>{{ x.telefono }}</td>
-                    </tr>
+                        <td>
+                            <h4>Elija la opcion para filtrar:</h4>
+                            <div id="header">
+                                <ul class="esLista">
+                                    <li><a href="">Rango Precio</a>
+                                        <ul class="sub">                   
+                                            <li><a href="" ng-click="filtrarPrecio(1)">$30.000 - $40.000</a></li>
+                                            <li><a href="" ng-click="filtrarPrecio(2)">$40.000 - $50.000</a></li>
+                                            <li><a href="" ng-click="filtrarPrecio(3)">$50.000 - $60.000</a></li>
+                                            <li><a href="" ng-click="filtrarPrecio(4)">$60.000 - $70.000</a></li>
+                                            <li><a href="" ng-click="filtrarPrecio(5)"> > $70.000 </a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="" ng-click="ordenPrecio()" >Precio</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>    
                 </table>
+            </div>
+        </td>
+        <td valign="top">
+            <div>            
+            <table> 
+                <tr>
+                    <td>
+                        <input id="dirrecionManual" style="width:490px;" >
+                    </td>
+                    <td>
+                        <button id="Buscar" >Buscar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div id="map1" style="width:500px;height:300px;border:2px solid blue;">
+
+                        </div>            
+                    </td>
+                </tr>
+                </table>    
+            </div>
+        </td>
+        <td>
+                                <table class="table table-striped table-hover">
+                                        <tr>
+                                            <td>Nombre Establecimiento</td>
+                                            <td>Direccion</td>
+                                            <td>Telefono</td>    
+                                            <td> Cancha</td> 
+                                            <td> Precio</td>                      
+                                        </tr>
+                                     <tr ng-repeat="todo in estable">                
+                                        <td>{{todo.nombreEstablecimiento}}</td>
+                                        <td>{{todo.direccion}}</td>
+                                        <td>{{todo.telefono}}</td>    
+                                        <td>{{todo.numCancha}}</td> 
+                                        <td>{{todo.precio}}</td>                      
+                                     </tr>
+                                </table>
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                        <tr ng-repeat="todo in canchas | orderBy:'precio'">
+                                            <td> {{todo.nombreEstablecimiento}}</td>
+                                            <td> {{todo.direccion}}</td>
+                                            <td>{{todo.telefono}}</td> 
+                                            <td> {{todo.numCancha}}</td>
+                                            <td>{{todo.precio}}</td>
+                                       </tr>
+                                    </tbody>
+                                </table>
             </td>
     </tr>
-    
-
 </table>
+    
+    
