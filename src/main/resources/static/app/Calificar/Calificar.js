@@ -49,7 +49,7 @@ angular.module('myApp.Calificar', ['ngRoute'])
        
        $scope.Puntaje = function (valor) {
             $scope.calificacion = valor;
-                    alert("Tu puntuación para el lugar: " + aux.nombreEstablecimiento + " fue: " + calificacion );
+                    alert("Tu puntuación para el lugar: " + aux.nombreEstablecimiento + " fue: " + $scope.calificacion);
        };       
        
        $scope.Calificacion = function () {
