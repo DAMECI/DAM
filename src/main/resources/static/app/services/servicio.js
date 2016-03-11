@@ -13,6 +13,13 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
         });
     })
     
+    .factory('postService', function ($resource) {
+        
+        return $resource('/establecimientos/AddCalificacion',{},{
+        save : { method: 'POST'}
+        });
+    })
+    
     .factory('canchaService', function ($resource) {
         return $resource('/establecimientos/canchas',{},{
         GET : { method: 'GET', isArray: true}

@@ -31,6 +31,7 @@ public class ApiRestEstablecimiento{
     
     @RequestMapping(method= RequestMethod.GET)
          public List<Establecimiento> getEstablecimientos(){
+             System.out.println("Entro Get Establecimiento");
             return operacionEstablecimiento.getEstablecimientos(); 
     }         
          
@@ -51,8 +52,9 @@ public class ApiRestEstablecimiento{
     }
          
          
-    @RequestMapping(method= RequestMethod.POST, value="/AddCalificacion")
+    @RequestMapping(method= RequestMethod.POST, path = "/AddCalificacion")
          public ResponseEntity<?> addCalificacionAEstablecimiento(@RequestBody Calificacion c){
+             System.out.println("Entro Add Calificacion");
              operacionEstablecimiento.addCalificacion(c); 
          return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
     }

@@ -9,13 +9,13 @@ angular.module('myApp.Calificar', ['ngRoute'])
   });
 }])
 
-.controller('ControladorCalificar',  ['$scope','Establecimiento','estService',function ($scope,Establecimiento,estService) {
+.controller('ControladorCalificar',  ['$scope','Establecimiento','estService','postService',function ($scope,Establecimiento,estService, postService) {
         console.log('Entro Calificar');
         var visualizar = document.getElementById('Visualizar');
         var logOut = document.getElementById('Logout');
         var logIn = document.getElementById('Login');
         var registrar = document.getElementById('Registrar');
-        var calificacion = "";
+        $scope.calificacion = "";
         visualizar.style.visibility = 'hidden';
         logOut.style.visibility = 'hidden';
         logIn.style.visibility = 'visible';
@@ -24,7 +24,7 @@ angular.module('myApp.Calificar', ['ngRoute'])
         var aux = {nombreEstablecimiento:"", telefono:"", direccion:"", numCancha:0, precio:0};
         $scope.establecimiento = "";
         $scope.Observacion= "";
-        var establecimientos = [];
+        $scope.establecimientos = [];
         
 
         registrar.style.visibility = 'visible';
@@ -36,36 +36,35 @@ angular.module('myApp.Calificar', ['ngRoute'])
            $scope.listado = estService.query(function(data){
                         lista=data;
                         for (var index = 0; index < lista.length; index++) {  
-                            if(lista[index].razonSocial == $scope.establecimiento){
+                            //if(lista[index].razonSocial == $scope.establecimiento){
+                            if($scope.establecimiento.indexOf(lista[index].razonSocial) > -1){    
+                                 
                                 aux={nombreEstablecimiento:lista[index].razonSocial, telefono:lista[index].telefono, direccion:lista[index].direccion,
-                                        numCancha:lista[index].canchas[0].idCancha, precio:lista[index].canchas[0].precio,nit:lista[index].NIT};
-                                    establecimientos.push(aux);
+                                        numCancha:lista[index].canchas[0].idCancha, precio:lista[index].canchas[0].precio,nit:lista[index].nit};
+                                    $scope.establecimientos.push(aux);
                             }
-                        } $scope.estable=establecimientos;
+                        } $scope.estable=$scope.establecimientos;
                     });   
        };
        
        $scope.Puntaje = function (valor) {
-            calificacion = valor;
-                    alert("Tu puntuación para el lugar: " + establecimientos[0].nombreEstablecimiento + " fue: " + calificacion );
+            $scope.calificacion = valor;
+                    alert("Tu puntuación para el lugar: " + aux.nombreEstablecimiento + " fue: " + calificacion );
        };       
        
        $scope.Calificacion = function () {
-            calificacion = valor;
-            var calificacion = {"IdCalificacion":1,"Puntaje":calificacion, "Observacion":$scope.Apellido, 
-            "usuarioCalifica":"","NitEstablecimiento":establecimientos[0].nit};
+            var calificacion = {"IdCalificacion":1,"Puntaje":$scope.calificacion, "Observacion":$scope.Observacion, 
+            "NitEstablecimiento":aux.nit};            
+            console.log(calificacion.toString());            
+            $scope.SaveCalificacion(calificacion);
+            alert("Calificacion Guardad");
             
        };
        
        
        $scope.SaveCalificacion = function(calificacion) {
-        $http({
-            method  : 'POST',
-            url     : 'establecimientos/AddCalificacion',
-            data    : calificacion
-        });
+           postService.save(calificacion);
     };
-       
 }]);
 
 
