@@ -16,7 +16,8 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
     .factory('postService', function ($resource) {
         
         return $resource('/establecimientos/AddCalificacion',{},{
-        save : { method: 'POST'}
+        //POST : { method: 'POST'}
+        GET : { method: 'GET', isArray: true}
         });
     })
     

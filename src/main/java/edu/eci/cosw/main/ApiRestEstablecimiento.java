@@ -4,6 +4,7 @@ package edu.eci.cosw.main;
 import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
+import edu.eci.cosw.clases.Usuario;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -52,10 +53,11 @@ public class ApiRestEstablecimiento{
     }
          
          
-    @RequestMapping(method= RequestMethod.POST, path = "/AddCalificacion")
+    @RequestMapping(method= RequestMethod.POST, value = "/AddCalificacion")
          public ResponseEntity<?> addCalificacionAEstablecimiento(@RequestBody Calificacion c){
              System.out.println("Entro Add Calificacion");
-             operacionEstablecimiento.addCalificacion(c); 
+             operacionEstablecimiento.addCalificacion(c);
          return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
     }
+         
 }

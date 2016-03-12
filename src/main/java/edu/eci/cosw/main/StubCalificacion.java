@@ -20,8 +20,8 @@ import org.springframework.stereotype.Service;
 public class StubCalificacion implements OperacionCalificacion{
     private List<Calificacion> calificaciones= new ArrayList<Calificacion>() ;    
     {
-        calificaciones.add(new Calificacion(1,5,"Buen servicio",new Usuario("1","Diego", "Becerra", "11111", "diego@gmail.com", "12345")));
-        calificaciones.add(new Calificacion(2,4,"Buen servicio",new Usuario("1","Diego", "Becerra", "11111", "diego@gmail.com", "12345")));
+        calificaciones.add(new Calificacion(1,5,"Buen servicio","12"));
+        calificaciones.add(new Calificacion(2,4,"Buen servicio","12"));
     }
     
 

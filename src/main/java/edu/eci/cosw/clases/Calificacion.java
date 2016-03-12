@@ -14,16 +14,15 @@ public class Calificacion {
     private int IdCalificacion;
     private int Puntaje;
     private String Observacion;
-    private Usuario usuarioCalifica;
     private String NitEstablecimiento;
     
     public Calificacion(){}
     
-    public Calificacion(int IdCalificacion, int Puntaje, String Observacion, Usuario usuarioCalifica) {
+    public Calificacion(int IdCalificacion, int Puntaje, String Observacion, String NitEstablecimiento) {
         this.IdCalificacion = IdCalificacion;
         this.Puntaje = Puntaje;
         this.Observacion = Observacion;
-        this.usuarioCalifica = usuarioCalifica;
+        this.NitEstablecimiento = NitEstablecimiento;
     }
 
     public int getIdCalificacion() {
@@ -50,13 +49,13 @@ public class Calificacion {
         this.Observacion = Observacion;
     }
 
-    public Usuario getUsuarioCalifica() {
-        return usuarioCalifica;
-    }
+    //public Usuario getUsuarioCalifica() {
+    //    return usuarioCalifica;
+    //}
 
-    public void setUsuarioCalifica(Usuario usuarioCalifica) {
-        this.usuarioCalifica = usuarioCalifica;
-    }
+    //public void setUsuarioCalifica(Usuario usuarioCalifica) {
+    //    this.usuarioCalifica = usuarioCalifica;
+    //}
     
     
     public String getNitEstablecimiento() {

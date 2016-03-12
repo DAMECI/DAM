@@ -40,7 +40,9 @@ angular.module('myApp.Calificar', ['ngRoute'])
                             if($scope.establecimiento.indexOf(lista[index].razonSocial) > -1){    
                                  
                                 aux={nombreEstablecimiento:lista[index].razonSocial, telefono:lista[index].telefono, direccion:lista[index].direccion,
-                                        numCancha:lista[index].canchas[0].idCancha, precio:lista[index].canchas[0].precio,nit:lista[index].nit};
+                                        numCancha:lista[index].canchas[0].idCancha, precio:lista[index].canchas[0].precio,nit:lista[index].nit,
+                                        calificacionPromedio:lista[index].calificacionPromedio
+                                    };
                                     $scope.establecimientos.push(aux);
                             }
                         } $scope.estable=$scope.establecimientos;
@@ -53,18 +55,17 @@ angular.module('myApp.Calificar', ['ngRoute'])
        };       
        
        $scope.Calificacion = function () {
-            var calificacion = {"IdCalificacion":1,"Puntaje":$scope.calificacion, "Observacion":$scope.Observacion, 
-            "NitEstablecimiento":aux.nit};            
-            console.log(calificacion.toString());            
-            $scope.SaveCalificacion(calificacion);
-            alert("Calificacion Guardad");
+            var oCalificacion = {"idCalificacion":1,
+                "puntaje": $scope.calificacion, 
+                "observacion":$scope.Observacion, 
+            "nitEstablecimiento":aux.nit};
+            console.log(oCalificacion);    
             
+            postService.save(oCalificacion, function(){
+                alert("Calificacion Guardad");                
+            });
        };
-       
-       
-       $scope.SaveCalificacion = function(calificacion) {
-           postService.save(calificacion);
-    };
+      
 }]);
 
 

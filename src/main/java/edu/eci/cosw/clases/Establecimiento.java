@@ -5,7 +5,9 @@
  */
 package edu.eci.cosw.clases;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -13,12 +15,13 @@ import java.util.List;
  */
 public class Establecimiento {
     
+    private double CalificacionPromedio;
     private String NIT;
     private String RazonSocial;
     private String Direccion;
     private String Telefono;
     private List<Cancha> canchas;
-    private List<Calificacion> calificaciones;
+    private Set<Calificacion> calificaciones = new HashSet<Calificacion>();
 
     public Establecimiento(){}
 
@@ -31,6 +34,24 @@ public class Establecimiento {
     }
            
 
+    public double getCalificacionPromedio() {
+        CalificacionPromedio =0D;
+        for(Calificacion oCalifica: calificaciones){
+            CalificacionPromedio = CalificacionPromedio + (double)oCalifica.getPuntaje();
+        }
+        
+        if (calificaciones.size() > 0){
+            CalificacionPromedio = CalificacionPromedio / calificaciones.size();
+        }
+        
+        return CalificacionPromedio;
+    }
+
+    public void setCalificacionPromedio(double CalificacionPromedio) {
+        this.CalificacionPromedio = CalificacionPromedio;
+    }
+
+    
     public String getNIT() {
         return NIT;
     }
@@ -71,13 +92,11 @@ public class Establecimiento {
         canchas.add(cancha);
     }
 
-    public List<Calificacion> getCalificaciones() {
+    public Set<Calificacion> getCalificaciones() {
         return calificaciones;
     }
 
     public void setCalificaciones(Calificacion calificacion) {
         calificaciones.add(calificacion);
     }
-            
-          
 }

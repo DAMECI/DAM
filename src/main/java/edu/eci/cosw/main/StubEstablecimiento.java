@@ -71,7 +71,7 @@ public class StubEstablecimiento implements OperacionEstablecimiento{
     @Override
     public void addCalificacion(Calificacion c) {
        for (int i = 0; i < establecimientos.size(); i++) {
-            if(establecimientos.get(i).getNIT() == c.getNitEstablecimiento()){
+            if(establecimientos.get(i).getNIT().equals(c.getNitEstablecimiento())){
                 establecimientos.get(i).setCalificaciones(c);
             }
        }
