@@ -20,6 +20,6 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 public interface OperacionReserva {
     public List<Reserva> getReservas();
-    public Reserva getReservaByIdreserva(int IdReserva);
+    public Reserva getReservaByIdreserva(int IdReserva, String nitEstablecimiento);
     public void addReserva(Reserva r);
 }

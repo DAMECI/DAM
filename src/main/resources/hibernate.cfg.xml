@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://desarrollo.is.escuelaing.edu.co:3306/coswgr4?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">coswgr4</property>
+    <property name="hibernate.connection.password">gr404</property>
+    <mapping class="edu.eci.cosw.clases.Usuarios"/>
+    <mapping class="edu.eci.cosw.clases.Usuario"/>
+    <mapping class="edu.eci.cosw.clases.ReservasId"/>
+    <mapping class="edu.eci.cosw.clases.Cancha"/>
+    <mapping class="edu.eci.cosw.clases.Calificaciones"/>
+    <mapping class="edu.eci.cosw.clases.CanchasId"/>
+    <mapping class="edu.eci.cosw.clases.HorariosId"/>
+    <mapping class="edu.eci.cosw.clases.Horarios"/>
+    <mapping class="edu.eci.cosw.clases.Calificacion"/>
+    <mapping class="edu.eci.cosw.clases.Establecimiento"/>
+    <mapping class="edu.eci.cosw.clases.Reservas"/>
+    <mapping class="edu.eci.cosw.clases.Reserva"/>
+    <mapping class="edu.eci.cosw.clases.Establecimientos"/>
+    <mapping class="edu.eci.cosw.clases.Canchas"/>
+  </session-factory>
+</hibernate-configuration>

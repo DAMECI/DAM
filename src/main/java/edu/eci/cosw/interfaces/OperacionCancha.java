@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 public interface OperacionCancha {
     public List<Cancha> getCanchas();
-    public Cancha getCanchaByIdCancha(int IdCancha);
+    public Cancha getCanchaByIdCancha(int IdCancha, String nitEstablecimiento);
     public void addCancha(Cancha c);
     public List<Cancha> getCanchaPrecio(Double precio);
 }

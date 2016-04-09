@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import edu.eci.cosw.interfaces.OperacionEstablecimiento;
+import java.util.Set;
 import org.springframework.web.bind.annotation.PathVariable;
 
 /**
@@ -42,8 +43,10 @@ public class ApiRestEstablecimiento{
     }
     
     @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}/{idCancha}")
-    public List<Cancha> getCanchaEstablecimiento(@PathVariable int idCancha){
-        return operacionEstablecimiento.getCanchasEstablecimiento(idCancha);
+    public List<Cancha> getCanchaEstablecimiento(@PathVariable int idCancha, String nitEstablecimiento){
+        //return operacionEstablecimiento.getCanchasEstablecimiento(idCancha);
+        return operacionEstablecimiento.getCanchasEstablecimiento(idCancha, nitEstablecimiento);
+        
     }
     
     @RequestMapping(method= RequestMethod.POST)

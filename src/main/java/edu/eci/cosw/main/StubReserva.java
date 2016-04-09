@@ -6,6 +6,7 @@
 package edu.eci.cosw.main;
 
 import edu.eci.cosw.clases.Reserva;
+import edu.eci.cosw.clases.ReservasId;
 import edu.eci.cosw.clases.Usuario;
 import edu.eci.cosw.interfaces.OperacionReserva;
 import java.util.ArrayList;
@@ -21,10 +22,10 @@ import org.springframework.stereotype.Service;
 public class StubReserva implements OperacionReserva{
     private List<Reserva>  reservas = new ArrayList<Reserva>();
     {
-        reservas.add(new Reserva(new Date(201531), 20.000, 1, 
-                new Usuario("2","a", "b", "11111", "ab@gmail.com", "12345"), 2.5));
-        reservas.add(new Reserva(new Date(242016), 20.000, 2, 
-                new Usuario("3","aa", "bb", "11111", "aabb@gmail.com", "12345"), 2.0));
+        //reservas.add(new Reserva(new Date(201531), 20.000, 1, 
+        //        new Usuario("2","a", "b", "11111", "ab@gmail.com", "12345"), 2.5));
+        //reservas.add(new Reserva(new Date(242016), 20.000, 2, 
+        //        new Usuario("3","aa", "bb", "11111", "aabb@gmail.com", "12345"), 2.0));
     }    
 
     @Override
@@ -33,10 +34,10 @@ public class StubReserva implements OperacionReserva{
     }
 
     @Override
-    public Reserva getReservaByIdreserva(int IdReserva) {
+    public Reserva getReservaByIdreserva(int IdReserva, String nitEstablecimiento) {
         Reserva aux = new Reserva();
         for(int i=0; i<reservas.size(); i++){
-            if(reservas.get(i).getId()== IdReserva){
+            if(reservas.get(i).getId()== new ReservasId(IdReserva, nitEstablecimiento)){
                 aux = reservas.get(i);
             }
         }
