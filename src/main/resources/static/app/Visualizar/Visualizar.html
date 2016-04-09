@@ -1,77 +1,69 @@
+ <link rel="stylesheet" href="assets/css/main.css" />
 <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyBD_hs2HhO-gDJvBsft1WKr9lwOEcBpTGQ"></script>
-<table>
-    <tr>
-<<<<<<< HEAD
-       
-      
-=======
-        <td valign="top">
-            <div>
-                <table   border='1'    class="colortablas2">
-                    <tr>
-                        <td>
-                            <h4>Elija la opcion para filtrar:</h4>
-                            <div id="header">
-                                <ul class="esLista">
-                                    <li><a href="">Rango Precio</a>
-                                        <ul class="sub">                   
-                                            <li><a href="" ng-click="filtrarPrecio(1)">$30.000 - $40.000</a></li>
-                                            <li><a href="" ng-click="filtrarPrecio(2)">$40.000 - $50.000</a></li>
-                                            <li><a href="" ng-click="filtrarPrecio(3)">$50.000 - $60.000</a></li>
-                                            <li><a href="" ng-click="filtrarPrecio(4)">$60.000 - $70.000</a></li>
-                                            <li><a href="" ng-click="filtrarPrecio(5)"> > $70.000 </a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="" ng-click="ordenPrecio()" >Precio</a></li>
-                                </ul>
-                            </div>
-                        </td>
-                    </tr>    
-                </table>
-            </div>
-        </td>
-        <td valign="top">
-            <div>            
-            <table> 
-                <tr>
-                    <td>
-                        <input id="dirrecionManual" placeholder="Buscar dirección:" class="buscardireccion" style="width:490px;" >
-                    </td>
-                    <td>
-                          <button id="Buscar" class="botonbuscar">Buscar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <div id="map1" style="width:500px; height:400px; border:2px solid blue; top:60px; left: 10px;">
->>>>>>> <<!--564ea26905c1bc3612865273dcbd7eaad499957-->
 
-                        </div>            
-                    </td>
-                </tr>
-                </table>    
-            </div>
-        </td>
-<<<<<<< HEAD
-            <td valign="top">
-   
-                <table border='1'    class="colortablas">
-                    <tr>
-                        <td>Nit</td>
-                        <td>Razón Social</td>
-                        <td>Dirección</td>
-                        <td>Telefono</td>
-                    </tr>
-                    <tr ng-repeat="x in establecimientos">
-                        <td>{{ x.nit }}</td>
-                        <td>{{ x.razonSocial }}</td>
-                        <td>{{ x.direccion }}</td>
-                        <td>{{ x.telefono }}</td>
-                    </tr>
-                </table>
-=======
-        <td>
-                                <table border="1" class="colortablas3">
+    
+    
+<!--<table class="tabla1">
+<caption>Contenido nutricional por cada 100 g de alimento.</caption>
+<tr> <th>Alimento</th> <th>Calorías (kCal)</th> <th>Grasas (g)</th>
+<th>Proteína (g)</th> <th>Carbohidratos (g)</th>
+</tr>
+<tr> <td>Arándano</td> <td>49</td> <td>0.2</td>
+<td>0.4</td> <td>12.7</td>
+</tr>
+<tr> <td>Plátano</td> <td>90</td> <td>0.3</td>
+<td>1.0</td> <td>23.5</td>
+</tr>
+<tr> <td>Cereza</td> <td>46</td> <td>0.4</td>
+<td>0.9</td> <td>10.9</td>
+</tr>
+<tr> <td>Fresa</td> <td>37</td> <td>0.5</td>
+<td>0.8</td> <td>8.3</td>
+</tr>
+</table>
+<table>-->
+    
+    
+    <tr>
+
+        <td valign="top">
+                    <div>
+                        <table class="tabla1">
+                         <tr>   
+                             <td>   
+                         <table class="tabla1">
+                             <caption>Elija la opcion para filtrar:</caption> 
+                            
+                            <tr>        
+                                <td>
+
+                                            <div id="header">
+                                                <ul class="esLista">
+                                                    <li><a href="">Rango Precio</a>
+                                                        <ul class="sub">                   
+                                                            <li><a href="" ng-click="filtrarPrecio(1)">$30.000 - $40.000</a></li>
+                                                            <li><a href="" ng-click="filtrarPrecio(2)">$40.000 - $50.000</a></li>
+                                                            <li><a href="" ng-click="filtrarPrecio(3)">$50.000 - $60.000</a></li>
+                                                            <li><a href="" ng-click="filtrarPrecio(4)">$60.000 - $70.000</a></li>
+                                                            <li><a href="" ng-click="filtrarPrecio(5)"> > $70.000 </a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="" ng-click="ordenPrecio()" >Precio</a></li>
+                                                </ul>
+                                            </div>
+                                </td>  
+                            </tr>
+                            
+                            
+                            
+                            
+                            
+                            
+                        </table>
+                             </td>         
+                             <td>
+                        <table border="1" class="tabla1">
+                                 <caption>ESTABLECIMIENTOS:</caption> 
                                         <tr>
                                             <td>Nombre Establecimiento</td>
                                             <td>Direccion</td>
@@ -89,7 +81,7 @@
                                         <td><a id='Buscar' ng-click="irCalificar(todo.nit)">Calificar</a></td>
                                      </tr>
                                 </table>
-                                <table border="1" class="colortablas4">
+                                <table border="1" class="tabla1">
                                     <tbody>
                                         <tr ng-repeat="todo in canchas | orderBy:'precio'">
                                             <td> {{todo.nombreEstablecimiento}}</td>
@@ -101,9 +93,67 @@
                                        </tr>
                                     </tbody>
                                 </table>
->>>>>>> 2564ea26905c1bc3612865273dcbd7eaad499957
+                             </td>
+                             <td>
+                                                        <table class="tabla1">
+                                           <tr>
+                                               <td>Nit</td>
+                                               <td>Razón Social</td>
+                                               <td>Dirección</td>
+                                               <td>Telefono</td>
+                                           </tr>
+                                           <tr ng-repeat="x in establecimientos">
+                                               <td>{{ x.nit }}</td>
+                                               <td>{{ x.razonSocial }}</td>
+                                               <td>{{ x.direccion }}</td>
+                                               <td>{{ x.telefono }}</td>
+                                           </tr>
+                                       </table>
+                                 
+                             </td>
+                         </tr>
+                        </table>
+                    </div>
+            
+            <header>
+            <h2>DAM: <em>Visualiza los establecimientos<a href="http://html5up.net">HTML5 UP</a></em></h2>
+            </header>	
+
+        </td>
+                        
+    </tr>      
+        <section id="banner">
+             <h1>Establecimientos</h1>
+        <td valign="top">
+            <div>            
+                
+                       <input  type="text" id="dirrecionManual" placeholder="Buscar dirección:" class="buscardirec"> 
+                    
+                          <button id="Buscar"  class="botonbuscravisu">Buscar</button>
+                   
+                    
+                        <div id="map1" style="width:500px; height:400px; border:2px solid blue; top:-150px; left: 730px;">
+
+
+                        </div>            
+                    
+                
+                
+            </div>
+        </td>
+        </section>
+        <tr>
+            <td valign="top">
+   
+                
+            </td>
+        </tr>  
+
+        <td>
+                                
+
             </td>
     </tr>
-</table>
+
     
     

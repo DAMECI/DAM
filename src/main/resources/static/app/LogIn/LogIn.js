@@ -10,10 +10,7 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
 }])
 
 	.controller('ControladorLogin',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {                                         
-		var visualizar = document.getElementById('Visualizar');
-                var logOut = document.getElementById('Logout');
-                var logIn = document.getElementById('Login');
-                var registrar = document.getElementById('Registrar');
+		
                 var authenticate = function (credentials, callback) {
 
                 var headers = credentials ? {authorization: "Basic "
@@ -44,18 +41,12 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
                 authenticate($scope.credentials, function () {                        
                     if ($rootScope.authenticated) {
                         $scope.error = false;
-                         visualizar.style.visibility = 'visible';
-                         logOut.style.visibility = 'visible';
-                         logIn.style.visibility = 'hidden';
-                         registrar.style.visibility = 'hidden';
+                        
                          $location.path("/Visualizar");
                     } else {
                         $location.path("/login");
                         $scope.error = true;
-                        visualizar.style.visibility = 'hidden';
-                        logOut.style.visibility = 'hidden';
-                        logIn.style.visibility = 'visible';
-                        registrar.style.visibility = 'visible';
+                     
                     }
                 });
             };

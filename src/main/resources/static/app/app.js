@@ -19,24 +19,15 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
 
 .controller('ControladorLogOut',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
         $scope.logout = function () {
-            var visualizar = document.getElementById('Visualizar');
-            var logOut = document.getElementById('Logout');
-            var logIn = document.getElementById('Login');
-            var registrar = document.getElementById('Registrar');
+         
         $http.post('/logout', {}).success(function () {
             $rootScope.authenticated = false;
             $location.path("/LogIn");
-            visualizar.style.visibility = 'hidden';
-            logOut.style.visibility = 'hidden';
-            logIn.style.visibility = 'visible';
-            registrar.style.visibility = 'visible';
+          
         }).error(function (data) {
              $location.path("/LogIn");
             $rootScope.authenticated = false;
-            visualizar.style.visibility = 'hidden';
-            logOut.style.visibility = 'hidden';
-            logIn.style.visibility = 'visible';
-            registrar.style.visibility = 'visible';
+           
         });
     };
 }]);

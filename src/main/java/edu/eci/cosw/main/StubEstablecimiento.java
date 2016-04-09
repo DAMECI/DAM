@@ -19,15 +19,15 @@ import edu.eci.cosw.interfaces.OperacionEstablecimiento;
  */
 @Service
 public class StubEstablecimiento implements OperacionEstablecimiento{
-    private List<Establecimiento>  establecimientos = new ArrayList<>();
+    private List<Establecimiento>  establecimientos = new ArrayList<Establecimiento>();
     {
-        List<Cancha> canchasEs1 = new ArrayList<>();
+        List<Cancha> canchasEs1 = new ArrayList<Cancha>();
         canchasEs1.add(new Cancha(15421,"30.000",true));
         canchasEs1.add(new Cancha(15422,"30.000",true));
-        List<Cancha> canchasEs2 = new ArrayList<>();
+        List<Cancha> canchasEs2 = new ArrayList<Cancha>();
         canchasEs2.add(new Cancha(25411,"50.000",true));
         canchasEs2.add(new Cancha(25412,"50.000",true));
-        List<Cancha> canchasEs3 = new ArrayList<>();
+        List<Cancha> canchasEs3 = new ArrayList<Cancha>();
         canchasEs3.add(new Cancha(89541,"40.000",true));
         canchasEs3.add(new Cancha(89542,"30.000",true));
         establecimientos.add(new Establecimiento("1542-4", "Cancha5", "calle 170 #13-1", "12333",canchasEs1));
@@ -53,7 +53,7 @@ public class StubEstablecimiento implements OperacionEstablecimiento{
         
     @Override
     public List<Cancha> getCanchasEstablecimiento(int idCancha){
-        List<Cancha>  canchas = new ArrayList<>();
+        List<Cancha>  canchas = new ArrayList<Cancha>();
         for(int i=0; i<establecimientos.size(); i++){
             for(int j=0; j<establecimientos.get(i).getCanchas().size(); j++)
                 if(establecimientos.get(i).getCanchas().get(j).getIdCancha() == idCancha){

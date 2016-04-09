@@ -49,7 +49,7 @@ public class StubCancha implements OperacionCancha{
     
     @Override
     public List<Cancha> getCanchaPrecio(Double precio){        
-        List<Cancha> canchasPrecio= new ArrayList<>();
+        List<Cancha> canchasPrecio= new ArrayList<Cancha>();
         for(int i=0; i<canchas.size(); i++){           
             if(Objects.equals(canchas.get(i).getPrecio(), precio))
                 canchasPrecio.add(canchas.get(i));

@@ -11,15 +11,9 @@ angular.module('myApp.Calificar', ['ngRoute'])
 
 .controller('ControladorCalificar',  ['$scope','Establecimiento','estService','postService',function ($scope,Establecimiento,estService, postService) {
         console.log('Entro Calificar');
-        var visualizar = document.getElementById('Visualizar');
-        var logOut = document.getElementById('Logout');
-        var logIn = document.getElementById('Login');
-        var registrar = document.getElementById('Registrar');
+       
         $scope.calificacion = "";
-        visualizar.style.visibility = 'hidden';
-        logOut.style.visibility = 'hidden';
-        logIn.style.visibility = 'visible';
-
+       
         registrar.style.visibility = 'visible';        
         var aux = {nombreEstablecimiento:"", telefono:"", direccion:"", numCancha:0, precio:0};
         $scope.establecimiento = "";
