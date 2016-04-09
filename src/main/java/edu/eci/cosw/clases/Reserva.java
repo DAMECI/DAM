@@ -20,7 +20,7 @@ public class Reserva {
     private int IdReserva;
     private Usuario UsuarioReserva;
     private Double tiempo;
-   
+    private String estado;
 
     public Reserva(){
     }
@@ -40,6 +40,16 @@ public class Reserva {
     public void setFechaReserva(Date FechaReserva) {
         this.FechaReserva = FechaReserva;
     }
+    
+    public String getEstado() {       
+        return estado;
+    }
+
+    public void setEstado(String iEstado) {
+        this.estado = iEstado;
+    }
+
+    
 
     public Double getPrecio() {
         return Precio;
