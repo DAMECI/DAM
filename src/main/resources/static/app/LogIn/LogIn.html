@@ -1,34 +1,22 @@
     <link rel="stylesheet" href="assets/css/main.css" />
   
-    <section id="banner">
-        <div ng-show="!authenticated" ng-controller="ControladorLogin">
-        <h1>Login</h1>
-            <form role="form">
-                <div >
-                   <!-- <label for="username"  class="NU">NombreUsuario:</label> -->
-                   <input type="text"  placeholder="NombreUsuario:" class="LoginUsuario"
-                       id="username" name="username"  ng-model="credentials.username"/>
-                </div>
-                <div >
-                    <!-- <label for="password">PasswordUsuario:</label> --> 
-                    <input type="password" placeholder="PasswordUsuario:" class="PasswordUsuario"
-                         id="password" name="password" ng-model="credentials.password"/>
-                </div>
-                <button type="submit" class="botonSubmit" ng-click="login()">Submit</button>
-            </form>
+    
+        <div class="divRegistro" ng-controller="ControladorLogin">
+                <header class="major">
+                    <h2>LogIn</h2>
+                </header>		
+               <!-- <label for="username"  class="NU">NombreUsuario:</label> -->
+                <input type="text"  placeholder="NombreUsuario:" class="LoginUsuario" id="username" name="username"  ng-model="credentials.username"/>
+                <input type="password" placeholder="PasswordUsuario:" class="PasswordUsuario" id="password" name="password" ng-model="credentials.password"/>
+                <button type="submit" class="button special" ng-click="login()">Submit</button>
         </div>
         <div  ng-show="authenticated">
             <h1 class="titulo1">Ya esta autenticado</h1>
         </div>
-    </section>
-    <header>
-            <h2>DAM: <em>Consulta y reserva  ya tu cancha sintética para  que te diviertas jugando con tus amigos <a href="http://html5up.net">HTML5 UP</a></em></h2>
-    </header>	
-
-      
+          
 
 
-    <script src="assets/js/jquery.min.js"></script>
+                        <script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
