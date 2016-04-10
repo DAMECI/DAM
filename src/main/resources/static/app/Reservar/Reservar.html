@@ -1,16 +1,10 @@
  <link rel="stylesheet" href="assets/css/main.css" />
-<section id="banner">
-<h1>Registrar</h1>
 
-<input type="text" name="Nombre" class="Nombreusuario" placeholder="Nombre:" ng-model="Nombre" ><br>
-<input type="text" name="Apellido" class="Apellidousuario" placeholder="Apellido:" ng-model="Apellido" ><br>
-<input type="text" name="Telefono" class="Telefonousuario" placeholder="Telefono:" ng-model="Telefono" ><br>
-<input type="text" name="Email" class="Emailusuario" placeholder="Email:" ng-model="Email" ><br>
-<input type="text" name="Id" class="Identificacionusuario" placeholder="Identificación:" ng-model="idCliente" ><br>
-<input type="password" name="Password" class="Passwordusuario" placeholder="Password:" ng-model="Password" ><br>
+<h1>Reservar</h1>
 
-<input type="button" value="Agregar" ng-click="agregarUsuario()" class="botonAgregar">
-</section>
-  <header>
-            <h2>DAM: <em>Consulta y reserva  ya tu cancha sintética para  que te diviertas jugando con tus amigos <a href="http://html5up.net">HTML5 UP</a></em></h2>
-  </header>	
+<input type="text" name="FechaReserva"  placeholder="FechaReserva:" ng-model="fechaReserva" ><br>
+<input type="text" name="Tiempo"  placeholder="Tiempo:" ng-model="tiempo" ><br>
+<input type="text" name="UsuarioId"  placeholder="UsuarioId:" ng-model="usuarioId" ><br>
+
+
+<input type="button" value="Reservar" ng-click="agregarReserva()">

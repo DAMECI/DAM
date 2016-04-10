@@ -9,8 +9,10 @@ import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.CanchasId;
 import edu.eci.cosw.interfaces.OperacionCancha;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,8 +23,15 @@ import org.springframework.stereotype.Service;
 public class StubCancha implements OperacionCancha{
     private List<Cancha> canchas= new ArrayList<Cancha>();
     {
-        //canchas.add(new Cancha(1,"30.000",false));
-        //canchas.add(new Cancha(2,"40.000",false));
+        
+        canchas.add(new Cancha((new CanchasId(11,"1542-4")),true,1562));
+        canchas.add(new Cancha((new CanchasId(12,"1542-4")),false,1563));
+         
+        canchas.add(new Cancha((new CanchasId(21,"2541-1")),true,2562));
+        canchas.add(new Cancha((new CanchasId(22,"2541-1")),false,2563));
+        
+        canchas.add(new Cancha((new CanchasId(31,"8954-0")),true,3562));
+        canchas.add(new Cancha((new CanchasId(32,"8954-0")),false,3563));
     }
 
 

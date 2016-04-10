@@ -10,22 +10,25 @@ angular.module('myApp.Reservar', ['ngRoute'])
 }])
 
 .controller('ReservarCtrl', ['$scope', 'canchaService','$location', function ($scope, canchaService,$location) {  
-    $scope.idCliente ="";  
-    $scope.nombre ="";
-    $scope.apellido ="";
-    $scope.telefono =""; 
-    $scope.email ="";
-    $scope.password ="";
+    $scope.fechaReserva ="";  
+    $scope.precio ="";
+    $scope.tiempo ="";
+    $scope.usuarioId =""; 
+    $scope.estado ="";
+    $scope.idCancha ="";
     
-    $scope.agregarUsuario = function(){
-        var user = {"idCliente":$scope.idCliente,"nombre":$scope.Nombre, "apellido":$scope.Apellido, 
-            "telefono":$scope.Telefono, "email":$scope.Email, "password":$scope.Password};
-        canchaService.save(user,function(){
+  console.info("Reserva Agregado12355");
+    
+    $scope.agregarReserva = function(){
+          console.info("Reserva Agregado123");
+        var reserva = {"fechaReserva":$scope.fechaReserva,"precio":$scope.precio, "tiempo":$scope.tiempo, 
+            "usuarioId":$scope.usuarioId, "estado":$scope.estado, "idCancha":$scope.idCancha};
+        canchaService.save(reserva,function(){
                 var visualizar = document.getElementById('Visualizar');
                 var logOut = document.getElementById('Logout');
                 var logIn = document.getElementById('Login');
                 var registrar = document.getElementById('Registrar');
-                console.info("usuario Agregado");
+                console.info("Reserva Agregado");
                 visualizar.style.visibility = 'visible';
                 logOut.style.visibility = 'visible';
                 logIn.style.visibility = 'hidden';

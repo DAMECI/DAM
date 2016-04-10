@@ -40,7 +40,7 @@ public class Establecimiento  implements java.io.Serializable {
         this.nit = nit;
         this.rLegal = rLegal;
     }
-    public Establecimiento(String nit, String rLegal, String razonsocial, String direccion, String telefono, Double calificacionpromedio, Set<Cancha> canchases, Set<Calificacion> calificacioneses) {
+    public Establecimiento(String nit, String rLegal, String razonsocial, String direccion, String telefono, Double calificacionpromedio, Set<Cancha> canchases) {
        this.nit = nit;
        this.rLegal = rLegal;
        this.razonsocial = razonsocial;
@@ -48,8 +48,8 @@ public class Establecimiento  implements java.io.Serializable {
        this.telefono = telefono;
        this.calificacionpromedio = calificacionpromedio;
        this.canchases = canchases;
-       this.calificacioneses = calificacioneses;
-    }
+   
+    } 
    
      @Id 
 
