@@ -23,16 +23,14 @@
         
          <div id="header">
              
-             <h1><a href="index1.html" id="logo">DAM <em>Deporte a tus manos </em></a></h1>
+             <h1><a href="index.html" id="logo">DAM <em>Deporte a tus manos </em></a></h1>
              <nav id="nav">  
-             <ul ng-controller="ControladorLogOut"> 
-                <li class="current"><a href="index1.html">Home</a></li>
-                <li><a id="Login" href="#/Login"  >LogIn</a></li>
-                <li><a id="Registrar" href="#/Registrar">Registro</a></li>
-                <li><a id="Calificar" href="#/Calificar" style="visibility:hidden">Calificar</a></li>
+             <ul id="Menu" ng-controller="ControladorLogOut"> 
+<!--                <li class="current"><a href="#/Index2.html">Home</a></li>-->
+    <!--            <li><a id="Calificar" href="#/Calificar" style="visibility:hidden">Calificar</a></li>
                 <li><a id="Visualizar" href="#/Visualizar" >Establecimientos</a></li>
-                <li><a id="Filtran" href="#/Filtrar"  style="visibility:hidden">Filtrar</a></li>
-                <li><a id="Logout" href="" ng-click="logout()"  >LogOut</a></li>
+                <li><a id="Filtran" href="#/Filtrar"  style="visibility:hidden">Filtrar</a></li>-->
+                <li><a  href="#/Login"  class="button special" >LogIn</a></li>
              </ul>  
 	
         
@@ -53,7 +51,20 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
-	</div>
+				<footer id="footer">
+					<ul class="icons">
+						<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Todos los derechos reservados.</li><li>Design: <a href="http://html5up.net">Paola Castro, Alejandro Girón, Diego Becerra, Daniela Escobar</a></li>
+					</ul>
+				</footer>
+
 
   <script type="text/javascript" src="http://www.google.com/jsapi?key=AIzaSyBD_hs2HhO-gDJvBsft1WKr9lwOEcBpTGQ"></script>
   <script src="bower_components/angular/angular.js"></script>

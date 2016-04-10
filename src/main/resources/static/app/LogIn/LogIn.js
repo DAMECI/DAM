@@ -10,9 +10,14 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
 }])
 
 	.controller('ControladorLogin',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {                                         
-		
+                simple();      
+                function simple() {
+                    document.getElementById("Menu").innerHTML = "";
+                    document.getElementById("Menu").innerHTML = "<ul id='Menu'><li><a  href='#/Index2'  class='button special' >Home</a></li></ul>";
+                }
+                      
                 var authenticate = function (credentials, callback) {
-
+                    
                 var headers = credentials ? {authorization: "Basic "
                             + btoa(credentials.username + ":" + credentials.password)
                 } : {};
