@@ -8,6 +8,7 @@ angular.module('myApp', [
   'myApp.vistaLogIn',
   'myApp.Visualizar',
   'myApp.Calificar',
+  'myApp.Reservar',
   'services.modulo',
   'services.Establecimientos',
   'myApp.version'
