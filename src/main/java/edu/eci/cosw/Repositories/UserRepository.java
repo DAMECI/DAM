@@ -14,6 +14,7 @@ import org.springframework.data.jpa.repository.Query;
  *
  * @author paola
  */
+
 public interface UserRepository extends JpaRepository<Usuario, String>{
     
  
