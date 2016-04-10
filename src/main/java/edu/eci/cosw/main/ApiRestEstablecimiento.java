@@ -1,6 +1,7 @@
 package edu.eci.cosw.main;
 
 
+import edu.eci.cosw.imp.DamServices;
 import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
@@ -24,20 +25,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 
 @RestController
-@RequestMapping("/establecimientos")
+@RequestMapping(path ="/establecimientos")
 public class ApiRestEstablecimiento{
     
     @Autowired
-    private DamServices operacion;
+    DamServices operacion;
     
     //private DamServicesImp operacion;
     
-    @RequestMapping(method= RequestMethod.GET)
-         public List<Establecimiento> getEstablecimientos(){
-             System.out.println("Entro Get Establecimiento");
+    //@RequestMapping(method= RequestMethod.GET)
+         //public List<Establecimiento> getEstablecimientos(){
+             //System.out.println("Entro Get Establecimiento");
             //return operacion.getEstablecimientos(); 
-           return null;
-    }         
+      //     return null;
+    //}         
 //         
 //    @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}")
 //    public Establecimiento getEstablecimientoByNit(@PathVariable String nitEstablecimiento){
