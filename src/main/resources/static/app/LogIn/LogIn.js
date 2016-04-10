@@ -36,7 +36,6 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
 
             };
 
-            authenticate();
             $scope.credentials = {};
             $scope.login = function () {
                 
@@ -48,7 +47,7 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
                         $scope.error = false;
                          $location.path("/Visualizar");
                     } else {
-                        $location.path("/login");
+                        $location.path("/LogIn");
                         $scope.error = true;
                      
                     }
