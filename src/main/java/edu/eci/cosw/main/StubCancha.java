@@ -24,14 +24,14 @@ public class StubCancha implements OperacionCancha{
     private List<Cancha> canchas= new ArrayList<Cancha>();
     {
         
-        canchas.add(new Cancha((new CanchasId(11,"1542-4")),true,1562));
-        canchas.add(new Cancha((new CanchasId(12,"1542-4")),false,1563));
-         
-        canchas.add(new Cancha((new CanchasId(21,"2541-1")),true,2562));
-        canchas.add(new Cancha((new CanchasId(22,"2541-1")),false,2563));
-        
-        canchas.add(new Cancha((new CanchasId(31,"8954-0")),true,3562));
-        canchas.add(new Cancha((new CanchasId(32,"8954-0")),false,3563));
+//        canchas.add(new Cancha((new CanchasId(11,"1542-4")),true,1562));
+//        canchas.add(new Cancha((new CanchasId(12,"1542-4")),false,1563));
+//         
+//        canchas.add(new Cancha((new CanchasId(21,"2541-1")),true,2562));
+//        canchas.add(new Cancha((new CanchasId(22,"2541-1")),false,2563));
+//        
+//        canchas.add(new Cancha((new CanchasId(31,"8954-0")),true,3562));
+//        canchas.add(new Cancha((new CanchasId(32,"8954-0")),false,3563));
     }
 
 
