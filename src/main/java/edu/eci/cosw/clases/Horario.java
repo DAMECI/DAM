@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="Horarios"
-    ,catalog="coswgr4"
+   // ,catalog="coswgr4"
 )
 public class Horario  implements java.io.Serializable {
 

@@ -5,7 +5,6 @@ import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
 import edu.eci.cosw.clases.Usuario;
-import edu.eci.cosw.imp.DamServices;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -31,12 +30,14 @@ public class ApiRestEstablecimiento{
     @Autowired
     private DamServices operacion;
     
+    //private DamServicesImp operacion;
     
-//    @RequestMapping(method= RequestMethod.GET)
-//         public List<Establecimiento> getEstablecimientos(){
-//             System.out.println("Entro Get Establecimiento");
-//            return operacionEstablecimiento.getEstablecimientos(); 
-//    }         
+    @RequestMapping(method= RequestMethod.GET)
+         public List<Establecimiento> getEstablecimientos(){
+             System.out.println("Entro Get Establecimiento");
+            //return operacion.getEstablecimientos(); 
+           return null;
+    }         
 //         
 //    @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}")
 //    public Establecimiento getEstablecimientoByNit(@PathVariable String nitEstablecimiento){

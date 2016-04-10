@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.cosw.imp;
+package edu.eci.cosw.main;
 
 import edu.eci.cosw.Repositories.CanchaRepository;
 import edu.eci.cosw.Repositories.EstablecimientoRepository;

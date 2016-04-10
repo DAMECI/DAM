@@ -21,7 +21,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name="RESERVAS"
-    ,catalog="coswgr4"
+   // ,catalog="coswgr4"
 )
 public class Reserva  implements java.io.Serializable {
 

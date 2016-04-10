@@ -22,7 +22,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="CANCHAS"
-    ,catalog="coswgr4"
+    //,catalog="coswgr4"
 )
 public class Cancha  implements java.io.Serializable {
 

@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="USUARIOS"
-    ,catalog="coswgr4"
+   // ,catalog="coswgr4"
 )
 public class Usuario  implements java.io.Serializable {
 

@@ -15,7 +15,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name="CALIFICACIONES"
-    ,catalog="coswgr4"
+    //,catalog="coswgr4"
 )
 public class Calificacion  implements java.io.Serializable {
 
