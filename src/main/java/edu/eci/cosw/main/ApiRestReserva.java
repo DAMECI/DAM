@@ -34,9 +34,9 @@ public class ApiRestReserva {
             return operacionReserva.getReservas(); 
     }
     
-    @RequestMapping(method= RequestMethod.GET, value="/{idReserva}")
-    public Reserva getCanchaById(@PathVariable int idReserva){
-        return operacionReserva.getReservaByIdreserva(idReserva);
+    @RequestMapping(method= RequestMethod.GET, value="/{idReserva}/{nitEstablecimiento}")
+    public Reserva getCanchaById(@PathVariable int idReserva, String nitEstablecimiento){
+        return operacionReserva.getReservaByIdreserva(idReserva, nitEstablecimiento);
     }
     
     @RequestMapping(method= RequestMethod.POST)

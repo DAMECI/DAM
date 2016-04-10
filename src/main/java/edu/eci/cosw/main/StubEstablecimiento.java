@@ -7,6 +7,7 @@ package edu.eci.cosw.main;
 
 import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
+import edu.eci.cosw.clases.CanchasId;
 import edu.eci.cosw.clases.Establecimiento;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,18 +22,10 @@ import edu.eci.cosw.interfaces.OperacionEstablecimiento;
 public class StubEstablecimiento implements OperacionEstablecimiento{
     private List<Establecimiento>  establecimientos = new ArrayList<Establecimiento>();
     {
-        List<Cancha> canchasEs1 = new ArrayList<Cancha>();
-        canchasEs1.add(new Cancha(15421,"30.000",true));
-        canchasEs1.add(new Cancha(15422,"30.000",true));
-        List<Cancha> canchasEs2 = new ArrayList<Cancha>();
-        canchasEs2.add(new Cancha(25411,"50.000",true));
-        canchasEs2.add(new Cancha(25412,"50.000",true));
-        List<Cancha> canchasEs3 = new ArrayList<Cancha>();
-        canchasEs3.add(new Cancha(89541,"40.000",true));
-        canchasEs3.add(new Cancha(89542,"30.000",true));
-        establecimientos.add(new Establecimiento("1542-4", "Cancha5", "calle 170 #13-1", "12333",canchasEs1));
-        establecimientos.add(new Establecimiento("2541-1", "RealMadrid", "cra 1 #1-1", "12333", canchasEs2));
-        establecimientos.add(new Establecimiento("8954-0", "Emirates", "cra 20 #2-2", "12333", canchasEs3));
+     
+       
+        
+        
     }    
 
     @Override
@@ -44,7 +37,7 @@ public class StubEstablecimiento implements OperacionEstablecimiento{
     public Establecimiento getEstablecimientoByNit(String nit) {
         Establecimiento aux = new Establecimiento();
         for(int i=0; i<establecimientos.size(); i++){
-            if(establecimientos.get(i).getNIT().equals(nit)){
+            if(establecimientos.get(i).getNit().equals(nit)){
                 aux = establecimientos.get(i);
             }
         }
@@ -52,13 +45,16 @@ public class StubEstablecimiento implements OperacionEstablecimiento{
     }
         
     @Override
-    public List<Cancha> getCanchasEstablecimiento(int idCancha){
+    public List<Cancha> getCanchasEstablecimiento(int idCancha, String nitEstablecimiento){
         List<Cancha>  canchas = new ArrayList<Cancha>();
         for(int i=0; i<establecimientos.size(); i++){
-            for(int j=0; j<establecimientos.get(i).getCanchas().size(); j++)
-                if(establecimientos.get(i).getCanchas().get(j).getIdCancha() == idCancha){
-                    canchas.add(establecimientos.get(i).getCanchas().get(j));
+            
+            for (Cancha c : establecimientos.get(i).getCanchases()){
+                if(c.getId() ==  new CanchasId(idCancha, nitEstablecimiento)) {
+                    canchas.add(c);
                 }
+            }
+            
         }
         return canchas;
     }
@@ -71,9 +67,9 @@ public class StubEstablecimiento implements OperacionEstablecimiento{
     @Override
     public void addCalificacion(Calificacion c) {
        for (int i = 0; i < establecimientos.size(); i++) {
-            if(establecimientos.get(i).getNIT().equals(c.getNitEstablecimiento())){
-                establecimientos.get(i).setCalificaciones(c);
-            }
+            //if(establecimientos.get(i).getNIT().equals(c.getNitEstablecimiento())){
+            //    establecimientos.get(i).setCalificaciones(c);
+            //}
        }
     }
 }

@@ -20,8 +20,7 @@ import org.springframework.stereotype.Service;
 public class StubCalificacion implements OperacionCalificacion{
     private List<Calificacion> calificaciones= new ArrayList<Calificacion>() ;    
     {
-        calificaciones.add(new Calificacion(1,5,"Buen servicio","12"));
-        calificaciones.add(new Calificacion(2,4,"Buen servicio","12"));
+        
     }
     
 
@@ -40,7 +39,7 @@ public class StubCalificacion implements OperacionCalificacion{
     public Calificacion getCalificacionByIdCalificacion(int IdCalificacion) {
         Calificacion  aux = new Calificacion();
         for(int i=0; i<calificaciones.size(); i++){
-            if(calificaciones.get(i).getIdCalificacion() == IdCalificacion){
+            if(calificaciones.get(i).getIdcalificacion() == IdCalificacion){
                 aux = calificaciones.get(i);
             }
         }

@@ -19,10 +19,10 @@ import edu.eci.cosw.interfaces.OperacionUsuario;
 public class StubUsuario implements OperacionUsuario{
     private List<Usuario> usuarios= new ArrayList<Usuario>();
     {
-       usuarios.add(new Usuario("1", "Paola", "Castro", "11111", "paola@gmail.com", "12345"));
-       usuarios.add(new Usuario("2","Alejandro", "Giron", "11111", "alejo@gmail.com", "12345"));
-       usuarios.add(new Usuario("3","Daniela", "Escobar", "11111", "daniela@gmail.com", "12345")); 
-       usuarios.add(new Usuario("4","Diego", "Becerra", "11111", "diego@gmail.com", "12345")); 
+       //usuarios.add(new Usuario("1", "Paola", "Castro", "11111", "paola@gmail.com", "12345"));
+       //usuarios.add(new Usuario("2","Alejandro", "Giron", "11111", "alejo@gmail.com", "12345"));
+       //usuarios.add(new Usuario("3","Daniela", "Escobar", "11111", "daniela@gmail.com", "12345")); 
+       //usuarios.add(new Usuario("4","Diego", "Becerra", "11111", "diego@gmail.com", "12345")); 
     }
     
     @Override

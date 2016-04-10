@@ -6,6 +6,7 @@
 package edu.eci.cosw.main;
 
 import edu.eci.cosw.clases.Cancha;
+import edu.eci.cosw.clases.CanchasId;
 import edu.eci.cosw.interfaces.OperacionCancha;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,8 @@ import org.springframework.stereotype.Service;
 public class StubCancha implements OperacionCancha{
     private List<Cancha> canchas= new ArrayList<Cancha>();
     {
-        canchas.add(new Cancha(1,"30.000",false));
-        canchas.add(new Cancha(2,"40.000",false));
+        //canchas.add(new Cancha(1,"30.000",false));
+        //canchas.add(new Cancha(2,"40.000",false));
     }
 
 
@@ -37,10 +38,10 @@ public class StubCancha implements OperacionCancha{
     }
 
     @Override
-    public Cancha getCanchaByIdCancha(int IdCancha) {
+    public Cancha getCanchaByIdCancha(int IdCancha, String nitEstablecimiento) {
         Cancha aux = new Cancha();
         for(int i=0; i<canchas.size(); i++){
-            if(canchas.get(i).getIdCancha() == IdCancha){
+            if(canchas.get(i).getId() == new CanchasId(IdCancha, nitEstablecimiento)){
                 aux = canchas.get(i);
             }
         }
@@ -51,7 +52,7 @@ public class StubCancha implements OperacionCancha{
     public List<Cancha> getCanchaPrecio(Double precio){        
         List<Cancha> canchasPrecio= new ArrayList<Cancha>();
         for(int i=0; i<canchas.size(); i++){           
-            if(Objects.equals(canchas.get(i).getPrecio(), precio))
+            if(Objects.equals(canchas.get(i), precio))
                 canchasPrecio.add(canchas.get(i));
         }
         return canchasPrecio;

@@ -20,6 +20,6 @@ public interface OperacionEstablecimiento {
         public List<Establecimiento> getEstablecimientos();
         public Establecimiento getEstablecimientoByNit(String nit);
         public void addEstablecimiento(Establecimiento e);    
-        public List<Cancha> getCanchasEstablecimiento(int idCancha);
+        public List<Cancha> getCanchasEstablecimiento(int idCancha, String nitEstablecimiento);
         public void addCalificacion(Calificacion c);
 }
