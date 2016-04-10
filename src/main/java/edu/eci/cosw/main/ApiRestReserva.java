@@ -6,6 +6,7 @@
 package edu.eci.cosw.main;
 
 import edu.eci.cosw.clases.Reserva;
+import edu.eci.cosw.imp.DamServices;
 import edu.eci.cosw.interfaces.OperacionReserva;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,22 +27,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/reservas")
 public class ApiRestReserva {
     @Autowired
-    private OperacionReserva operacionReserva;
+    private DamServices operacion;
     
     
-    @RequestMapping(method= RequestMethod.GET)
-    public List<Reserva> getCanchas(){
-            return operacionReserva.getReservas(); 
-    }
-    
-    @RequestMapping(method= RequestMethod.GET, value="/{idReserva}/{nitEstablecimiento}")
-    public Reserva getCanchaById(@PathVariable int idReserva, String nitEstablecimiento){
-        return operacionReserva.getReservaByIdreserva(idReserva, nitEstablecimiento);
-    }
-    
-    @RequestMapping(method= RequestMethod.POST)
-         public ResponseEntity<?> addReserva(@RequestBody Reserva r){
-             operacionReserva.addReserva(r); 
-         return new ResponseEntity<Reserva>(HttpStatus.ACCEPTED);
-    }
+//    @RequestMapping(method= RequestMethod.GET)
+//    public List<Reserva> getCanchas(){
+//            return operacionReserva.getReservas(); 
+//    }
+//    
+//    @RequestMapping(method= RequestMethod.GET, value="/{idReserva}/{nitEstablecimiento}")
+//    public Reserva getCanchaById(@PathVariable int idReserva, String nitEstablecimiento){
+//        return operacionReserva.getReservaByIdreserva(idReserva, nitEstablecimiento);
+//    }
+//    
+//    @RequestMapping(method= RequestMethod.POST)
+//         public ResponseEntity<?> addReserva(@RequestBody Reserva r){
+//             operacionReserva.addReserva(r); 
+//         return new ResponseEntity<Reserva>(HttpStatus.ACCEPTED);
+//    }
 }

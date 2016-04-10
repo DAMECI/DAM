@@ -6,6 +6,7 @@
 package edu.eci.cosw.main;
 
 import edu.eci.cosw.clases.Calificacion;
+import edu.eci.cosw.imp.DamServices;
 import edu.eci.cosw.interfaces.OperacionCalificacion;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,22 +27,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/calificaciones")
 public class ApiRestCalificacion {
     @Autowired
-    private OperacionCalificacion operacionCalificacion;
+    private DamServices operacion;
     
     
-    @RequestMapping(method= RequestMethod.GET)
-         public List<Calificacion> getCalificaciones(){
-            return operacionCalificacion.getCalificaciones(); 
-    }
-     
-    @RequestMapping(method= RequestMethod.GET, value="/{idCalifica}")
-    public Calificacion getCanchaById(@PathVariable int idCalifica){
-        return operacionCalificacion.getCalificacionByIdCalificacion(idCalifica);
-    }
-    
-    @RequestMapping(method= RequestMethod.POST)
-         public ResponseEntity<?> addCalificacion(@RequestBody Calificacion c){
-             operacionCalificacion.addCalificacion(c); 
-         return new ResponseEntity<Calificacion>(HttpStatus.ACCEPTED);
-    }
+//    @RequestMapping(method= RequestMethod.GET)
+//         public List<Calificacion> getCalificaciones(){
+//            return operacionCalificacion.getCalificaciones(); 
+//    }
+//     
+//    @RequestMapping(method= RequestMethod.GET, value="/{idCalifica}")
+//    public Calificacion getCanchaById(@PathVariable int idCalifica){
+//        return operacionCalificacion.getCalificacionByIdCalificacion(idCalifica);
+//    }
+//    
+//    @RequestMapping(method= RequestMethod.POST)
+//         public ResponseEntity<?> addCalificacion(@RequestBody Calificacion c){
+//             operacionCalificacion.addCalificacion(c); 
+//         return new ResponseEntity<Calificacion>(HttpStatus.ACCEPTED);
+//    }
 }

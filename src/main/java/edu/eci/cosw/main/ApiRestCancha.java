@@ -6,6 +6,7 @@
 package edu.eci.cosw.main;
 
 import edu.eci.cosw.clases.Cancha;
+import edu.eci.cosw.imp.DamServices;
 import edu.eci.cosw.interfaces.OperacionCancha;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,29 +27,29 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/canchas")
 public class ApiRestCancha {
     @Autowired
-    private OperacionCancha operacionCanchas;
+    private DamServices operacion;
     
     
-    @RequestMapping(method= RequestMethod.GET)
-         public List<Cancha> getCanchas(){
-            return operacionCanchas.getCanchas(); 
-    }
-         
-    @RequestMapping(method= RequestMethod.GET, value="/{idCancha}/{nitEstablecimiento}")
-    public Cancha getCanchaById(@PathVariable int idCancha, String nitEstablecimiento){
-        //return operacionCanchas.getCanchaByIdCancha(idCancha);        
-        return operacionCanchas.getCanchaByIdCancha(idCancha, nitEstablecimiento);
-    }
+//    @RequestMapping(method= RequestMethod.GET)
+//         public List<Cancha> getCanchas(){
+//            return operacionCanchas.getCanchas(); 
+//    }
+//         
+//    @RequestMapping(method= RequestMethod.GET, value="/{idCancha}/{nitEstablecimiento}")
+//    public Cancha getCanchaById(@PathVariable int idCancha, String nitEstablecimiento){
+//        //return operacionCanchas.getCanchaByIdCancha(idCancha);        
+//        return operacionCanchas.getCanchaByIdCancha(idCancha, nitEstablecimiento);
+//    }
     
-    @RequestMapping(method= RequestMethod.GET, value="/{idCancha}/{precio}")
-    public List<Cancha> getCanchaPrecio(@PathVariable Double precio){
-        System.out.println("PrecioEstaCancha"+precio);
-        return operacionCanchas.getCanchaPrecio(precio);
-    }
-         
-    @RequestMapping(method= RequestMethod.POST)
-         public ResponseEntity<?> addCancha(@RequestBody Cancha c){
-             operacionCanchas.addCancha(c); 
-         return new ResponseEntity<Cancha>(HttpStatus.ACCEPTED);
-    }
+//    @RequestMapping(method= RequestMethod.GET, value="/{idCancha}/{precio}")
+//    public List<Cancha> getCanchaPrecio(@PathVariable Double precio){
+//        System.out.println("PrecioEstaCancha"+precio);
+//        return operacionCanchas.getCanchaPrecio(precio);
+//    }
+//         
+//    @RequestMapping(method= RequestMethod.POST)
+//         public ResponseEntity<?> addCancha(@RequestBody Cancha c){
+//             operacionCanchas.addCancha(c); 
+//         return new ResponseEntity<Cancha>(HttpStatus.ACCEPTED);
+//    }
 }
