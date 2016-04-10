@@ -49,11 +49,11 @@ public class StubEstablecimiento implements OperacionEstablecimiento{
         List<Cancha>  canchas = new ArrayList<Cancha>();
         for(int i=0; i<establecimientos.size(); i++){
             
-            for (Cancha c : establecimientos.get(i).getCanchases()){
-                if(c.getId() ==  new CanchasId(idCancha, nitEstablecimiento)) {
-                    canchas.add(c);
-                }
-            }
+            //for (Cancha c : establecimientos.get(i).getCanchases()){
+            //    if(c.getId() ==  new CanchasId(idCancha, nitEstablecimiento)) {
+            //        canchas.add(c);
+            //    }
+            //}
             
         }
         return canchas;

@@ -8,13 +8,13 @@
     <property name="hibernate.connection.username">coswgr4</property>
     <property name="hibernate.connection.password">gr404</property>
     <mapping class="edu.eci.cosw.clases.CanchasId"/>
-    <mapping class="edu.eci.cosw.clases.Usuarios"/>
+    <mapping class="edu.eci.cosw.clases.Usuario" file="" jar="" package="" resource=""/>
     <mapping class="edu.eci.cosw.clases.HorariosId"/>
-    <mapping class="edu.eci.cosw.clases.Horarios"/>
-    <mapping class="edu.eci.cosw.clases.Reservas"/>
+    <mapping class="edu.eci.cosw.clases.Horario" file="" jar="" package="" resource=""/>
+    <mapping class="edu.eci.cosw.clases.Reserva" file="" jar="" package="" resource=""/>
     <mapping class="edu.eci.cosw.clases.ReservasId"/>
-    <mapping class="edu.eci.cosw.clases.Establecimientos"/>
-    <mapping class="edu.eci.cosw.clases.Calificaciones"/>
-    <mapping class="edu.eci.cosw.clases.Canchas"/>
+    <mapping class="edu.eci.cosw.clases.Establecimiento" file="" jar="" package="" resource=""/>
+    <mapping class="edu.eci.cosw.clases.Calificacion" file="" jar="" package="" resource=""/>
+    <mapping class="edu.eci.cosw.clases.Cancha" file="" jar="" package="" resource=""/>
   </session-factory>
 </hibernate-configuration>

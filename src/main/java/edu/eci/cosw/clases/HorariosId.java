@@ -1,5 +1,5 @@
 package edu.eci.cosw.clases;
-// Generated 9/04/2016 08:18:08 PM by Hibernate Tools 4.3.1
+// Generated 9/04/2016 10:36:04 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
