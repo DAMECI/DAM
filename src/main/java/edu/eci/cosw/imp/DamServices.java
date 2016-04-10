@@ -5,7 +5,6 @@
  */
 package edu.eci.cosw.imp;
 
-import edu.eci.cosw.Repositories.UserRepository;
 import edu.eci.cosw.clases.Usuario;
 
 /**

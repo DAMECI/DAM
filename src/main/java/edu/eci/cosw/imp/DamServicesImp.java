@@ -5,10 +5,7 @@
  */
 package edu.eci.cosw.imp;
 
-import edu.eci.cosw.imp.DamServices;
-import edu.eci.cosw.Repositories.CanchaRepository;
-import edu.eci.cosw.Repositories.EstablecimientoRepository;
-import edu.eci.cosw.Repositories.HorarioRepository;
+
 import edu.eci.cosw.Repositories.UserRepository;
 import edu.eci.cosw.clases.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,20 +19,22 @@ import org.springframework.stereotype.Service;
 public class DamServicesImp implements DamServices{
     @Autowired
     private UserRepository user;
-    
-    @Autowired
-    private CanchaRepository cancha;
-    
-    @Autowired
-    private HorarioRepository horario;
-    
-    @Autowired
-    private EstablecimientoRepository establecimiento;
+//    
+//    @Autowired
+//    private CanchaRepository cancha;
+//    
+//    @Autowired
+//    private HorarioRepository horario;
+//    
+//    @Autowired
+//    private EstablecimientoRepository establecimiento;
 
     @Override
     public void addUser(Usuario u) {
-        //user.save(u);
+        user.save(u);
     }
+
+    
     
     
 }

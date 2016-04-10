@@ -5,9 +5,7 @@
  */
 package edu.eci.cosw.main;
 
-import edu.eci.cosw.imp.DamServices;
 import edu.eci.cosw.clases.Cancha;
-import edu.eci.cosw.interfaces.OperacionCancha;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,8 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/canchas")
 public class ApiRestCancha {
-    @Autowired
-    private DamServices operacion;
+    //@Autowired
+   // private DamServices operacion;
     
     
 //    @RequestMapping(method= RequestMethod.GET)

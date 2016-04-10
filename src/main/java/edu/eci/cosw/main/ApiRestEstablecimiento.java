@@ -1,7 +1,6 @@
 package edu.eci.cosw.main;
 
 
-import edu.eci.cosw.imp.DamServices;
 import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import edu.eci.cosw.interfaces.OperacionEstablecimiento;
 import java.util.Set;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -28,8 +26,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RequestMapping(path ="/establecimientos")
 public class ApiRestEstablecimiento{
     
-    @Autowired
-    DamServices operacion;
+    //@Autowired
+    //DamServices operacion;
     
     //private DamServicesImp operacion;
     
