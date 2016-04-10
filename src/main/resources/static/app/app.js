@@ -14,7 +14,16 @@ angular.module('myApp', [
   'myApp.version'
 ]).
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
-  $routeProvider.otherwise({redirectTo: '/LogIn'});
+        $routeProvider
+            .when("/Index2", {
+                controller: "ControladorLogOut",
+                templateUrl: "Index2.html"
+            })
+             .when("/Login", {
+                templateUrl: 'LogIn/LogIn.html',
+                controller: 'ControladorLogin'
+            });
+  $routeProvider.otherwise({redirectTo: '/Index2'});
   $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 }])
 
