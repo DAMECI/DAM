@@ -5,16 +5,14 @@
  */
 package edu.eci.cosw.Repositories;
 
-import edu.eci.cosw.clases.Usuario;
-import java.util.List;
+import edu.eci.cosw.clases.Horario;
+import edu.eci.cosw.clases.HorariosId;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 /**
  *
- * @author paola
+ * @author DanielaEF
  */
-public interface UserRepository extends JpaRepository<Usuario, String>{
+public interface HorarioRepository extends JpaRepository<Horario, HorariosId>{
     
- 
 }
