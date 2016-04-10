@@ -38,19 +38,15 @@ public class Establecimiento  implements java.io.Serializable {
     public Establecimiento(String nit) {
         this.nit = nit;
     }
-<<<<<<< HEAD
     public Establecimiento(String nit, String razonsocial, String direccion, String telefono, Double calificacionpromedio, Set<Cancha> canchases, Set<Calificacion> calificacioneses) {
-=======
-    public Establecimiento(String nit, String rLegal, String razonsocial, String direccion, String telefono, Double calificacionpromedio, Set<Cancha> canchases) {
->>>>>>> 6120f4c9e78c7b00b4da6e1d1a4650197eb2790c
        this.nit = nit;
        this.razonsocial = razonsocial;
        this.direccion = direccion;
        this.telefono = telefono;
        this.calificacionpromedio = calificacionpromedio;
        this.canchases = canchases;
-   
-    } 
+       this.calificacioneses = calificacioneses;
+    }
    
      @Id 
 
@@ -124,5 +120,4 @@ public class Establecimiento  implements java.io.Serializable {
         this.calificacioneses = calificacioneses;
     }
 }
-
 
