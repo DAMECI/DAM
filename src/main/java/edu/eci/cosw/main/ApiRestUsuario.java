@@ -26,18 +26,18 @@ public class ApiRestUsuario{
     
    DamServices operacion;
     
-//    @RequestMapping(method= RequestMethod.GET)
-//         public List<Usuario> getUsuarios(){
-//            return operacion.getUsuarios(); 
-//    }
-//        
-//    @RequestMapping(method= RequestMethod.GET, value="/{id}")
-//    public Usuario getUsuarioByEmail(@PathVariable String id){
-//        return operacion.getUsuarioById(id);
-//    }
+    @RequestMapping(method= RequestMethod.GET)
+         public List<Usuario> getUsuarios(){
+           return operacion.getUser(); 
+    }
+        
+    //@RequestMapping(method= RequestMethod.GET, value="/{id}")
+    //public Usuario getUsuarioByEmail(@PathVariable String id){
+    //    return operacion.getUsuarioById(id);
+    //}
     
     @RequestMapping(method= RequestMethod.POST)
-         public ResponseEntity<?> addTarea(@RequestBody Usuario u){
+         public ResponseEntity<?> addTarea( @RequestBody Usuario u){
              operacion.addUser(u); 
          return new ResponseEntity<Usuario>(HttpStatus.ACCEPTED);
     }

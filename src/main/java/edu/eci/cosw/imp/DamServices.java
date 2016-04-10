@@ -6,12 +6,13 @@
 package edu.eci.cosw.imp;
 
 import edu.eci.cosw.clases.Usuario;
+import java.util.List;
 
 /**
  *
  * @author paola
  */
 public interface DamServices {
-      
     public void addUser(Usuario u);
+    public List<Usuario> getUser();
 }

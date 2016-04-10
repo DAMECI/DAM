@@ -8,6 +8,9 @@ package edu.eci.cosw.imp;
 
 import edu.eci.cosw.Repositories.UserRepository;
 import edu.eci.cosw.clases.Usuario;
+import static java.lang.reflect.Array.set;
+import java.util.List;
+import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,7 +37,9 @@ public class DamServicesImp implements DamServices{
         user.save(u);
     }
 
-    
-    
-    
+    @Override
+    public List<Usuario> getUser() {
+        return user.findAll();
+    }
+
 }
