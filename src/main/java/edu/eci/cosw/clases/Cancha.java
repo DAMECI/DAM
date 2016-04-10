@@ -1,5 +1,5 @@
 package edu.eci.cosw.clases;
-// Generated 9/04/2016 06:17:06 PM by Hibernate Tools 4.3.1
+// Generated 9/04/2016 08:18:08 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.AttributeOverride;
@@ -23,21 +23,20 @@ public class Cancha  implements java.io.Serializable {
 
 
      private CanchasId id;
-     private Establecimiento establecimientos;
      private Boolean estadocancha;
      private Integer reservaId;
-
+     private String sNitEstablecimiento;
+     
+     
     public Cancha() {
     }
 
 	
-    public Cancha(CanchasId id, Establecimiento establecimientos) {
+    public Cancha(CanchasId id) {
         this.id = id;
-        this.establecimientos = establecimientos;
     }
-    public Cancha(CanchasId id, Establecimiento establecimientos, Boolean estadocancha, Integer reservaId) {
+    public Cancha(CanchasId id,Boolean estadocancha, Integer reservaId) {
        this.id = id;
-       this.establecimientos = establecimientos;
        this.estadocancha = estadocancha;
        this.reservaId = reservaId;
     }
@@ -58,15 +57,14 @@ public class Cancha  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="NitEstablecimiento", nullable=false, insertable=false, updatable=false)
-    public Establecimiento getEstablecimientos() {
-        return this.establecimientos;
+    public String getEstablecimientos() {
+        return this.sNitEstablecimiento;
     }
     
-    public void setEstablecimientos(Establecimiento establecimientos) {
-        this.establecimientos = establecimientos;
+    public void setEstablecimientos(String sNitEstablecimiento) {
+        this.sNitEstablecimiento = sNitEstablecimiento;
     }
 
-    
     @Column(name="estadocancha")
     public Boolean getEstadocancha() {
         return this.estadocancha;

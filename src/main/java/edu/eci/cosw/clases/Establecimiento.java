@@ -1,5 +1,5 @@
 package edu.eci.cosw.clases;
-// Generated 9/04/2016 06:17:06 PM by Hibernate Tools 4.3.1
+// Generated 9/04/2016 08:18:08 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -24,7 +24,7 @@ public class Establecimiento  implements java.io.Serializable {
 
 
      private String nit;
-     private Usuario usuarios;
+     private String rLegal;
      private String razonsocial;
      private String direccion;
      private String telefono;
@@ -36,13 +36,13 @@ public class Establecimiento  implements java.io.Serializable {
     }
 
 	
-    public Establecimiento(String nit, Usuario usuarios) {
+    public Establecimiento(String nit, String rLegal) {
         this.nit = nit;
-        this.usuarios = usuarios;
+        this.rLegal = rLegal;
     }
-    public Establecimiento(String nit, Usuario usuarios, String razonsocial, String direccion, String telefono, Double calificacionpromedio, Set<Cancha> canchases, Set<Calificacion> calificacioneses) {
+    public Establecimiento(String nit, String rLegal, String razonsocial, String direccion, String telefono, Double calificacionpromedio, Set<Cancha> canchases, Set<Calificacion> calificacioneses) {
        this.nit = nit;
-       this.usuarios = usuarios;
+       this.rLegal = rLegal;
        this.razonsocial = razonsocial;
        this.direccion = direccion;
        this.telefono = telefono;
@@ -65,12 +65,12 @@ public class Establecimiento  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="RepresentanteLegal", nullable=false)
-    public Usuario getUsuarios() {
-        return this.usuarios;
+    public String getUsuarios() {
+        return this.rLegal;
     }
     
-    public void setUsuarios(Usuario usuarios) {
-        this.usuarios = usuarios;
+    public void setUsuarios(String usuarios) {
+        this.rLegal = usuarios;
     }
 
     
@@ -130,4 +130,10 @@ public class Establecimiento  implements java.io.Serializable {
     public void setCalificacioneses(Set<Calificacion> calificacioneses) {
         this.calificacioneses = calificacioneses;
     }
+
+
+
+
 }
+
+

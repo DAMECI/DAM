@@ -1,5 +1,5 @@
 package edu.eci.cosw.clases;
-// Generated 9/04/2016 06:17:06 PM by Hibernate Tools 4.3.1
+// Generated 9/04/2016 08:18:08 PM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -21,27 +21,26 @@ public class Calificacion  implements java.io.Serializable {
 
 
      private int idcalificacion;
-     private Establecimiento establecimientos;
-     private Usuario usuarios;
+     private String USUARIOS_idCliente;
      private int puntaje;
      private String observacion;
-
+     private String NitEstablecimiento;
+     
     public Calificacion() {
     }
 
 	
-    public Calificacion(int idcalificacion, Establecimiento establecimientos, Usuario usuarios, int puntaje) {
+    public Calificacion(int idcalificacion, String USUARIOS_idCliente, int puntaje) {
         this.idcalificacion = idcalificacion;
-        this.establecimientos = establecimientos;
-        this.usuarios = usuarios;
+        this.USUARIOS_idCliente = USUARIOS_idCliente;
         this.puntaje = puntaje;
     }
-    public Calificacion(int idcalificacion, Establecimiento establecimientos, Usuario usuarios, int puntaje, String observacion) {
+    public Calificacion(int idcalificacion, String USUARIOS_idCliente, int puntaje, String observacion, String NitEstablecimiento) {
        this.idcalificacion = idcalificacion;
-       this.establecimientos = establecimientos;
-       this.usuarios = usuarios;
+       this.USUARIOS_idCliente = USUARIOS_idCliente;
        this.puntaje = puntaje;
        this.observacion = observacion;
+       this.NitEstablecimiento = NitEstablecimiento;
     }
    
      @Id 
@@ -58,22 +57,22 @@ public class Calificacion  implements java.io.Serializable {
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="NitEstablecimiento", nullable=false)
-    public Establecimiento getEstablecimientos() {
-        return this.establecimientos;
+    public String getEstablecimientos() {
+        return this.NitEstablecimiento;
     }
     
-    public void setEstablecimientos(Establecimiento establecimientos) {
-        this.establecimientos = establecimientos;
+    public void NitEstablecimiento(String NitEstablecimiento) {
+        this.NitEstablecimiento = NitEstablecimiento;
     }
 
 @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="USUARIOS_idCliente", nullable=false)
-    public Usuario getUsuarios() {
-        return this.usuarios;
+    public String getUsuarios() {
+        return this.USUARIOS_idCliente;
     }
     
-    public void setUsuarios(Usuario usuarios) {
-        this.usuarios = usuarios;
+    public void setUsuarios(String USUARIOS_idCliente) {
+        this.USUARIOS_idCliente = USUARIOS_idCliente;
     }
 
     

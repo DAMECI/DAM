@@ -1,5 +1,5 @@
 package edu.eci.cosw.clases;
-// Generated 9/04/2016 06:17:06 PM by Hibernate Tools 4.3.1
+// Generated 9/04/2016 08:18:08 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -27,8 +27,8 @@ public class Usuario  implements java.io.Serializable {
      private String telefono;
      private String email;
      private String password;
-     private Set calificacioneses = new HashSet(0);
-     private Set establecimientoses = new HashSet(0);
+     private Set<Calificacion> calificacioneses = new HashSet(0);
+     private Set<Establecimiento> establecimientoses = new HashSet(0);
 
     public Usuario() {
     }
@@ -40,18 +40,20 @@ public class Usuario  implements java.io.Serializable {
         this.apellido = apellido;
         this.password = password;
     }
-    public Usuario(String idCliente, String nombre, String apellido, String telefono, String email, String password, Set calificaciones, Set establecimientos) {
+    public Usuario(String idCliente, String nombre, String apellido, String telefono, String email, String password, Set<Calificacion> calificacioneses, Set<Establecimiento> establecimientoses) {
        this.idCliente = idCliente;
        this.nombre = nombre;
        this.apellido = apellido;
        this.telefono = telefono;
        this.email = email;
        this.password = password;
-       this.calificacioneses = calificaciones;
-       this.establecimientoses = establecimientos;
+       this.calificacioneses = calificacioneses;
+       this.establecimientoses = establecimientoses;
     }
    
      @Id 
+
+    
     @Column(name="idCliente", unique=true, nullable=false, length=10)
     public String getIdCliente() {
         return this.idCliente;
@@ -112,26 +114,20 @@ public class Usuario  implements java.io.Serializable {
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="usuarios")
-    public Set getCalificacioneses() {
+    public Set<Calificacion> getCalificacioneses() {
         return this.calificacioneses;
     }
     
-    public void setCalificacioneses(Set calificacioneses) {
+    public void setCalificacioneses(Set<Calificacion> calificacioneses) {
         this.calificacioneses = calificacioneses;
     }
 
 @OneToMany(fetch=FetchType.LAZY, mappedBy="usuarios")
-    public Set getEstablecimientoses() {
+    public Set<Establecimiento> getEstablecimientoses() {
         return this.establecimientoses;
     }
     
-    public void setEstablecimientoses(Set establecimientoses) {
+    public void setEstablecimientoses(Set<Establecimiento> establecimientoses) {
         this.establecimientoses = establecimientoses;
     }
-
-
-
-
 }
-
-
