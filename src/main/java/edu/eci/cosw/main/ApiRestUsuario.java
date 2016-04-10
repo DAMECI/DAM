@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 public class ApiRestUsuario{
     
+   @Autowired
    DamServices operacion;
     
     @RequestMapping(method= RequestMethod.GET)
