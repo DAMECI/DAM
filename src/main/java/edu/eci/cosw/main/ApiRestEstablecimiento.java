@@ -35,7 +35,7 @@ public class ApiRestEstablecimiento{
     
     @RequestMapping(method= RequestMethod.GET)
     @ResponseBody
-         public ResponseEntity<List<Establecimiento>> getUsuarios(){
+         public ResponseEntity<List<Establecimiento>> getEstablecimientos(){
              try {
             List<Establecimiento> establecimientos=operacion.getEstablecimientos();
             if (establecimientos!=null){
@@ -53,7 +53,7 @@ public class ApiRestEstablecimiento{
          
     @RequestMapping(path = "/{nit}",method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<Establecimiento> getPaciente(@PathVariable String nit) {
+    public ResponseEntity<Establecimiento> getEstablecimientoByNit(@PathVariable String nit) {
         try {
             Establecimiento e=operacion.getEstablecimientoByNit(nit);
             if (e!=null){
@@ -69,7 +69,8 @@ public class ApiRestEstablecimiento{
         }                 
     }
  
-
+      
+    
 //    
 //    @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}/{idCancha}")
 //    public List<Cancha> getCanchaEstablecimiento(@PathVariable int idCancha, String nitEstablecimiento){

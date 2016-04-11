@@ -31,9 +31,9 @@ public class DamServicesImp implements DamServices{
     @Autowired
     private UserRepository user;
     
-   /* @Autowired
+    @Autowired
     private CanchaRepository cancha;
-   
+   /*
     @Autowired
     private HorarioRepository horario;
     
@@ -71,4 +71,8 @@ public class DamServicesImp implements DamServices{
        establecimiento.save(e);
     }
 
+    @Override
+    public List<Cancha> getCanchas() {
+        return cancha.findAll();
+    }
 }

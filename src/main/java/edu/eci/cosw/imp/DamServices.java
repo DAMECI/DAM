@@ -19,6 +19,7 @@ public interface DamServices {
     public List<Usuario> getUser();
     public List<Establecimiento> getEstablecimientos();
     public Establecimiento getEstablecimientoByNit(String nit);
-    public void addEstablecimiento(Establecimiento e);    
+    public void addEstablecimiento(Establecimiento e); 
+    public List<Cancha> getCanchas();
     
 }
