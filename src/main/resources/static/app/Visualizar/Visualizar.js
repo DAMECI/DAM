@@ -10,42 +10,51 @@ angular.module('myApp.Visualizar', ['ngRoute'])
 }])
 .controller('CtrVisualizador',['$scope','Establecimiento','estService', '$filter','$location',function ($scope,Establecimiento,estService, $filter,$location) {
                 console.log('Entro visualizacion');
+                var establecimientosAux = [];
+                var lista = [];
+                var aux = {nombreEstablecimiento:"", direccion:""};
+                $scope.estMapa = estService.query(function(data){
+                    lista=data;
+                    for (var index = 0; index < lista.length; index++) {                                            
+                        aux={nombreEstablecimiento:lista[index].razonSocial, direccion:lista[index].direccion};
+                        establecimientosAux.push(aux);
+                    }$scope.estable=establecimientosAux;
+
+                    /*Ubica Puntos de establecimientos en el mapa*/
+
+                    google.load('maps', '2', {callback: simple});
+                    var puntos=[];
+
+                    function simple() {
+                        if (GBrowserIsCompatible()) {
+                            var map = new GMap2(document.getElementById("map1"));
+                            map.setCenter(new GLatLng(4.6203798, -74.1096943), 11);
+                            map.setUIToDefault();
+                            var geocoder = new GClientGeocoder();
+                            for(var index = 0; index < $scope.estable.length; index++) { 
+                                geocoder.getLatLng($scope.estable[index].direccion+"Bogota", function(point){ 
+                                    if (!point) { 
+                                      alert($scope.estable[index].direccion + " not found"); 
+                                    } 
+                                    else { 
+                                        var marker = new GMarker (new GLatLng(point.lat(), point.lng()));   
+                                        map.addOverlay(marker);
+                                        return point; 
+                                    } 
+                                });                     
+                            } 
+                        }else{
+                            alert("Error en cargar puntos"); 
+                        }
+                    }           
+                    window.onload = function () {
+                        simple();
+                    };                           
+                });     
+        
         	$scope.establecimientos= Establecimiento.query();
-                google.load('maps', '2', {callback: simple});
-                var puntos=[];
-                
-                function simple() {
-                    if (GBrowserIsCompatible()) {
-                        console.log("Entro a simple");
-                        var map = new GMap2(document.getElementById("map1"));
-                        map.setCenter(new GLatLng(4.6203798, -74.1096943), 11);
-                        map.setUIToDefault();
-                        var geocoder = new GClientGeocoder();
-                        for(var index = 0; index < $scope.establecimientos.length; index++) {   
-                            console.log("Entro a ubicar");
-                            geocoder.getLatLng($scope.establecimientos[index].direccion+"Bogota", function(point){ 
-                                if (!point) { 
-                                  alert($scope.establecimientos[index].direccion + " not found"); 
-                                } 
-                                else { 
-                                    var marker = new GMarker (new GLatLng(point.lat(), point.lng())); 
-                                    map.addOverlay(marker);
-                                    console.log("puntoAgregado1");
-                                    return point; 
-                                } 
-                            });                     
-                        } 
-                    
-                    }else{
-                        alert("Error en cargar puntos"); 
-                    }
-                }           
-                window.onload = function () {
-                   simple();
-                };            
-                
-               console.log('Salio visualizacion');
-               $scope.filtrarPrecio = function(valor){
+             
+           /*    $scope.filtrarPrecio = function(valor){
                     var min;
                     var max;
                     var lista = [];
@@ -116,5 +125,5 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                        navigator.geolocation.getCurrentPosition(success);
 
 
-                    };
+                    };*/
 }]);
