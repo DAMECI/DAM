@@ -6,7 +6,10 @@
 package edu.eci.cosw.main;
 
 
+import edu.eci.cosw.Repositories.EstablecimientoRepository;
 import edu.eci.cosw.Repositories.UserRepository;
+import edu.eci.cosw.clases.Cancha;
+import edu.eci.cosw.clases.Establecimiento;
 import edu.eci.cosw.clases.Usuario;
 import edu.eci.cosw.imp.DamServices;
 import static java.lang.reflect.Array.set;
@@ -30,8 +33,8 @@ public class DamServicesImp implements DamServices{
 //    @Autowired
 //    private HorarioRepository horario;
 //    
-//    @Autowired
-//    private EstablecimientoRepository establecimiento;
+    @Autowired
+    private EstablecimientoRepository establecimiento;
 
     @Override
     public void addUser(Usuario u) {
@@ -41,6 +44,21 @@ public class DamServicesImp implements DamServices{
     @Override
     public List<Usuario> getUser() {
         return user.findAll();
+    }
+
+    @Override
+    public List<Establecimiento> getEstablecimientos(){
+        return establecimiento.findAll();
+    }
+
+    @Override
+    public Establecimiento getEstablecimientoByNit(String nit) {
+        return establecimiento.findById(nit);
+    }
+
+    @Override
+    public void addEstablecimiento(Establecimiento e) {
+       establecimiento.save(e);
     }
 
 }

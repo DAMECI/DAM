@@ -22,6 +22,7 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                         map.setUIToDefault();
                         var geocoder = new GClientGeocoder();
                         for(var index = 0; index < $scope.establecimientos.length; index++) {   
+                            console.log("Entro a ubicar");
                             geocoder.getLatLng($scope.establecimientos[index].direccion+"Bogota", function(point){ 
                                 if (!point) { 
                                   alert($scope.establecimientos[index].direccion + " not found"); 
@@ -41,7 +42,8 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                 }           
                 window.onload = function () {
                    simple();
-                };                                      
+                };            
+                
                console.log('Salio visualizacion');
                $scope.filtrarPrecio = function(valor){
                     var min;

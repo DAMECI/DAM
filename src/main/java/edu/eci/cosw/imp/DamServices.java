@@ -5,6 +5,8 @@
  */
 package edu.eci.cosw.imp;
 
+import edu.eci.cosw.clases.Cancha;
+import edu.eci.cosw.clases.Establecimiento;
 import edu.eci.cosw.clases.Usuario;
 import java.util.List;
 
@@ -15,4 +17,8 @@ import java.util.List;
 public interface DamServices {
     public void addUser(Usuario u);
     public List<Usuario> getUser();
+    public List<Establecimiento> getEstablecimientos();
+    public Establecimiento getEstablecimientoByNit(String nit);
+    public void addEstablecimiento(Establecimiento e);    
+    
 }

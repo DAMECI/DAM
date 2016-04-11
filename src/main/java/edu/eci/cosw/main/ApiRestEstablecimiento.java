@@ -5,6 +5,7 @@ import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
 import edu.eci.cosw.clases.Usuario;
+import edu.eci.cosw.imp.DamServices;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,7 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -26,22 +30,46 @@ import org.springframework.web.bind.annotation.PathVariable;
 @RequestMapping(path ="/establecimientos")
 public class ApiRestEstablecimiento{
     
-    //@Autowired
-    //DamServices operacion;
+    @Autowired
+    DamServices operacion;
     
-    //private DamServicesImp operacion;
-    
-    //@RequestMapping(method= RequestMethod.GET)
-         //public List<Establecimiento> getEstablecimientos(){
-             //System.out.println("Entro Get Establecimiento");
-            //return operacion.getEstablecimientos(); 
-      //     return null;
-    //}         
-//         
-//    @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}")
-//    public Establecimiento getEstablecimientoByNit(@PathVariable String nitEstablecimiento){
-//        return operacionEstablecimiento.getEstablecimientoByNit(nitEstablecimiento);
-//    }
+    @RequestMapping(method= RequestMethod.GET)
+    @ResponseBody
+         public ResponseEntity<List<Establecimiento>> getUsuarios(){
+             try {
+            List<Establecimiento> establecimientos=operacion.getEstablecimientos();
+            if (establecimientos!=null){
+                return ResponseEntity.ok().body(establecimientos);        
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            
+        } catch (Exception e) {
+            Logger.getLogger(ApiRestEstablecimiento.class.getName()).log(Level.SEVERE, null, e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
+        }           
+    }       
+         
+    @RequestMapping(path = "/{nit}",method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<Establecimiento> getPaciente(@PathVariable String nit) {
+        try {
+            Establecimiento e=operacion.getEstablecimientoByNit(nit);
+            if (e!=null){
+                return ResponseEntity.ok().body(e);        
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(ApiRestEstablecimiento.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
+        }                 
+    }
+ 
+
 //    
 //    @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}/{idCancha}")
 //    public List<Cancha> getCanchaEstablecimiento(@PathVariable int idCancha, String nitEstablecimiento){
@@ -50,11 +78,6 @@ public class ApiRestEstablecimiento{
 //        
 //    }
 //    
-//    @RequestMapping(method= RequestMethod.POST)
-//         public ResponseEntity<?> addEstablecimiento(@RequestBody Establecimiento e){
-//             operacionEstablecimiento.addEstablecimiento(e); 
-//         return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
-//    }
 //         
 //         
 //    @RequestMapping(method= RequestMethod.POST, value = "/AddCalificacion")
