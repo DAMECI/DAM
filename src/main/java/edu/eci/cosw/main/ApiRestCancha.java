@@ -34,7 +34,7 @@ public class ApiRestCancha {
          
         @RequestMapping(method= RequestMethod.GET)
         @ResponseBody
-        public ResponseEntity<List<Cancha>> getUsuarios(){
+        public ResponseEntity<List<Cancha>> getCanchas(){
             try {
             List<Cancha> canchas=operacion.getCanchas();
             if (canchas!=null){
@@ -44,11 +44,30 @@ public class ApiRestCancha {
                 return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
 
-        } catch (Exception e) {
-            Logger.getLogger(ApiRestEstablecimiento.class.getName()).log(Level.SEVERE, null, e);
+            } catch (Exception e) {
+                Logger.getLogger(ApiRestCancha.class.getName()).log(Level.SEVERE, null, e);
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
+            }           
+        }          
+        
+    @RequestMapping(path = "/{idcancha}",method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<Cancha> getCanchaById(@PathVariable int idcancha) {
+        try {
+            Cancha e=operacion.getCanchaByid(idcancha);
+            if (e!=null){
+                return ResponseEntity.ok().body(e);        
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(ApiRestCancha.class.getName()).log(Level.SEVERE, null, ex);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
-        }           
-    }       
+        }                 
+    }    
+         
 //         
 //    @RequestMapping(method= RequestMethod.GET, value="/{idCancha}/{nitEstablecimiento}")
 //    public Cancha getCanchaById(@PathVariable int idCancha, String nitEstablecimiento){
@@ -66,5 +85,5 @@ public class ApiRestCancha {
 //         public ResponseEntity<?> addCancha(@RequestBody Cancha c){
 //             operacionCanchas.addCancha(c); 
 //         return new ResponseEntity<Cancha>(HttpStatus.ACCEPTED);
-//    }
+//    }*/
 }

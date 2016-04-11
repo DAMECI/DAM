@@ -7,6 +7,7 @@ package edu.eci.cosw.imp;
 
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
+import edu.eci.cosw.clases.Reserva;
 import edu.eci.cosw.clases.Usuario;
 import java.util.List;
 
@@ -19,7 +20,9 @@ public interface DamServices {
     public List<Usuario> getUser();
     public List<Establecimiento> getEstablecimientos();
     public Establecimiento getEstablecimientoByNit(String nit);
-    public void addEstablecimiento(Establecimiento e); 
+    public void addEstablecimiento(Establecimiento e);
     public List<Cancha> getCanchas();
-    
+    public Cancha getCanchaByid(int idCancha);
+    public void addReserva(Reserva r);
+    public List<Reserva> getReservas();
 }

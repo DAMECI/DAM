@@ -5,6 +5,7 @@
  */
 package edu.eci.cosw.Repositories;
 
+import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;

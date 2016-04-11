@@ -69,18 +69,7 @@ public class ApiRestEstablecimiento{
         }                 
     }
  
-      
-    
-//    
-//    @RequestMapping(method= RequestMethod.GET, value="/{nitEstablecimiento}/{idCancha}")
-//    public List<Cancha> getCanchaEstablecimiento(@PathVariable int idCancha, String nitEstablecimiento){
-//        //return operacionEstablecimiento.getCanchasEstablecimiento(idCancha);
-//        return operacionEstablecimiento.getCanchasEstablecimiento(idCancha, nitEstablecimiento);
-//        
-//    }
-//    
-//         
-//         
+            
 //    @RequestMapping(method= RequestMethod.POST, value = "/AddCalificacion")
 //         public ResponseEntity<?> addCalificacionAEstablecimiento(@RequestBody Calificacion c){
 //             System.out.println("Entro Add Calificacion");

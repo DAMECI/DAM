@@ -14,11 +14,10 @@ import edu.eci.cosw.Repositories.ReservaRepository;
 import edu.eci.cosw.Repositories.UserRepository;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
+import edu.eci.cosw.clases.Reserva;
 import edu.eci.cosw.clases.Usuario;
 import edu.eci.cosw.imp.DamServices;
-import static java.lang.reflect.Array.set;
 import java.util.List;
-import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,10 +34,10 @@ public class DamServicesImp implements DamServices{
     private CanchaRepository cancha;
    /*
     @Autowired
-    private HorarioRepository horario;
+    private HorarioRepository horario;*/
     
     @Autowired
-    private ReservaRepository reserva;*/
+    private ReservaRepository reserva;
     
     @Autowired
     private EstablecimientoRepository establecimiento;
@@ -74,5 +73,20 @@ public class DamServicesImp implements DamServices{
     @Override
     public List<Cancha> getCanchas() {
         return cancha.findAll();
+    }
+    
+    @Override
+    public Cancha getCanchaByid(int idCancha) {
+        return cancha.findCanchaById(idCancha);
+    }
+
+    @Override
+    public void addReserva(Reserva r) {
+         reserva.save(r);
+    }
+
+    @Override
+    public List<Reserva> getReservas() {
+         return reserva.findAll();
     }
 }
