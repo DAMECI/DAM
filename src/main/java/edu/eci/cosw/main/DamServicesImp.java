@@ -6,7 +6,11 @@
 package edu.eci.cosw.main;
 
 
+import edu.eci.cosw.Repositories.CalificacionRepository;
+import edu.eci.cosw.Repositories.CanchaRepository;
 import edu.eci.cosw.Repositories.EstablecimientoRepository;
+import edu.eci.cosw.Repositories.HorarioRepository;
+import edu.eci.cosw.Repositories.ReservaRepository;
 import edu.eci.cosw.Repositories.UserRepository;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
@@ -26,15 +30,21 @@ import org.springframework.stereotype.Service;
 public class DamServicesImp implements DamServices{
     @Autowired
     private UserRepository user;
-//    
-//    @Autowired
-//    private CanchaRepository cancha;
-//    
-//    @Autowired
-//    private HorarioRepository horario;
-//    
+    
+   /* @Autowired
+    private CanchaRepository cancha;
+   
+    @Autowired
+    private HorarioRepository horario;
+    
+    @Autowired
+    private ReservaRepository reserva;*/
+    
     @Autowired
     private EstablecimientoRepository establecimiento;
+    
+   /* @Autowired
+    private CalificacionRepository calificacion;*/
 
     @Override
     public void addUser(Usuario u) {
