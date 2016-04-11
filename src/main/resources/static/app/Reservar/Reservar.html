@@ -8,3 +8,20 @@
 
 
 <input type="button" value="Reservar" ng-click="agregarReserva()">
+
+ <table width="100%" class="tabla1">
+                    <tr>
+                        <td>IdCancha</td>
+                        <td>estadoCancha</td>
+                        <td>Reservaa-ID</td>
+                        <td>NitEstablecimiento</td>
+                        <td></td>
+                    </tr>
+                    <tr ng-repeat="x in canchas">
+                        <td>{{ x.idcancha }}</td>
+                        <td>{{ x.estadocancha }}</td>
+                        <td>{{ x.reserva_id }}</td>
+                        <td>{{ x.NitEstablecimiento }}</td>
+                   
+                    </tr>
+                </table>
