@@ -22,8 +22,12 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
     })
     
     .factory('canchaService', function ($resource) {
-        return $resource('/establecimientos/canchas',{},{
-        GET : { method: 'GET', isArray: true}
+        return $resource('/canchas',{},{
+        get : { method: 'GET', 
+            isArray: true
+        }
     });
     
-});
+    });
+    
+  
