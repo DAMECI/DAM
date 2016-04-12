@@ -9,14 +9,26 @@ angular.module('myApp.Reservar', ['ngRoute'])
   });
 }])
 
-.controller('ReservarCtrl', ['$scope', 'canchaService','reservaService','$location', function ($scope, canchaService, reservaService,$location) {  
+.controller('ReservarCtrl', ['$scope', 'canchaService','reservaService','estService','$location', function ($scope, canchaService, reservaService, estService,$location) {  
    $scope.canchas= canchaService.query();
    
     $scope.fechaReserva ="";  
     $scope.tiempo ="";
     $scope.usuarioId ="";
-    
+    var lista = [];
  
+    
+    
+    
+       $scope.listado = estService.query(function(data){
+            lista=data;
+              for (var index = 0; index < lista.length; index++) { 
+                  
+          
+      
+                }
+            
+        });
     
     
     $scope.agregarReserva = function(){
