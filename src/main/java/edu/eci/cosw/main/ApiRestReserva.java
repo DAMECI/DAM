@@ -37,7 +37,7 @@ public class ApiRestReserva {
         }
     
         
-        @RequestMapping(method= RequestMethod.GET)
+       @RequestMapping(method= RequestMethod.GET)
         @ResponseBody
          public ResponseEntity<List<Reserva>> getReservas(){
              try {
@@ -52,8 +52,13 @@ public class ApiRestReserva {
         } catch (Exception e) {
             Logger.getLogger(ApiRestReserva.class.getName()).log(Level.SEVERE, null, e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
-        }           
-    }   
+        }        
+            
+       }
+
+}
+    
+    
 //    @RequestMapping(method= RequestMethod.GET)
 //    public List<Reserva> getCanchas(){
 //            return operacionReserva.getReservas(); 
@@ -64,4 +69,4 @@ public class ApiRestReserva {
 //        return operacionReserva.getReservaByIdreserva(idReserva, nitEstablecimiento);
 //    }
 
-}
+

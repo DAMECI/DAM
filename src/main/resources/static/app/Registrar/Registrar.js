@@ -17,7 +17,7 @@ angular.module('myApp.vistaRegistrar', ['ngRoute'])
     $scope.email ="";
     $scope.password ="";                
     $scope.agregarUsuario = function(){
-        console.log("Entro");
+       
         var user = {"idCliente":$scope.idCliente,"nombre":$scope.Nombre, "apellido":$scope.Apellido, 
             "telefono":$scope.Telefono, "email":$scope.Email, "password":$scope.Password};
         usersService.save(user,function(){

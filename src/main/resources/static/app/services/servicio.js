@@ -6,6 +6,14 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
         GET : { method: 'GET', isArray: true}
         });
     })
+    
+     .factory('reservaService', function ($resource) {
+          console.log("Entrobeeeeeee");
+        return $resource('/reservas',{},{   
+        GET : { method: 'GET', isArray: true} 
+        });
+          
+    })
 
     .factory('estService', function ($resource) {
         return $resource('/establecimientos',{},{
@@ -22,6 +30,8 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
     })
     
     .factory('canchaService', function ($resource) {
+        
+        console.log("Entroyaaaaaa");
         return $resource('/canchas',{},{
         get : { method: 'GET', 
             isArray: true
