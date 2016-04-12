@@ -17,7 +17,8 @@ angular.module('myApp.Reservar', ['ngRoute'])
     $scope.fechareserva ="";  
     $scope.precio ="";  
     $scope.tiempo ="";
-    $scope.ReservaId ={"idReserva":$scope.id.idreserva ="","nitEstablecimiento":$scope.id.nitEstablecimiento =""};
+    $scope.ReservaId ="";
+    //{"idReserva":$scope.id.idreserva ="","nitEstablecimiento":$scope.id.nitEstablecimiento =""};
     $scope.usuarioId ="";
     
     var lista = [];
