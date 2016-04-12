@@ -4,16 +4,18 @@
 
  <table width="10%" class="tabla1">
                     <tr>
-                        <td>IdCancha</td>
+                      
                         <td>estadoCancha</td>
                         <td>Reserva-ID</td>
+                        <td>IdCancha</td>
                         <td>NitEstablecimiento</td>
                         <td></td>
                     </tr>
                     <tr ng-repeat="x in canchas">
-                        <td>{{ x.idcancha }}</td>
+                       
                         <td>{{ x.estadocancha }}</td>
                         <td>{{ x.reserva_id }}</td>
+                        <td>{{ x.id.idcancha }}</td>
                         <td>{{ x.NitEstablecimiento }}</td>
                    
                     </tr>
