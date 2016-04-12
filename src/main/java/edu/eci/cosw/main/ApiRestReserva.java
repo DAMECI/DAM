@@ -5,6 +5,7 @@
  */
 package edu.eci.cosw.main;
 
+import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Reserva;
 import edu.eci.cosw.imp.DamServices;
 import java.util.List;
@@ -56,6 +57,7 @@ public class ApiRestReserva {
         }        
             
        }
+<<<<<<< HEAD
          
         @RequestMapping(path = "/{idreserva}",method = RequestMethod.GET)
         @ResponseBody
@@ -74,6 +76,27 @@ public class ApiRestReserva {
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
             }                 
         }
+=======
+       
+       
+          @RequestMapping(path = "/{idreserva}",method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<Reserva> getReservaById(@PathVariable int idreserva) {
+        try {
+            Reserva r=operacion.getReservaById(idreserva);
+            if (r!=null){
+                return ResponseEntity.ok().body(r);        
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(ApiRestCancha.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
+        }                 
+    }  
+>>>>>>> 69c3938214a5698d940f2ddf0cd9bc6ac6f84e0e
 
 }
     

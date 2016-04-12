@@ -27,5 +27,9 @@ public interface DamServices {
     public Cancha addCancha(Cancha c);
     public void addReserva(Reserva r);
     public List<Reserva> getReservas();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69c3938214a5698d940f2ddf0cd9bc6ac6f84e0e
     public Reserva getReservaByid(int idreserva);
 }
