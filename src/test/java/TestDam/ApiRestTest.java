@@ -199,18 +199,13 @@ public class ApiRestTest {
             
             Establecimiento e= new Establecimiento("8756210");
             estRep.save(e);
-            
             Cancha c=new Cancha(new CanchasId(123,"8756210") ,e );
             canRep.save(c);
-            
             Usuario u=new Usuario("asd124", "Carolina", "Bece", "124"); 
             userRep.save(u);
             services.addReserva(new Reserva(new ReservasId(111,e.getNit()), c ,u , new Date(13-01-2014), 
-                    30.000, 2.3 ,u.getIdCliente(), "ocupado"  ));
-            
-            assertNotNull(services.getReservaByid(111));
-            
-            
+                    30.000, 2.3 ,u.getIdCliente(), "ocupado"));           
+            assertNotNull(services.getReservaByid(111)); 
         }
         
         @Test
@@ -222,9 +217,7 @@ public class ApiRestTest {
             canRep.save(c);
             canRep.save(c1);
             Usuario u = new Usuario("ar85", "marta", "casas", "8965");
-            userRep.save(u);
-           
-            
+            userRep.save(u);            
             Reserva r = new Reserva(new ReservasId(123,"203-99"), c, u, new Date(13-01-2014), 
                     30.000, 2.3 ,u.getIdCliente(), "ocupado");
             resRep.save(r);
