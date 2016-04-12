@@ -5,6 +5,7 @@
  */
 package edu.eci.cosw.main;
 
+import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Reserva;
 import edu.eci.cosw.imp.DamServices;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -55,6 +57,25 @@ public class ApiRestReserva {
         }        
             
        }
+       
+       
+          @RequestMapping(path = "/{idreserva}",method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<Reserva> getReservaById(@PathVariable int idreserva) {
+        try {
+            Reserva r=operacion.getReservaById(idreserva);
+            if (r!=null){
+                return ResponseEntity.ok().body(r);        
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            
+        } catch (Exception ex) {
+            Logger.getLogger(ApiRestCancha.class.getName()).log(Level.SEVERE, null, ex);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
+        }                 
+    }  
 
 }
     

@@ -8,10 +8,13 @@ package TestDam;
 
 import edu.eci.cosw.Repositories.CanchaRepository;
 import edu.eci.cosw.Repositories.EstablecimientoRepository;
+import edu.eci.cosw.Repositories.ReservaRepository;
 import edu.eci.cosw.Repositories.UserRepository;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.CanchasId;
 import edu.eci.cosw.clases.Establecimiento;
+import edu.eci.cosw.clases.Reserva;
+import edu.eci.cosw.clases.ReservasId;
 import edu.eci.cosw.clases.Usuario;
 import edu.eci.cosw.imp.DamServices;
 import edu.eci.cosw.main.DemoApplication;
@@ -49,6 +52,9 @@ public class ApiRestTest {
     
     @Autowired
     CanchaRepository canRep;
+    
+    @Autowired
+    ReservaRepository resRep;
 
     @Autowired
     DamServices services;
@@ -71,6 +77,9 @@ public class ApiRestTest {
            
 	}
         
+        
+        
+        
         @Test
         public void noExisteUsuario() throws Exception{
             Usuario u = new Usuario("896632", "Andrea", "Pardo", "789ab");
@@ -84,6 +93,26 @@ public class ApiRestTest {
             assertNotNull(services.findUserById("maria89"));
         }
     
+    /*    @Test
+        public void agregaReserva() throws Exception{
+            
+            Establecimiento e= new Establecimiento("6789-3");
+            estRep.save(e);
+            
+            Cancha c=new Cancha(new CanchasId(123,e.getNit()) ,e );
+            canRep.save(c);
+            
+            Usuario u=new Usuario("124", "Carolina", "Bece", "124"); 
+            userRep.save(u);
+            services.addReserva(new Reserva());
+            services.addReserva(new Reserva(new ReservasId(111,e.getNit()), c ,u , null , 30.000, 2.3 ,"124", "ocupado"  ));
+            
+            assertNotNull(services.getReservaByid(111));
+            
+            
+        } 
+        
+      */  
         @Test
         public void agregaEstablecimiento() throws Exception{
             services.addEstablecimiento(new Establecimiento("7854-2", "Emirate Futbol5", "calle 9 #145-51", "9999658", 
@@ -100,7 +129,7 @@ public class ApiRestTest {
             estRep.save(est1);
             estRep.save(est2);
             
-            assertEquals(6, services.getEstablecimientos().size());
+            assertEquals(7, services.getEstablecimientos().size());
             
             estRep.delete(est);
             estRep.delete(est1);

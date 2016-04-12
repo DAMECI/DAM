@@ -96,7 +96,13 @@ public class DamServicesImp implements DamServices{
     }
 
     @Override
-    public List<Reserva> getReservas() {
-         return reserva.findAll();
+    public Reserva getReservaByid(int idreserva) {
+         return reserva.findReservaById(idreserva);
     }
+    @Override
+    public List<Reserva> getReservas() {
+        return reserva.findAll();
+    }
+    
+    
 }
