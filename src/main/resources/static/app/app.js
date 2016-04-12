@@ -9,8 +9,9 @@ angular.module('myApp', [
   'myApp.Visualizar',
   'myApp.Calificar',
   'myApp.Reservar',
+  'myApp.InfoEstablecimiento',
   'services.modulo',
-  'services.Establecimientos',
+  'services.Establecimientos',  
   'myApp.version'
 ]).
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {

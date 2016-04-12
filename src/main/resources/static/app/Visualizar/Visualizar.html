@@ -29,7 +29,8 @@
                         <td>Razón Social</td>
                         <td>Dirección</td>
                         <td>Telefono</td>  
-                        <td></td>
+                        <td>Reservar</td>  
+                        <td>Detalle</td>  
                     </tr>
                     <tr ng-repeat="x in establecimientos">
                         <td>{{ x.nit }}</td>
@@ -37,6 +38,7 @@
                         <td>{{ x.direccion }}</td>
                         <td>{{ x.telefono }}</td>
                         <td><a href="#/Reservar">Reservar</a></td>
+                        <td><a href="#/InfoEstablecimiento">Detalle</a></td>
                     </tr>
                 </table>
 </div>

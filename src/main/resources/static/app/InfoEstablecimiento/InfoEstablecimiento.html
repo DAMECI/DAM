@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html ng-controller="ControladorInfoEstablecimiento">
+    <head>        
+        <style>
+    .ec-stars-wrapper {
+	/* Espacio entre los inline-block (los hijos, los `a`) 
+	   http://ksesocss.blogspot.com/2012/03/display-inline-block-y-sus-empeno-en.html */
+	font-size: 0;
+	/* Podríamos quitarlo, 
+		pero de esta manera (siempre que no le demos padding), 
+		sólo aplicará la regla .ec-stars-wrapper:hover a cuando
+		también se esté haciendo hover a alguna estrella */
+	display: inline-block;
+}
+.ec-stars-wrapper a {
+	text-decoration: none;
+	display: inline-block;
+	/* Volver a dar tamaño al texto */
+	font-size: 32px;
+	font-size: 2rem;
+	
+	color: #888;
+}
+
+.ec-stars-wrapper:hover a {
+	color: rgb(39, 130, 228);
+}
+/*
+ * El selector de hijo, es necesario para aumentar la especifidad
+ */
+.ec-stars-wrapper > a:hover ~ a {
+	color: #888;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;	
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+
+    </head> 
+    <body>
+        <div>
+            <table width="100%" >
+                <tr>
+                    <td align="center"  colspan="4">
+                        Cancha de Futbol
+                    </td>
+                </tr>                    
+                <tr>
+                    <td align="center" colspan="4">
+                        <img src="http://estadiocementosprogreso.com.gt/wp-content/uploads/2011/09/Futbol-5.jpg"
+                        alt="W3Schools.com" width="600" height="300">
+                    </td>
+                </tr>                
+                <tr>
+                    <td align="center" width="25%">
+                        
+                    </td>
+                    <td  width="25%">                        
+                        <input type='submit' value="Calificar" class="button" />
+                    </td>
+                    <td align="center"  width="25%">
+                        <input type='submit' value="Reservar"  class="button"  />
+                    </td>
+                    <td  width="25%">                        
+                    </td>
+                </tr>                
+            </table>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    Comentarios
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
