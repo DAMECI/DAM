@@ -8,13 +8,17 @@ package TestDam;
 
 import edu.eci.cosw.Repositories.CanchaRepository;
 import edu.eci.cosw.Repositories.EstablecimientoRepository;
+import edu.eci.cosw.Repositories.ReservaRepository;
 import edu.eci.cosw.Repositories.UserRepository;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.CanchasId;
 import edu.eci.cosw.clases.Establecimiento;
+import edu.eci.cosw.clases.Reserva;
+import edu.eci.cosw.clases.ReservasId;
 import edu.eci.cosw.clases.Usuario;
 import edu.eci.cosw.imp.DamServices;
 import edu.eci.cosw.main.DemoApplication;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 import org.junit.After;
@@ -46,6 +50,9 @@ public class ApiRestTest {
     
     @Autowired
     EstablecimientoRepository estRep;
+    
+    @Autowired
+    ReservaRepository resRep;
     
     @Autowired
     CanchaRepository canRep;
@@ -100,7 +107,7 @@ public class ApiRestTest {
             estRep.save(est1);
             estRep.save(est2);
             
-            assertEquals(6, services.getEstablecimientos().size());
+            assertEquals(7, services.getEstablecimientos().size());
             
             estRep.delete(est);
             estRep.delete(est1);
@@ -182,5 +189,44 @@ public class ApiRestTest {
             assertNull(services.getCanchaByid(589));
             Cancha c = new Cancha(new CanchasId(1254,"54128-2"), null, true, 0, null, null);
             assertNull(services.getCanchaByid(1254));         
+        }
+        
+        @Test
+        public void agregaReserva() throws Exception{
+            
+            Establecimiento e= new Establecimiento("8756210");
+            estRep.save(e);
+            
+            Cancha c=new Cancha(new CanchasId(123,"8756210") ,e );
+            canRep.save(c);
+            
+            Usuario u=new Usuario("asd124", "Carolina", "Bece", "124"); 
+            userRep.save(u);
+            //services.addReserva(new Reserva(new ReservasId(111,"8756210"), c, u, "124"));
+            services.addReserva(new Reserva(new ReservasId(111,e.getNit()), c ,u , new Date(13-01-2014), 
+                    30.000, 2.3 ,u.getIdCliente(), "ocupado"  ));
+            
+            assertNotNull(services.getReservaByid(111));
+            
+            
+        }
+        
+        @Test
+	public void existeReserva() throws Exception {
+            Establecimiento e = new Establecimiento("203-99");
+            estRep.save(e);
+            Cancha c = new Cancha(new CanchasId(58,"203-99"), e, true, 0, null, null);
+            Cancha c1 = new Cancha(new CanchasId(99,"203-99"), e, true, 0, null, null);
+            canRep.save(c);
+            canRep.save(c1);
+            Usuario u = new Usuario("ar85", "marta", "casas", "8965");
+            userRep.save(u);
+           
+            
+            Reserva r = new Reserva(new ReservasId(123,"203-99"), c, u, new Date(13-01-2014), 
+                    30.000, 2.3 ,u.getIdCliente(), "ocupado");
+            resRep.save(r);
+            assertNotNull(services.getReservaByid(123));
+            
         }
 }

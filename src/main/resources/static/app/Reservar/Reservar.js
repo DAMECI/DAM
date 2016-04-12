@@ -10,10 +10,10 @@ angular.module('myApp.Reservar', ['ngRoute'])
 }])
 
 .controller('ReservarCtrl', ['$scope', 'canchaService','reservaService','estService','$location', function ($scope, canchaService, reservaService, estService,$location) {  
-   $scope.canchas= canchaService.query();
-   
+    $scope.canchas= canchaService.query();
     $scope.fechaReserva ="";  
     $scope.tiempo ="";
+    $scope.ReservaId ={"idReserva":$scope.id.idreserva ="","nitEstablecimiento":$scope.id.nitEstablecimiento =""};
     $scope.usuarioId ="";
     var lista = [];
  
@@ -33,7 +33,8 @@ angular.module('myApp.Reservar', ['ngRoute'])
     
     $scope.agregarReserva = function(){
           
-        var reserva = {"fechaReserva":$scope.fechaReserva, "tiempo":$scope.tiempo,"usuarioId":$scope.usuarioId};
+        var reserva = {"ReservaId":{"idReserva":$scope.id.idreserva, "nitEstablecimiento":$scope.id.nitEstablecimiento}, "fechaReserva":$scope.fechaReserva, "tiempo":$scope.tiempo,"usuarioId":$scope.usuarioId};
+        
        console.info("Reserva Agregado123");
        
        reservaService.save(reserva,function(){
