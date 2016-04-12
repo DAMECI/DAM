@@ -15,11 +15,6 @@ import org.springframework.data.jpa.repository.Query;
  * @author DanielaEF
  */
 public interface ReservaRepository extends JpaRepository<Reserva, ReservasId>{
-<<<<<<< HEAD
     @Query("from Reserva e where e.id.idreserva=?1")
     Reserva findReservaById(int idreserva);
-=======
-      @Query("from Reserva e where e.id.idreserva=?1")
-    Reserva findReservaById(int idreserva);  
->>>>>>> 69c3938214a5698d940f2ddf0cd9bc6ac6f84e0e
 }

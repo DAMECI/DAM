@@ -52,9 +52,6 @@ public class ApiRestTest {
     EstablecimientoRepository estRep;
     
     @Autowired
-    ReservaRepository resRep;
-    
-    @Autowired
     CanchaRepository canRep;
     
     @Autowired
@@ -97,26 +94,6 @@ public class ApiRestTest {
             assertNotNull(services.findUserById("maria89"));
         }
     
-    /*    @Test
-        public void agregaReserva() throws Exception{
-            
-            Establecimiento e= new Establecimiento("6789-3");
-            estRep.save(e);
-            
-            Cancha c=new Cancha(new CanchasId(123,e.getNit()) ,e );
-            canRep.save(c);
-            
-            Usuario u=new Usuario("124", "Carolina", "Bece", "124"); 
-            userRep.save(u);
-            services.addReserva(new Reserva());
-            services.addReserva(new Reserva(new ReservasId(111,e.getNit()), c ,u , null , 30.000, 2.3 ,"124", "ocupado"  ));
-            
-            assertNotNull(services.getReservaByid(111));
-            
-            
-        } 
-        
-      */  
         @Test
         public void agregaEstablecimiento() throws Exception{
             services.addEstablecimiento(new Establecimiento("7854-2", "Emirate Futbol5", "calle 9 #145-51", "9999658", 
@@ -228,7 +205,6 @@ public class ApiRestTest {
             
             Usuario u=new Usuario("asd124", "Carolina", "Bece", "124"); 
             userRep.save(u);
-            //services.addReserva(new Reserva(new ReservasId(111,"8756210"), c, u, "124"));
             services.addReserva(new Reserva(new ReservasId(111,e.getNit()), c ,u , new Date(13-01-2014), 
                     30.000, 2.3 ,u.getIdCliente(), "ocupado"  ));
             

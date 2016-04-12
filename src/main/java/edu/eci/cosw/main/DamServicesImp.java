@@ -103,13 +103,4 @@ public class DamServicesImp implements DamServices{
     public List<Reserva> getReservas() {
         return reserva.findAll();
     }
-    
-<<<<<<< HEAD
-    @Override
-    public Reserva getReservaByid(int idreserva) {
-         return reserva.findReservaById(idreserva);
-    }
-=======
-    
->>>>>>> 69c3938214a5698d940f2ddf0cd9bc6ac6f84e0e
 }
