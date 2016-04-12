@@ -54,6 +54,11 @@ public class DamServicesImp implements DamServices{
     public List<Usuario> getUser() {
         return user.findAll();
     }
+    
+    @Override
+    public Usuario findUserById(String id){
+        return user.findUserById(id);
+    }
 
     @Override
     public List<Establecimiento> getEstablecimientos(){
@@ -83,6 +88,11 @@ public class DamServicesImp implements DamServices{
     @Override
     public void addReserva(Reserva r) {
          reserva.save(r);
+    }
+    
+    @Override
+    public Cancha addCancha(Cancha c) {
+        return cancha.save(c);
     }
 
     @Override

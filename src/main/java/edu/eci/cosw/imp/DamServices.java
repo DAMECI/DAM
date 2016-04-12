@@ -18,11 +18,13 @@ import java.util.List;
 public interface DamServices {
     public void addUser(Usuario u);
     public List<Usuario> getUser();
+    public Usuario findUserById(String id);
     public List<Establecimiento> getEstablecimientos();
     public Establecimiento getEstablecimientoByNit(String nit);
     public void addEstablecimiento(Establecimiento e);
     public List<Cancha> getCanchas();
     public Cancha getCanchaByid(int idCancha);
+    public Cancha addCancha(Cancha c);
     public void addReserva(Reserva r);
     public List<Reserva> getReservas();
 }

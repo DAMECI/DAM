@@ -30,7 +30,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiRestCancha {
    @Autowired
    DamServices operacion;
-
+   
+        @RequestMapping(method= RequestMethod.POST)
+        public ResponseEntity<?> addCancha( @RequestBody Cancha c){
+            operacion.addCancha(c); 
+            return new ResponseEntity<Cancha>(HttpStatus.ACCEPTED);
+        }
          
         @RequestMapping(method= RequestMethod.GET)
         @ResponseBody

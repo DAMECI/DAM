@@ -18,6 +18,8 @@ import org.springframework.data.repository.query.Param;
 
 public interface UserRepository extends JpaRepository<Usuario, String>{
     @Query("from Usuario u where u.idCliente= :user and u.password= :pass")
-     Usuario Login(@Param(value = "user")String user,@Param(value = "pass")String password);
- 
+    Usuario Login(@Param(value = "user")String user,@Param(value = "pass")String password);
+     
+    @Query("from Usuario u where u.idCliente=?1")
+    Usuario findUserById(String idCliente);
 }

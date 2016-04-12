@@ -33,6 +33,13 @@ public class ApiRestEstablecimiento{
     @Autowired
     DamServices operacion;
     
+    
+     @RequestMapping(method= RequestMethod.POST)
+         public ResponseEntity<?> addEstablecimiento( @RequestBody Establecimiento e){
+             operacion.addEstablecimiento(e); 
+         return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
+    }
+    
     @RequestMapping(method= RequestMethod.GET)
     @ResponseBody
          public ResponseEntity<List<Establecimiento>> getEstablecimientos(){
