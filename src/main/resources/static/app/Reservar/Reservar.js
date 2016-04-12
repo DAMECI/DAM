@@ -11,8 +11,7 @@ angular.module('myApp.Reservar', ['ngRoute'])
 
 .controller('ReservarCtrl', ['$scope', 'canchaService','reservaService','estService','$location', function ($scope, canchaService, reservaService, estService,$location) {  
     $scope.canchas= canchaService.query();
-    $scope.fechaReserva ="";  
-   $scope.canchas= canchaService.query();
+    
  
     $scope.id ="";  
     $scope.fechareserva ="";  
