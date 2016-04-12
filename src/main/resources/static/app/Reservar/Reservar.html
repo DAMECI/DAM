@@ -5,18 +5,20 @@
  <table width="10%" class="tabla1">
                     <tr>
                       
-                        <td>estadoCancha</td>
-                        <td>Reserva-ID</td>
-                        <td>IdCancha</td>
-                        <td>NitEstablecimiento</td>
+                        <td>Estado de la Cancha</td>
+                        <td>Reserva-Identificación</td>
+                        <td>Identificación-Cancha</td>
+                        <td>Nit del Establecimiento</td>
                         <td></td>
+                        
                     </tr>
                     <tr ng-repeat="x in canchas">
                        
                         <td>{{ x.estadocancha }}</td>
-                        <td>{{ x.reserva_id }}</td>
+                        <td>{{ x.reservaid }}</td>
                         <td>{{ x.id.idcancha }}</td>
-                        <td>{{ x.NitEstablecimiento }}</td>
+                        <td>{{ x.id.nitEstablecimiento }}</td>
+                       
                    
                     </tr>
                 </table>
