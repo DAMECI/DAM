@@ -20,8 +20,7 @@ angular.module('myApp.Reservar', ['ngRoute'])
     $scope.ReservaId ="";
     //{"idReserva":$scope.id.idreserva ="","nitEstablecimiento":$scope.id.nitEstablecimiento =""};
     $scope.usuarioId ="";
-    
-    Sscope.
+
     
     var lista = [];
     $scope.listado = estService.query(function(data){
