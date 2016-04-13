@@ -9,8 +9,15 @@ angular.module('myApp.InfoEstablecimiento', ['ngRoute'])
   });
 }])
 
-.controller('ControladorInfoEstablecimiento',  ['$scope','Establecimiento','estService','postService',function ($scope,Establecimiento,estService, postService) {
+.controller('ControladorInfoEstablecimiento',  ['$scope','Establecimiento','getEstablecimientobyNit','postService',function ($scope,Establecimiento,getEstablecimientobyNit, postService) {        
+      console.log("Entro a buscar establecimiento")
       
+      
+      function buscarEstablecimiento() {
+            console.log("Entro a buscar establecimiento")
+            $scope.lista = getEstablecimientobyNit.query({nit : 8956});
+            $scope.lista2 = ""; 
+      }    
+      window.onload =buscarEstablecimiento();
+       
 }]);
-
-
