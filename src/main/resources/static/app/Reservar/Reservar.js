@@ -11,14 +11,14 @@ angular.module('myApp.Reservar', ['ngRoute'])
 
 .controller('ReservarCtrl', ['$scope', 'canchaService','reservaService','estService','$location', function ($scope, canchaService, reservaService, estService,$location) {  
     $scope.canchas= canchaService.query();
-    $scope.fechaReserva ="";  
-   $scope.canchas= canchaService.query();
+    
  
     $scope.id ="";  
     $scope.fechareserva ="";  
     $scope.precio ="";  
     $scope.tiempo ="";
-    $scope.ReservaId ={"idReserva":$scope.id.idreserva ="","nitEstablecimiento":$scope.id.nitEstablecimiento =""};
+    $scope.ReservaId ="";
+    //{"idReserva":$scope.id.idreserva ="","nitEstablecimiento":$scope.id.nitEstablecimiento =""};
     $scope.usuarioId ="";
     
     var lista = [];
