@@ -9,7 +9,7 @@ angular.module('myApp.Reservar', ['ngRoute'])
   });
 }])
 
-.controller('ReservarCtrl', ['$scope', 'canchaService','reservaService','estService','$location', function ($scope, canchaService, reservaService, estService,$location) {  
+.controller('ReservarCtrl', ['$scope', '$rootScope', 'canchaService','reservaService','estService','$location', function ($scope, $rootScope, canchaService, reservaService, estService,$location) {  
     $scope.canchas= canchaService.query();
     
  
@@ -21,6 +21,8 @@ angular.module('myApp.Reservar', ['ngRoute'])
     //{"idReserva":$scope.id.idreserva ="","nitEstablecimiento":$scope.id.nitEstablecimiento =""};
     $scope.usuarioId ="";
     
+    Sscope.
+    
     var lista = [];
     $scope.listado = estService.query(function(data){
             lista=data;
@@ -30,11 +32,11 @@ angular.module('myApp.Reservar', ['ngRoute'])
     
   $scope.agregarReserva = function(){
         
-        var reserva = {"id":{"idReserva":$scope.idreserva, "nitEstablecimiento":$scope.nitEstablecimiento}, "fechareserva":$scope.fechareserva, "precio":$scope.precio, "tiempo":$scope.tiempo, "usuarioId":$scope.usuarioId};
+        var newReserva = {"id":{"idreserva":$scope.idreserva, "nitEstablecimiento":$rootScope.nitEstablecimiento}, "fechareserva":$scope.fechareserva, "precio":$scope.precio, "tiempo":$scope.tiempo, "usuarioId":$scope.usuarioId};
           
        console.info("Reserva Agregado123");
        
-       reservaService.save(reserva,function(){
+       reservaService.save({nitEstablecimiento:$rootScope.nitEstablecimiento}, newReserva,function(){
                    console.log("Entro");
                 $location.path("/Visualizar");
         });    

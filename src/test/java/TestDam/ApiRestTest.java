@@ -18,6 +18,7 @@ import edu.eci.cosw.clases.ReservasId;
 import edu.eci.cosw.clases.Usuario;
 import edu.eci.cosw.imp.DamServices;
 import edu.eci.cosw.main.DemoApplication;
+import java.time.Month;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -218,10 +219,22 @@ public class ApiRestTest {
             canRep.save(c1);
             Usuario u = new Usuario("ar85", "marta", "casas", "8965");
             userRep.save(u);            
-            Reserva r = new Reserva(new ReservasId(123,"203-99"), c, u, new Date(13-01-2014), 
+            Reserva r = new Reserva(new ReservasId(123,"203-99"), c, u,  new Date("March 03, 2015"), 
                     30.000, 2.3 ,u.getIdCliente(), "ocupado");
             resRep.save(r);
             assertNotNull(services.getReservaByid(123));
             
+            assertEquals("ocupado", services.getReservaByid(123).getEstado());          
+            assertEquals("2015-03-03", services.getReservaByid(123).getFechareserva().toString());
+            assertTrue(services.getReservaByid(123).getPrecio()==30.000);
+            assertTrue(services.getReservaByid(123).getTiempo()==2.3);
+            assertEquals("ar85", services.getReservaByid(123).getUsuarioId());  
+        }
+        
+        @Test
+        public void noExiteReserva() throws Exception{
+            assertNull(services.getReservaByid(54879));
+            Reserva r = new Reserva(new ReservasId(23148,"4587-2"), null, null, "yes59");
+            assertNull(services.getReservaByid(23148));
         }
 }

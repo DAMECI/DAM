@@ -113,7 +113,7 @@ public class Cancha  implements java.io.Serializable {
 @OneToMany(cascade=CascadeType.ALL)
 @Fetch(FetchMode.JOIN)
     @JoinColumns( { 
-        @JoinColumn(name="IdCancha"), 
+        @JoinColumn(name="IdCancha", nullable = true), 
         @JoinColumn(name="Nit_Establecimiento") } )
     public Set<Reserva> getReservases() {
         return this.reservases;
