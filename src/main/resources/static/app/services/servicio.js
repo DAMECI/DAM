@@ -21,6 +21,15 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
         });
     })
     
+    
+    .factory('getEstablecimientobyNit', function ($resource) {
+        return $resource('/establecimientos/:nit',{},{
+            nit: '@nit',
+            GET : { method: 'GET', isArray: true}
+        });
+    })
+    
+    
     .factory('postService', function ($resource) {
         
         return $resource('/establecimientos/AddCalificacion',{},{
