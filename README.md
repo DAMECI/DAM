@@ -31,7 +31,7 @@ Al entrar a Reservar indicamos los datos que nos piden para realizarla y lo mism
 </p>
 
 <h3>Modelo Base de Datos</h3>
-<img src="modelo.PNG" align="middle">
+<img src="src/main/resources/static/app/images/modelo.PNG" align="middle">
 
 
 
