@@ -21,10 +21,27 @@ angular.module('myApp.InfoEstablecimiento', ['ngRoute'])
                 $scope.lista=data;
                 $scope.nombreEstablecimiento = $scope.lista.razonsocial;
                 $scope.calificacionPrm = $scope.lista.calificacionpromedio;
+                
+                if(parseInt($scope.calificacionPrm) == 1){
+                    document.getElementById("star1").checked = true;
+                }                    
+                else if(parseInt($scope.calificacionPrm) == 2){
+                    document.getElementById("star2").checked = true;
+                }
+                else if(parseInt($scope.calificacionPrm) == 3){
+                    document.getElementById("star3").checked = true;
+                }
+                else if(parseInt($scope.calificacionPrm) == 4){
+                    document.getElementById("star4").checked = true;
+                }
+                else if(parseInt($scope.calificacionPrm) == 5){
+                    document.getElementById("star").checked = true;
+                }                
+                $scope.direccion = $scope.lista.direccion;
+                $scope.telefono = $scope.lista.telefono;
             });
       }
       window.onload =buscarEstablecimiento();
-      
       
       $scope.hrefs = function (pagina) {
             location.href="#" + pagina;
