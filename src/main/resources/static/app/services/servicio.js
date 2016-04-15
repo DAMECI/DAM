@@ -22,11 +22,11 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
     })
     
     
-    .factory('getEstablecimientobyNit', function ($resource) {
-        return $resource('/establecimientos/:nit',{},{
-            nit: '@nit',
-            GET : { method: 'GET', isArray: true}
+    .factory('getEstablecimientobyNit', function ($resource) {        
+        return $resource('/establecimientos/byNit/:nit',{nit: '@nit'},{            
+            GET : { method: 'GET'}
         });
+        console.log("Entrobeeeeeee" + nit);
     })
     
     

@@ -94,7 +94,7 @@ public class Establecimiento  implements java.io.Serializable {
 
     
     @Column(name="calificacionpromedio", precision=5, scale=3)
-    public Double getCalificacionpromedio() {
+    public Double getCalificacionpromedio() {        
         return this.calificacionpromedio;
     }
     
@@ -123,5 +123,10 @@ public class Establecimiento  implements java.io.Serializable {
     public void setCalificacioneses(Set<Calificacion> calificacioneses) {
         this.calificacioneses = calificacioneses;
     }
+    
+    
+    
+    
+    
 }
 

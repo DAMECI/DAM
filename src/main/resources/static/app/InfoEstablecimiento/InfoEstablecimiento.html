@@ -62,8 +62,14 @@
         <div>
             <table width="100%" >
                 <tr>
+                    <td  colspan="4">
+                        <input type="button" ng-click="hrefs('Visualizar')" value="Atras" />
+                    </td>
+                </tr>
+                
+                <tr>
                     <td align="center"  colspan="4">
-                        <label ng-value="lista.razonsocial" />
+                        {{nombreEstablecimiento}}
                     </td>
                 </tr>
                 <tr>
@@ -71,17 +77,21 @@
                         <img src="http://estadiocementosprogreso.com.gt/wp-content/uploads/2011/09/Futbol-5.jpg"
                         alt="W3Schools.com" width="600" height="300">
                     </td>
-                </tr>                
+                </tr>
+                
                 <tr>
-                    <td align="center" width="25%">
-                        
+                    <td align="center"  colspan="4">
+                        {{calificacionPrm}}
                     </td>
-                    <td  width="25%">                        
-                        
-                        <a href="#/Calificar"  class="button" >Calificarr</a>
+                </tr>
+                
+                <tr>
+                    <td align="center" width="25%">                        
                     </td>
-                    <td align="center"  width="25%">
-                       
+                    <td  width="25%">
+                        <a href="#/Calificar"  class="button" >Calificar</a>
+                    </td>
+                    <td align="center"  width="25%">                       
                         <a href="#/Reservar"    class="button" >Reservar</a>
                     </td>
                     <td  width="25%">                        

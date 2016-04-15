@@ -58,7 +58,7 @@ public class ApiRestEstablecimiento{
         }           
     }       
          
-    @RequestMapping(path = "/{nit}",method = RequestMethod.GET)
+    @RequestMapping(value = "/byNit/{nit}",method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity<Establecimiento> getEstablecimientoByNit(@PathVariable String nit) {
         try {

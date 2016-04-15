@@ -10,14 +10,26 @@ angular.module('myApp.InfoEstablecimiento', ['ngRoute'])
 }])
 
 .controller('ControladorInfoEstablecimiento',  ['$scope','Establecimiento','getEstablecimientobyNit','postService',function ($scope,Establecimiento,getEstablecimientobyNit, postService) {        
-      console.log("Entro a buscar establecimiento")
-      
-      
+      $scope.lista = [];
+      console.log("Entro a buscar establecimiento")      
       function buscarEstablecimiento() {
+            var nitXUrl = "";
+            nitXUrl = location.href.split("=")[1];
+            
             console.log("Entro a buscar establecimiento")
-            $scope.lista = getEstablecimientobyNit.query({nit : 8956});
-            $scope.lista2 = ""; 
-      }    
+            $scope.estab = getEstablecimientobyNit.get({nit : nitXUrl}, function(data){                
+                $scope.lista=data;
+                $scope.nombreEstablecimiento = $scope.lista.razonsocial;
+                $scope.calificacionPrm = $scope.lista.calificacionpromedio;
+            });
+      }
       window.onload =buscarEstablecimiento();
-       
+      
+      
+      $scope.hrefs = function (pagina) {
+            location.href="#" + pagina;
+      };
+        
+      
+      
 }]);

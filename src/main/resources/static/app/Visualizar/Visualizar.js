@@ -126,4 +126,10 @@ angular.module('myApp.Visualizar', ['ngRoute'])
 
 
                     };*/
+        
+        
+        $scope.hrefs = function (nit) {
+            location.href="#InfoEstablecimiento?nit=" + nit;
+        };
+        
 }]);
