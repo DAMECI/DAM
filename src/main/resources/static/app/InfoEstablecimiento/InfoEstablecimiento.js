@@ -10,7 +10,7 @@ angular.module('myApp.InfoEstablecimiento', ['ngRoute'])
 }])
 
 .controller('ControladorInfoEstablecimiento',  ['$scope','Establecimiento','getEstablecimientobyNit','postService',function ($scope,Establecimiento,getEstablecimientobyNit, postService) {        
-      $scope.lista = [];
+      $scope.lista;
       console.log("Entro a buscar establecimiento")      
       function buscarEstablecimiento() {
             var nitXUrl = "";
@@ -38,7 +38,8 @@ angular.module('myApp.InfoEstablecimiento', ['ngRoute'])
                     document.getElementById("star").checked = true;
                 }                
                 $scope.direccion = $scope.lista.direccion;
-                $scope.telefono = $scope.lista.telefono;
+                $scope.telefono = $scope.lista.telefono;                
+                localStorage.establecimiento= JSON.stringify($scope.lista);                
             });
       }
       window.onload =buscarEstablecimiento();
@@ -46,7 +47,8 @@ angular.module('myApp.InfoEstablecimiento', ['ngRoute'])
       $scope.hrefs = function (pagina) {
             location.href="#" + pagina;
       };
-        
       
-      
+      $scope.reservar = function (pagina, idCancha) {
+            location.href="#" + pagina + "?IDCancha=" + idCancha;
+      };      
 }]);

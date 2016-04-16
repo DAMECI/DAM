@@ -1,37 +1,85 @@
- <link rel="stylesheet" href="assets/css/main.css" />
-
-<h1>Reservar</h1>
-
- <table width="10%" class="tabla1" >
-                    <tr>
-                      
-                        <td>Estado de la Cancha</td>
-                        <td>Reserva-Identificación</td>
-                        <td>Identificación-Cancha</td>
-                        <td>Nit del Establecimiento</td>
-                        <td></td>
-                        
-                    </tr>
-                    <tr ng-repeat="x in canchas">
-                       
-                        <td>{{ x.estadocancha }}</td>
-                        <td>{{ x.reservaid }}</td>
-                        <td>{{ x.id.idcancha }}</td>
-                        <td>{{ x.id.nitEstablecimiento }}</td>
-                       
-                   
-                    </tr>
-                </table>
-
-<input type="text" name="idReserva"  placeholder="idReserva" ng-model="idReserva" ><br>
-<input type="text" name="fechareserva"  placeholder="fechareserva" ng-model="fechareserva" ><br>
-<input type="text" name="tiempo"  placeholder="tiempo" ng-model="tiempo" ><br>
-<input type="text" name="UsuarioId"  placeholder="UsuarioId:" ng-model="usuarioId" ><br>
-
-
-
-
-
-<input type="button" value="Reservar" ng-click="agregarReserva()">
-
-
+  <html ng-controller="ReservarCtrl" >
+     <head>
+            <link rel="stylesheet" href="assets/css/main.css" />
+     </head>
+     <body>
+            
+     <table width="100%" >
+         <tr>
+             <td colspan="7">
+                 <h1>Reserva en </h1> {{ establecimiento.razonsocial }}, Cancha: {{ canchaSession.descripcion }}
+             </td>
+         </tr>
+         
+         <tr>
+             <td>
+                 ¿Fecha de tu Reserva?
+             </td>
+             <td>
+                 <input type="date" id="FechaR" />
+             </td>
+             <td>
+                 ¿Hora de tu Reserva?
+             </td>
+             <td>
+                 <select name="HoraReserva" id="horaReserva" >
+                     <option value="700">07:00 am</option>
+                     <option value="800">08:00 am</option>
+                     <option value="900">09:00 am</option>
+                     <option value="1000">10:00 am</option>
+                     <option value="1100">11:00 am</option>
+                     <option value="1200">12:00 am</option>
+                     <option value="1300">01:00 pm</option>
+                     <option value="1400">02:00 pm</option>
+                     <option value="1500">03:00 pm</option>
+                     <option value="1600">04:00 pm</option>
+                     <option value="1700">05:00 pm</option>
+                     <option value="1800">06:00 pm</option>
+                     <option value="1900">07:00 pm</option>
+                     <option value="2000">08:00 pm</option>
+                     <option value="2100">09:00 pm</option>
+                     <option value="2200">10:00 pm</option>
+                     <option value="2300">11:00 pm</option>
+                     <option value="2400">12:00 pm</option>
+                 </select>
+             </td>
+             <td>
+                 ¿Tiempo?
+             </td>
+             <td>
+                 <input  type="number" id="iTiempo" max="6" min="1" value="1" /> Hrs.
+             </td>
+             <td>
+                 <input type="button" value="Verifica Disponibilidad" ng-click="VerificarDisponibilidad()" />
+             </td>             
+         </tr>
+         
+         <tr ng-show="cargaInfo">
+             <td>
+                 Disponibilidad:
+             </td>
+             <td>
+                 {{disponibilidad}}
+             </td>
+         </tr>
+         
+         <tr  ng-show="cargaInfo">
+             <td>
+                 Precio: 
+             </td>
+             <td align="right">
+                 ${{horario.id.precio}}
+             </td>
+         </tr>
+         
+         <tr ng-show="reserva">
+             <td>
+                 <input value="Reservar Ahora!" type="button" ng-click="AddReserva()" />
+             </td>
+         </tr>
+         
+    </table>
+     </body>
+     
+ </html>
+ 

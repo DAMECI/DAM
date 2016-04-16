@@ -14,8 +14,8 @@ public class HorariosId  implements java.io.Serializable {
 
 
      private int dia;
-     private Date horaInicial;
-     private Date horaFin;
+     private int horaInicial;
+     private int horaFin;
      private int canchasIdcancha;
      private double precio;
      private String nitEstablecimiento;
@@ -23,7 +23,7 @@ public class HorariosId  implements java.io.Serializable {
     public HorariosId() {
     }
 
-    public HorariosId(int dia, Date horaInicial, Date horaFin, int canchasIdcancha, double precio, String nitEstablecimiento) {
+    public HorariosId(int dia, int horaInicial, int horaFin, int canchasIdcancha, double precio, String nitEstablecimiento) {
        this.dia = dia;
        this.horaInicial = horaInicial;
        this.horaFin = horaFin;
@@ -44,22 +44,22 @@ public class HorariosId  implements java.io.Serializable {
     }
 
 
-    @Column(name="HoraInicial", nullable=false, length=8)
-    public Date getHoraInicial() {
+    @Column(name="HoraInicial", nullable=false)
+    public int getHoraInicial() {
         return this.horaInicial;
     }
     
-    public void setHoraInicial(Date horaInicial) {
+    public void setHoraInicial(int horaInicial) {
         this.horaInicial = horaInicial;
     }
 
 
-    @Column(name="HoraFin", nullable=false, length=8)
-    public Date getHoraFin() {
+    @Column(name="HoraFin", nullable=false)
+    public int getHoraFin() {
         return this.horaFin;
     }
     
-    public void setHoraFin(Date horaFin) {
+    public void setHoraFin(int horaFin) {
         this.horaFin = horaFin;
     }
 
@@ -101,8 +101,8 @@ public class HorariosId  implements java.io.Serializable {
 		 HorariosId castOther = ( HorariosId ) other; 
          
 		 return (this.getDia()==castOther.getDia())
- && ( (this.getHoraInicial()==castOther.getHoraInicial()) || ( this.getHoraInicial()!=null && castOther.getHoraInicial()!=null && this.getHoraInicial().equals(castOther.getHoraInicial()) ) )
- && ( (this.getHoraFin()==castOther.getHoraFin()) || ( this.getHoraFin()!=null && castOther.getHoraFin()!=null && this.getHoraFin().equals(castOther.getHoraFin()) ) )
+ && ( (this.getHoraInicial()==castOther.getHoraInicial())  )
+ && ( (this.getHoraFin()==castOther.getHoraFin())  )
  && (this.getCanchasIdcancha()==castOther.getCanchasIdcancha())
  && (this.getPrecio()==castOther.getPrecio())
  && ( (this.getNitEstablecimiento()==castOther.getNitEstablecimiento()) || ( this.getNitEstablecimiento()!=null && castOther.getNitEstablecimiento()!=null && this.getNitEstablecimiento().equals(castOther.getNitEstablecimiento()) ) );
@@ -112,8 +112,8 @@ public class HorariosId  implements java.io.Serializable {
          int result = 17;
          
          result = 37 * result + this.getDia();
-         result = 37 * result + ( getHoraInicial() == null ? 0 : this.getHoraInicial().hashCode() );
-         result = 37 * result + ( getHoraFin() == null ? 0 : this.getHoraFin().hashCode() );
+         result = 37 * result + this.getHoraInicial();
+         result = 37 * result + this.getHoraFin();
          result = 37 * result + this.getCanchasIdcancha();
          result = 37 * result + (int) this.getPrecio();
          result = 37 * result + ( getNitEstablecimiento() == null ? 0 : this.getNitEstablecimiento().hashCode() );

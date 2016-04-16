@@ -34,6 +34,7 @@ public class Reserva  implements java.io.Serializable {
      private Double tiempo;
      private String usuarioId;
      private String estado;
+     private int IdCancha;
 
     public Reserva() {
     }
@@ -123,7 +124,7 @@ public class Reserva  implements java.io.Serializable {
     }
 
     
-    @Column(name="usuario_id", nullable=false, length=10)
+    @Column(name="USUARIOS_idCliente", nullable=false, length=10)
     public String getUsuarioId() {
         return this.usuarioId;
     }
@@ -132,6 +133,15 @@ public class Reserva  implements java.io.Serializable {
         this.usuarioId = usuarioId;
     }
 
+    
+    @Column(name="IdCancha", nullable = false)
+    public int getIdCancha() {
+        return this.IdCancha;
+    }
+    
+    public void setIdCancha(int IdCancha) {
+        this.IdCancha = IdCancha;
+    }
     
     @Column(name="Estado", length=50)
     public String getEstado() {

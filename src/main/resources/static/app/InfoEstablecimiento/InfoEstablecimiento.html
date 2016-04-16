@@ -114,7 +114,10 @@ label.star:before {
                 
                 <tr>
                     <td align="center"  colspan="4">
-                        {{nombreEstablecimiento}}
+                        <h1>
+                            {{nombreEstablecimiento}}
+                        </h1>
+                        
                     </td>
                 </tr>
                 <tr>
@@ -139,22 +142,43 @@ label.star:before {
                                   <label class="star star-1" for="star-1"></label>
                             </form>
                        </td>
-                </tr>
-                
-                <tr>
-                    <td colspan="2">
-                       Dirección
-                    </td>
-                    <td colspan="2">
-                        {{direccion}}
-                    </td>
                 </tr>                
                 <tr>
+                    <td >
+                        <b>Dirección</b>
+                    </td>
+                    <td >
+                        {{direccion}}
+                    </td>
                     <td colspan="2">
-                       Teléfono
+                        <b>Teléfono</b>
                     </td>
                     <td colspan="2">
                         {{telefono}}
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td colspan="5">
+                        <h2>
+                            Canchas
+                        </h2>
+                    </td>
+                </tr>
+                
+                <tr ng-repeat="canchas in lista.canchases">
+                    <td>
+                        <img src="http://ch5.com.co/wp-content/uploads/2014/09/cancha1.jpg"
+                        alt="W3Schools.com" width="100" height="100">
+                        
+                        
+                        <label ng-value="{{canchas.descripcion}}" ></label>
+                    </td>
+                    <td colspan="2">
+                        {{canchas.memo}}
+                    </td>
+                    <td>
+                        <input value="Reserva Ahora" type="button" ng-click="reservar('Reservar',canchas.id.idcancha)" />
                     </td>
                 </tr>
                 

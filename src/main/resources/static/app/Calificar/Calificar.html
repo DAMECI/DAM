@@ -108,22 +108,6 @@ label.star:before {
         
         <div>
                 <table>
-                    <tr>
-                        <td class="stars" colspan="4" >
-                              <form action="">
-                                  <input class="star star-5" id="star-5" type="radio" name="star"/>
-                                  <label class="star star-5" for="star-5"></label>
-                                  <input class="star star-4" id="star-4" type="radio" name="star"/>
-                                  <label class="star star-4" for="star-4"></label>
-                                  <input class="star star-3" id="star-3" type="radio" name="star"/>
-                                  <label class="star star-3" for="star-3"></label>
-                                  <input class="star star-2" id="star-2" type="radio" name="star"/>
-                                  <label class="star star-2" for="star-2"></label>
-                                  <input class="star star-1" id="star-1" type="radio" name="star"/>
-                                  <label class="star star-1" for="star-1"></label>
-                                </form>
-                       </td>
-                    </tr>
             <tr>
                 <td>
                     <label class="color1">Establecimiento: </label>
@@ -154,12 +138,19 @@ label.star:before {
                                         <td>{{todo.numCancha}}</td> 
                                         <td>{{todo.precio}}</td>
                                         <td>{{todo.calificacionPromedio}}</td> 
-                                        <td class="ec-stars-wrapper" colspan="2" >
-                                            <a ng-click="Puntaje(1)" data-value="1" title="Votar con 1 estrellas">&#9733; </a>
-                                            <a ng-click="Puntaje(2)" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
-                                            <a ng-click="Puntaje(3)" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
-                                            <a ng-click="Puntaje(4)" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
-                                            <a ng-click="Puntaje(5)" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+                                        <td class="stars" colspan="4" >
+                                        <form action="">
+                                            <input class="star star-5" id="star-5" type="radio" name="star"/>
+                                            <label class="star star-5" for="star-5"></label>
+                                            <input class="star star-4" id="star-4" type="radio" name="star"/>
+                                            <label class="star star-4" for="star-4"></label>
+                                            <input class="star star-3" id="star-3" type="radio" name="star"/>
+                                            <label class="star star-3" for="star-3"></label>
+                                            <input class="star star-2" id="star-2" type="radio" name="star"/>
+                                            <label class="star star-2" for="star-2"></label>
+                                            <input class="star star-1" id="star-1" type="radio" name="star"/>
+                                            <label class="star star-1" for="star-1"></label>
+                                        </form>
                                         </td>
                                      </tr>
                                 </table>
@@ -175,10 +166,10 @@ label.star:before {
             </tr>
             <tr>
                 <td colspan="2">
-                    <input type="button" name="BEnviarCal" value="Enviar Calificación" ng-click="Calificacion()"  />                    
+                    <input type="button" name="BEnviarCal" value="Enviar Calificación" ng-click="Calificacion()"  />
                 </td>
             </tr>
-        </table>        
+        </table>
         </div>
         
     </body>

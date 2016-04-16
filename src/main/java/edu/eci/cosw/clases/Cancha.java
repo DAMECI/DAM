@@ -31,6 +31,8 @@ public class Cancha  implements java.io.Serializable {
 
      private CanchasId id;
      //private Establecimiento establecimientos;
+     private String descripcion;
+     private String memo;
      private Boolean estadocancha;
      private Integer reservaId;
      private Set<Horario> horarioses = new HashSet<Horario>(0);
@@ -96,7 +98,29 @@ public class Cancha  implements java.io.Serializable {
     public void setReservaId(Integer reservaId) {
         this.reservaId = reservaId;
     }
-
+    
+    
+    @Column(name="Descripcion")
+    public String getDescripcion() {
+        return this.descripcion;
+    }
+    
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
+    
+    @Column(name="memo")
+    public String getmemo() {
+        return this.memo;
+    }
+    
+    public void setmemo(String memo) {
+        this.memo = memo;
+    }
+    
+    
+    
 @OneToMany(cascade=CascadeType.ALL)
 @Fetch(FetchMode.JOIN)
 @JoinColumns( { 
