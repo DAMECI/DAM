@@ -57,6 +57,30 @@ public class ApiRestReserva {
         }        
             
        }
+        
+       
+         
+         @RequestMapping(value = "/byCliente/{idUser}", method= RequestMethod.GET)
+        @ResponseBody
+         public ResponseEntity<List<Reserva>> getReservasbyCliente(@PathVariable int idUser){
+             try {
+            List<Reserva> reservas=operacion.getReservasByIdCliente(idUser);
+            if (reservas!=null){
+                return ResponseEntity.ok().body(reservas);        
+            }
+            else{
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+            
+        } catch (Exception e) {
+            Logger.getLogger(ApiRestReserva.class.getName()).log(Level.SEVERE, null, e);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
+        }        
+            
+       }
+        
+         
+         
          
         @RequestMapping(path = "/{idreserva}",method = RequestMethod.GET)
         @ResponseBody

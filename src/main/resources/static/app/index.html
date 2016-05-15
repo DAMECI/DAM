@@ -17,21 +17,28 @@
                
                
 </head>
-<body >
+<body  ng-controller="ControladorLogOut" >
     <div id="page-wrapper">
-        
+        <h1><a href="index.html" id="logo">DAM <em>Deporte a tus manos </em></a></h1>
         
          <div id="header">
+                <button ng-click="Desplegar()">
+                    <img src="images/menu.ico" height="20px" width="20px" />
+                </button>
              
-             <h1><a href="index.html" id="logo">DAM <em>Deporte a tus manos </em></a></h1>
+             
+             
              <nav id="nav">  
-                       <ul id="Menu" ng-controller="ControladorLogOut"> 
+                       <ul id="Menu"> 
 <!--                <li class="current"><a href="#/Index2.html">Home</a></li>-->
     <!--            <li><a id="Calificar" href="#/Calificar" style="visibility:hidden">Calificar</a></li>
 >>>>>>> 74d2e5291f1596a9b190af75f633bbee67c9133f
                 <li><a id="Visualizar" href="#/Visualizar" >Establecimientos</a></li>
                 <li><a id="Filtran" href="#/Filtrar"  style="visibility:hidden">Filtrar</a></li>-->
-                <li><a  href="#/Login"  class="button special" >LogIn</a></li>
+                <li>
+                    <a  href="#/Login"  class="button special" >LogIn</a>
+                    
+                </li>
              </ul>  
 	
         
@@ -42,6 +49,11 @@
 
           </div>                         
 
+    <div id="divButtons" style="visibility: hidden">
+        <input type="button" value="Mis Reservas" ng-click="BotonMisReservas()" >
+    </div>
+    
+    
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -76,6 +88,7 @@
   <script src="Calificar/Calificar.js"></script>
   <script src="LogIn/LogIn.js"></script>
   <script src="Filtrar/Filtrar.js"></script>
+  <script src="listReservas/listReservas.js"></script>
   <script src="Reservar/Reservar.js"></script>
   <script src="Visualizar/Visualizar.js"></script>
   <script src="services/servicio.js"></script>

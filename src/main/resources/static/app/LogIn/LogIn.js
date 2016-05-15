@@ -9,7 +9,7 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
   });
 }])
 
-	.controller('ControladorLogin',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {                                         
+	.controller('ControladorLogin',  ['$rootScope', '$scope', '$http', '$location','getUsuarioxID', function($rootScope, $scope, $http, $location, getUsuarioxID) {                                         
                 simple();      
                 function simple() {
                     document.getElementById("Menu").innerHTML = "";
@@ -24,7 +24,10 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
 
                 $http.get('user', {headers: headers}).success(function (data) {
                     if (data.name) {
+                        //AUTENTICADO CORRECTAMENTE
                         $rootScope.authenticated = true;         
+                        //TRAER INFO DE USUARIO
+                            buscarUsuario(data.name);                        
                     } else {
                         $rootScope.authenticated = false;
                     }
@@ -46,6 +49,7 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
                     if ($rootScope.authenticated) {
                         $scope.error = false;
                          $location.path("/Visualizar");
+                         
                     } else {
                         $location.path("/LogIn");
                         $scope.error = true;
@@ -53,4 +57,13 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
                     }
                 });
             };
+            
+            
+            
+       function buscarUsuario(idUsuario) {           
+            $scope.estab = getUsuarioxID.get({idcliente : idUsuario}, function(data){                
+                $scope.user=data;
+                localStorage.userActivo = JSON.stringify($scope.user);                
+            });
+       }
 }]);

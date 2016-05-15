@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('myApp.Reservar', ['ngRoute'])
+angular.module('myApp.listReservas', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/Reservar', {
-    templateUrl: 'Reservar/Reservar.html',
-    controller: 'ReservarCtrl'
+  $routeProvider.when('/listReservas', {
+    templateUrl: 'listReservas/listReservas.html',
+    controller: 'listReservasCtrl'
   });
 }])
 
-.controller('ReservarCtrl', ['$scope', '$rootScope', 'canchaService','reservaService','estService','$location', function ($scope, $rootScope, canchaService, reservaService, estService,$location) {  
+.controller('listReservasCtrl', ['$scope', '$rootScope', 'canchaService','reservaService','estService','$location', function ($scope, $rootScope, canchaService, reservaService, estService,$location) {  
      $scope.cargaInfo = false;
      
          function CargarInicio(){            

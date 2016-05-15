@@ -103,4 +103,12 @@ public class DamServicesImp implements DamServices{
     public List<Reserva> getReservas() {
         return reserva.findAll();
     }
+    
+    public List<Reserva> getReservasByIdCliente(int idUser){
+        return reserva.getReservasByIdCliente(idUser);
+    }
+    
+            
+    
+    
 }

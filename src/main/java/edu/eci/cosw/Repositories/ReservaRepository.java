@@ -7,6 +7,7 @@ package edu.eci.cosw.Repositories;
 
 import edu.eci.cosw.clases.Reserva;
 import edu.eci.cosw.clases.ReservasId;
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -17,4 +18,8 @@ import org.springframework.data.jpa.repository.Query;
 public interface ReservaRepository extends JpaRepository<Reserva, ReservasId>{
     @Query("from Reserva e where e.id.idreserva=?1")
     Reserva findReservaById(int idreserva);
+    
+    @Query("from Reserva e where e.usuarioId=?1")
+    List<Reserva> getReservasByIdCliente(int idUser);
+    
 }

@@ -1,12 +1,15 @@
-  <html ng-controller="ReservarCtrl" >
+  <html ng-controller="ReservarCtrl" >         
      <head>
-            <link rel="stylesheet" href="assets/css/main.css" />
+            
      </head>
      <body>
             
-     <table width="100%" >
+     <table style="width: 100%;" >
          <tr>
-             <td colspan="7">
+             <td>
+                 <input type="button" value="Atras" ng-click="BotonAtras()" />
+             </td>
+             <td colspan="6">
                  <h1>Reserva en </h1> {{ establecimiento.razonsocial }}, Cancha: {{ canchaSession.descripcion }}
              </td>
          </tr>
@@ -16,7 +19,7 @@
                  ¿Fecha de tu Reserva?
              </td>
              <td>
-                 <input type="date" id="FechaR" />
+                    <input type="date" id="FechaR" style="color:#000000;" />
              </td>
              <td>
                  ¿Hora de tu Reserva?
@@ -47,7 +50,7 @@
                  ¿Tiempo?
              </td>
              <td>
-                 <input  type="number" id="iTiempo" max="6" min="1" value="1" /> Hrs.
+                 <input  type="number" id="iTiempo" max="6" min="1" value="1" style="color:#000000;" /> Hrs.
              </td>
              <td>
                  <input type="button" value="Verifica Disponibilidad" ng-click="VerificarDisponibilidad()" />

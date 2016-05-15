@@ -1,0 +1,35 @@
+  <html ng-controller="listReservasCtrl" >         
+     <head>
+            
+     </head>
+     <body>
+         <div>
+             <table style="width: 100%">
+                <tr>
+                   <td>
+                       <h1>Mis reservas</h1>
+                   </td>
+                </tr>
+                
+                
+                <tr ng-repeat="reserva in listaReservas">
+                    <td>
+                        {{reserva.fechareserva}}
+                    </td>
+                    <td>
+                        {{reserva.precio}}
+                    </td>
+                    <td>
+                        {{reserva.tiempo}}
+                    </td>
+                    <td>
+                        {{reserva.estado}}
+                    </td>
+                </tr>
+                
+            </table>
+         </div>         
+     </body>
+     
+ </html>
+ 

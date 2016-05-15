@@ -21,15 +21,15 @@
     </div>
     
 </div>
-<div class="row 150%">
+<div style="width: 100%;"  >
     <hr/>
-                <table width="50%" class="tabla1">
+    <section>
+        <table style="width: 100%;" >
                     <tr>
                         <td>NitEstablecimiento</td>
                         <td>Razón Social</td>
                         <td>Dirección</td>
-                        <td>Telefono</td>  
-                        <td>Reservar</td>  
+                        <td>Telefono</td>                                                                                                                                                                                                                                                                                                                                          
                         <td>Detalle</td>  
                     </tr>
                     <tr ng-repeat="x in establecimientos">
@@ -37,10 +37,11 @@
                         <td>{{ x.razonsocial }}</td>
                         <td>{{ x.direccion }}</td>
                         <td>{{ x.telefono }}</td>
-                        <td><a href="#/Reservar">Reservar</a></td>
                         <td><input type="button" value="Detalle" ng-click="hrefs(x.nit)" /> </td>
                     </tr>
                 </table>
+    </section>
+                
 </div>
     
                 

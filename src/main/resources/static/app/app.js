@@ -9,6 +9,7 @@ angular.module('myApp', [
   'myApp.Visualizar',
   'myApp.Calificar',
   'myApp.Reservar',
+  'myApp.listReservas',
   'myApp.InfoEstablecimiento',
   'services.modulo',
   'services.Establecimientos',  
@@ -41,4 +42,21 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
            
         });
     };
+    
+    
+    $scope.Desplegar = function () {
+         var oDiv = document.getElementById("divButtons");
+         if(localStorage.userActivo != null){
+            if(oDiv.style.visibility=="visible"){
+                oDiv.style.visibility='hidden';            
+            }else if(oDiv.style.visibility=="hidden"){
+                oDiv.style.visibility='visible'; 
+            }
+         }         
+     };
+    
+    $scope.BotonMisReservas = function () {
+         location.href="#listReservas";
+     };
+    
 }]);

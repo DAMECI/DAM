@@ -30,6 +30,26 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
     })
     
     
+    
+    .factory('getReservaByIdUser', function ($resource) {        
+        return $resource('/reservas/byCliente/:idUser',{idUser: 'idUser'},{            
+            GET : { method: 'GET'}
+        });
+        console.log("Entrobeeeeeee" + idUser);
+    })
+    
+    
+    
+    
+    .factory('getUsuarioxID', function ($resource) {        
+        return $resource('/usuarios/:idcliente',{idcliente: '@idcliente'},{            
+            GET : { method: 'GET'}
+        });
+    })
+    
+    
+    
+    
     .factory('postService', function ($resource) {
         
         return $resource('/establecimientos/AddCalificacion',{},{
