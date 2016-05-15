@@ -28,7 +28,7 @@ public interface DamServices {
     public void addReserva(Reserva r);
     public List<Reserva> getReservas();
     public Reserva getReservaByid(int idreserva);
-    public List<Reserva> getReservasByIdCliente(int idUser);
+    public List<Reserva> getReservasByIdCliente(String idUser);
     
     
 }

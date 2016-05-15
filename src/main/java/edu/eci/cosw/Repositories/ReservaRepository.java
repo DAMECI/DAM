@@ -20,6 +20,6 @@ public interface ReservaRepository extends JpaRepository<Reserva, ReservasId>{
     Reserva findReservaById(int idreserva);
     
     @Query("from Reserva e where e.usuarioId=?1")
-    List<Reserva> getReservasByIdCliente(int idUser);
+    List<Reserva> getReservasByIdCliente(String idUser);
     
 }

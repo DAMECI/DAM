@@ -60,9 +60,9 @@ public class ApiRestReserva {
         
        
          
-         @RequestMapping(value = "/byCliente/{idUser}", method= RequestMethod.GET)
+         @RequestMapping(value="/byCliente/{idUser}", method= RequestMethod.GET)
         @ResponseBody
-         public ResponseEntity<List<Reserva>> getReservasbyCliente(@PathVariable int idUser){
+         public ResponseEntity<List<Reserva>> getReservasbyCliente(@PathVariable String idUser){
              try {
             List<Reserva> reservas=operacion.getReservasByIdCliente(idUser);
             if (reservas!=null){

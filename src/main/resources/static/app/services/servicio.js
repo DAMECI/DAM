@@ -32,7 +32,7 @@ angular.module('services.modulo', ['ngRoute', 'ngResource'])
     
     
     .factory('getReservaByIdUser', function ($resource) {        
-        return $resource('/reservas/byCliente/:idUser',{idUser: 'idUser'},{            
+        return $resource('/reservas/byCliente/:idUser',{idUser: '@idUser'},{            
             GET : { method: 'GET'}
         });
         console.log("Entrobeeeeeee" + idUser);
