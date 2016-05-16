@@ -14,16 +14,19 @@
                 
                 <tr ng-repeat="reserva in listaReservas">
                     <td>
-                        {{reserva.fechareserva}}
+                        {{reserva[0]}}
                     </td>
                     <td>
-                        {{reserva.precio}}
+                        {{reserva[1]}}
                     </td>
                     <td>
-                        {{reserva.tiempo}}
+                        {{reserva[2]}}
                     </td>
                     <td>
-                        {{reserva.estado}}
+                        {{reserva[3]}}
+                    </td>
+                    <td>
+                        {{reserva[4]}}
                     </td>
                 </tr>
                 

@@ -16,6 +16,8 @@ angular.module('myApp.listReservas', ['ngRoute'])
            $scope.estab = getReservaByIdUser.query({idUser : $scope.userActivo.idCliente}, function(data){  
                $scope.listaReservas=data;
              });
+        
+        
      };
      
      window.onload =CargarInicio();
