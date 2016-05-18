@@ -19,13 +19,13 @@
 </head>
 <body  ng-controller="ControladorLogOut" >
     <div id="page-wrapper">
-        <h1><a href="index.html" id="logo">DAM <em>Deporte a tus manos </em></a></h1>
-        
          <div id="header">
-                <button ng-click="Desplegar()">
+                <button ng-click="Desplegar()" style="visibility: hidden">
                     <img src="images/menu.ico" height="20px" width="20px" />
                 </button>
-             
+    <div id="divButtons" style="visibility: hidden" class="header">
+        <input type="button" value="Mis Reservas" ng-click="BotonMisReservas()" >
+    </div>         
              
              
              <nav id="nav">  
@@ -49,9 +49,7 @@
 
           </div>                         
 
-    <div id="divButtons" style="visibility: hidden">
-        <input type="button" value="Mis Reservas" ng-click="BotonMisReservas()" >
-    </div>
+    
     
     
   <!--[if lt IE 7]>

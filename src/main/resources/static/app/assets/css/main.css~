@@ -2209,7 +2209,7 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #2EFEF7;
+			border-color: #e44c65;
 		}
 
 	.select-wrapper {
