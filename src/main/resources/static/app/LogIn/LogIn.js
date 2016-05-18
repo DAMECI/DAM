@@ -10,7 +10,7 @@ angular.module('myApp.vistaLogIn', ['ngRoute'])
 }])
 
 	.controller('ControladorLogin',  ['$rootScope', '$scope', '$http', '$location','getUsuarioxID', function($rootScope, $scope, $http, $location, getUsuarioxID) {                                         
-                simple();      
+//                simple();      
                 function simple() {
                     document.getElementById("Menu").innerHTML = "";
                     document.getElementById("Menu").innerHTML = "<ul id='Menu'><li><a  href='#/Index2'  class='button special' >Home</a></li></ul>";

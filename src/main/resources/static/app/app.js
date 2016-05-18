@@ -30,6 +30,7 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
 }])
 
 .controller('ControladorLogOut',  ['$rootScope', '$scope', '$http', '$location', function($rootScope, $scope, $http, $location) {
+    
         $scope.logout = function () {
          
         $http.post('/logout', {}).success(function () {
