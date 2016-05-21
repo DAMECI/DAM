@@ -4,17 +4,31 @@
      </head>
      <body>
          <div>
+                <h2>Mis reservas</h2>
              <table style="width: 100%">
                 <tr>
-                   <td>
-                       <h1>Mis reservas</h1>
-                   </td>
+                    <td>
+                        Establecimiento
+                    </td>
+                    <td>
+                        Cancha
+                    </td>
+                    <td>
+                        Fecha
+                    </td>
+                    <td>
+                        Tiempo
+                    </td>
+                    <td>
+                        Precio
+                    </td>
                 </tr>
-                
-                
                 <tr ng-repeat="reserva in listaReservas">
                     <td>
-                        {{reserva[0]}}
+                        {{reserva[3]}}
+                    </td>
+                    <td>
+                        {{reserva[4]}}
                     </td>
                     <td>
                         {{reserva[1]}}
@@ -23,10 +37,7 @@
                         {{reserva[2]}}
                     </td>
                     <td>
-                        {{reserva[3]}}
-                    </td>
-                    <td>
-                        {{reserva[4]}}
+                        {{reserva[0]}}
                     </td>
                 </tr>
                 
