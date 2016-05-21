@@ -2205,7 +2205,7 @@
 		-webkit-transition: border-color 0.2s ease-in-out;
 		-ms-transition: border-color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out;
-		background: transparent;
+		background: #FFF;
 		border-radius: 4px;
 		border: solid 1px #848484;
 		color: #151515;
