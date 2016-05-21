@@ -28,8 +28,10 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                     var puntos=[];
 
                     function simple() {
-                       var btn= document.getElementById("Botones");
-                       btn.style.visibility="visible";
+                        var bMenu= document.getElementById("loginMenu");
+                        bMenu.style.visibility="Hidden";
+                        var bAddEstablecimiento= document.getElementById("addEstablecimiento");
+                        bAddEstablecimiento.style.visibility="visible";
                         if (GBrowserIsCompatible()) {
                             var map = new GMap2(document.getElementById("map1"));
                             map.setCenter(new GLatLng(4.6203798, -74.1096943), 11);
