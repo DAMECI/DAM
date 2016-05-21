@@ -14,6 +14,7 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                 var lista = [];
                 var aux = {nombreEstablecimiento:"", direccion:""};
                 $scope.valMin=0;
+                $scope.valMax=100000;
                 $scope.estMapa = estService.query(function(data){
                     lista=data;
                     for (var index = 0; index < lista.length; index++) {                                            
@@ -27,6 +28,8 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                     var puntos=[];
 
                     function simple() {
+                       var btn= document.getElementById("Botones");
+                       btn.style.visibility="visible"
                         if (GBrowserIsCompatible()) {
                             var map = new GMap2(document.getElementById("map1"));
                             map.setCenter(new GLatLng(4.6203798, -74.1096943), 11);
@@ -35,7 +38,7 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                             for(var index = 0; index < $scope.estable.length; index++) { 
                                 geocoder.getLatLng($scope.estable[index].direccion+"Bogota", function(point){ 
                                     if (!point) { 
-                                      alert($scope.estable[index].direccion + " not found"); 
+                                      //alert($scope.estable[index].direccion + " not found"); 
                                     } 
                                     else { 
                                         var marker = new GMarker (new GLatLng(point.lat(), point.lng()));   
@@ -47,6 +50,7 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                         }else{
                             alert("Error en cargar puntos"); 
                         }
+                        
                     }           
                     window.onload = function () {
                         simple();
@@ -54,29 +58,31 @@ angular.module('myApp.Visualizar', ['ngRoute'])
                 });     
         
         	$scope.establecimientos= Establecimiento.query();
-             
-               $scope.filtrarPrecio = function(valueRange){
+                    
+
+               $scope.filtrarPrecio = function(){
                     var min;
-                    var max=100000;
+                    var max;
                     var lista = [];
                     var aux = {nombreEstablecimiento:"", telefono:"", direccion:"", numCancha:0, precio:0};
                     var establecimientos = [];
-                    min = $scope.valMin;
                     
-                    $scope.listado = estService.query(function(data){
-                    lista=data;
+                    min = $scope.valMin;
+                    max = $scope.valMax;
+                    
+                    lista=$scope.estMapa;
                         for (var index = 0; index < lista.length; index++) {  
-                            for (var i = 0; i < lista[index].canchas.length; i++) {                     
-                                if(lista[index].canchas[i].precio < max && lista[index].canchas[i].precio >=min){
-                                    aux={nombreEstablecimiento:lista[index].razonSocial, telefono:lista[index].telefono, direccion:lista[index].direccion,
-                                        numCancha:lista[index].canchas[i].idCancha, precio:lista[index].canchas[i].precio,nit:lista[index].nit};
-                                    establecimientos.push(aux);
-
+                            for (var i = 0; i < lista[index].canchases.length; i++) {                     
+                                for (var j = 0; j < lista[index].canchases[i].horarioses.length; j++) {                     
+                                    if(lista[index].canchases[i].horarioses[j].precio < max && lista[index].canchases[i].horarioses[j].precio >=min){
+                                        aux={nombreEstablecimiento:lista[index].razonSocial, telefono:lista[index].telefono, direccion:lista[index].direccion,
+                                            numCancha:lista[index].canchas[i].idCancha, precio:lista[index].canchas[i].precio,nit:lista[index].nit};
+                                        establecimientos.push(aux);
+                                    }        
                                 }
                             }          
-                        } $scope.estable=establecimientos;
-                    alert( $scope.estable); 
-                    });     
+                        } 
+                    $scope.estable=establecimientos;
                 };	
                 
                 $scope.irCalificar=function(nit){
