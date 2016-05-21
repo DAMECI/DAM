@@ -8,6 +8,8 @@ package edu.eci.cosw.main;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Reserva;
 import edu.eci.cosw.imp.DamServices;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,6 +36,7 @@ public class ApiRestReserva {
     
         @RequestMapping(method= RequestMethod.POST)
         public ResponseEntity<?> addReserva(@RequestBody Reserva r){
+            r.setFechareserva(addDays(r.getFechareserva(), 1));
             operacion.addReserva(r); 
             return new ResponseEntity<Reserva>(HttpStatus.ACCEPTED);
         }
@@ -99,6 +102,16 @@ public class ApiRestReserva {
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);            
             }                 
         }
+        
+         public static Date addDays(Date date, int days)
+        {
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            cal.add(Calendar.DATE, days); //minus number would decrement the days
+            return cal.getTime();
+        }
+        
+        
 }
     
     

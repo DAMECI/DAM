@@ -66,7 +66,6 @@ angular.module('myApp.Reservar', ['ngRoute'])
      
      $scope.AddReserva = function () {
          var inputFecha = document.getElementById("FechaR").value;
-        var fechaReserva = new Date(inputFecha); 
         var inputTiempo =document.getElementById("iTiempo").value;
          inputTiempo = inputTiempo;
          
@@ -83,7 +82,7 @@ angular.module('myApp.Reservar', ['ngRoute'])
           };
             
             reservaService.save(reserva,function(){
-                alert("Reserva Registrada, Resiviras un correo de confirmación");    
+                location.href="#listReservas";
             });
             
      };
