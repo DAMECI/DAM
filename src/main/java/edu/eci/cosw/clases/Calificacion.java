@@ -5,6 +5,7 @@ package edu.eci.cosw.clases;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,7 +26,9 @@ public class Calificacion  implements java.io.Serializable {
      //private Usuario usuarios;
      private int puntaje;
      private String observacion;
-
+     private String usuarioId;
+     private String nit;
+     
     public Calificacion() {
     }
 
@@ -46,7 +49,7 @@ public class Calificacion  implements java.io.Serializable {
    
      @Id 
 
-    
+    @GeneratedValue
     @Column(name="idcalificacion", unique=true, nullable=false)
     public int getIdcalificacion() {
         return this.idcalificacion;
@@ -97,6 +100,25 @@ public class Calificacion  implements java.io.Serializable {
     }
 
 
+    
+    @Column(name="USUARIOS_idCliente", nullable = false, length=10)
+    public String getUsuarioId() {
+        return this.usuarioId;
+    }
+    
+    public void setUsuarioId(String usuarioId) {
+        this.usuarioId = usuarioId;
+    }
+    
+    
+    @Column(name="NitEstablecimiento", nullable = false, length=15)
+    public String getNit() {
+        return this.nit;
+    }
+    
+    public void setNit(String nit) {
+        this.nit = nit;
+    }
 
 
 }

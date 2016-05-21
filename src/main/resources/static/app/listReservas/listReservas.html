@@ -22,6 +22,9 @@
                     <td>
                         Precio
                     </td>
+                    <td>
+                        Calificar
+                    </td>
                 </tr>
                 <tr ng-repeat="reserva in listaReservas">
                     <td>
@@ -38,6 +41,12 @@
                     </td>
                     <td>
                         {{reserva[0]}}
+                    </td>
+                    <td>
+                        {{reserva[5]}}
+                    </td>
+                    <td>
+                        <input value="Calificar" type="button" ng-click="calificar(reserva[5])" />
                     </td>
                 </tr>
                 

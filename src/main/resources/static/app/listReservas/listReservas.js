@@ -22,4 +22,9 @@ angular.module('myApp.listReservas', ['ngRoute'])
      
      window.onload =CargarInicio();
      
+     $scope.calificar = function (idEstable) {
+            location.href="#Calificar?IDEstablecimiento=" + idEstable;
+      };      
+     
+     
 }]);

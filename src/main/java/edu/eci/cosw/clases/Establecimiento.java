@@ -115,7 +115,7 @@ public class Establecimiento  implements java.io.Serializable {
 
 @OneToMany(cascade=CascadeType.ALL)
 @Fetch(FetchMode.JOIN)
-@JoinColumn(name="NitEstablecimiento")
+@JoinColumn(name="NitEstablecimiento", nullable=true)
     public Set<Calificacion> getCalificacioneses() {
         return this.calificacioneses;
     }

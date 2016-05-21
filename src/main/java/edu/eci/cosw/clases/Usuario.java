@@ -117,7 +117,7 @@ public class Usuario  implements java.io.Serializable {
 
 @OneToMany(cascade=CascadeType.ALL)
 @Fetch(FetchMode.JOIN)
-@JoinColumn(name="USUARIOS_idCliente", nullable=false)
+@JoinColumn(name="USUARIOS_idCliente", nullable=true)
     public Set<Calificacion> getCalificacioneses() {
         return this.calificacioneses;
     }

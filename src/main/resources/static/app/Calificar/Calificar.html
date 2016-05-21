@@ -110,34 +110,19 @@ label.star:before {
                 <table>
             <tr>
                 <td>
-                    <label class="color1">Establecimiento: </label>
-                    <input type="text" name="TXEstablecimiento"  ng-model="establecimiento" />        
-                </td>
-                <td>
-                    <input type="button"  value="Aceptar" ng-click="buscarEstablecimiento()" />
-                </td>
-            </tr>
-            
-            <tr>
-                <td>
                     <table border="1" class="colortablas5">
                                         <tr>
                                             <td>Nombre Establecimiento</td>
                                             <td>Direccion</td>
-                                            <td>Telefono</td>    
-                                            <td> Cancha</td> 
-                                            <td> Precio</td>               
+                                            <td>Telefono</td>     
                                             <td> Calificación Promedio</td>               
                                             <td> Calificación</td>               
-
                                         </tr>
-                                     <tr ng-repeat="todo in estable">                
-                                        <td>{{todo.nombreEstablecimiento}}</td>
-                                        <td>{{todo.direccion}}</td>
-                                        <td>{{todo.telefono}}</td>    
-                                        <td>{{todo.numCancha}}</td> 
-                                        <td>{{todo.precio}}</td>
-                                        <td>{{todo.calificacionPromedio}}</td> 
+                                     <tr >                
+                                        <td>{{lista.razonsocial}}</td>
+                                        <td>{{lista.direccion}}</td>
+                                        <td>{{lista.telefono}}</td>    
+                                        <td>{{lista.calificacionpromedio}}</td> 
                                         <td class="stars" colspan="4" >
                                         <form action="">
                                             <input class="star star-5" id="star-5" type="radio" name="star"/>

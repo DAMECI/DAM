@@ -12,6 +12,7 @@ import edu.eci.cosw.Repositories.EstablecimientoRepository;
 import edu.eci.cosw.Repositories.HorarioRepository;
 import edu.eci.cosw.Repositories.ReservaRepository;
 import edu.eci.cosw.Repositories.UserRepository;
+import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
 import edu.eci.cosw.clases.Reserva;
@@ -42,8 +43,8 @@ public class DamServicesImp implements DamServices{
     @Autowired
     private EstablecimientoRepository establecimiento;
     
-   /* @Autowired
-    private CalificacionRepository calificacion;*/
+    @Autowired
+    private CalificacionRepository calificacion;
 
     @Override
     public void addUser(Usuario u) {
@@ -103,6 +104,12 @@ public class DamServicesImp implements DamServices{
     public List<Reserva> getReservas() {
         return reserva.findAll();
     }
+    
+    @Override
+    public void addCalificacion(Calificacion c) {
+        calificacion.save(c);
+    }
+    
     
     public List<Reserva> getReservasByIdCliente(String idUser){
         return reserva.getReservasByIdCliente(idUser);

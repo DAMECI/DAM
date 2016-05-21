@@ -5,6 +5,7 @@
  */
 package edu.eci.cosw.imp;
 
+import edu.eci.cosw.clases.Calificacion;
 import edu.eci.cosw.clases.Cancha;
 import edu.eci.cosw.clases.Establecimiento;
 import edu.eci.cosw.clases.Reserva;
@@ -29,6 +30,6 @@ public interface DamServices {
     public List<Reserva> getReservas();
     public Reserva getReservaByid(int idreserva);
     public List<Reserva> getReservasByIdCliente(String idUser);
-    
+    public void addCalificacion(Calificacion c);
     
 }

@@ -77,11 +77,11 @@ public class ApiRestEstablecimiento{
     }
  
             
-//    @RequestMapping(method= RequestMethod.POST, value = "/AddCalificacion")
-//         public ResponseEntity<?> addCalificacionAEstablecimiento(@RequestBody Calificacion c){
-//             System.out.println("Entro Add Calificacion");
-//             operacionEstablecimiento.addCalificacion(c);
-//         return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
-//    }
+    @RequestMapping(method= RequestMethod.POST, value = "/AddCalificacion")
+         public ResponseEntity<?> addCalificacionAEstablecimiento(@RequestBody Calificacion c){
+             System.out.println("Entro Add Calificacion");
+             operacion.addCalificacion(c);
+         return new ResponseEntity<Establecimiento>(HttpStatus.ACCEPTED);
+    }
          
 }

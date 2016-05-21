@@ -9,50 +9,55 @@ angular.module('myApp.Calificar', ['ngRoute'])
   });
 }])
 
-.controller('ControladorCalificar',  ['$scope','Establecimiento','estService','postService',function ($scope,Establecimiento,estService, postService) {
+.controller('ControladorCalificar',  ['$scope','postService','getEstablecimientobyNit',function ($scope, postService,getEstablecimientobyNit) {
         console.log('Entro Calificar');
        
         $scope.calificacion = "";
        
-        registrar.style.visibility = 'visible';        
-        var aux = {nombreEstablecimiento:"", telefono:"", direccion:"", numCancha:0, precio:0};
-        $scope.establecimiento = "";
-        $scope.Observacion= "";
-        $scope.establecimientos = [];
         
 
-        registrar.style.visibility = 'visible';
-        console.log(document.getElementById("establecimiento").valueOf());
+        //registrar.style.visibility = 'visible';
+        //console.log(document.getElementById("establecimiento").valueOf());
 
-        $scope.buscarEstablecimiento = function () {
-            console.log("Buscando Establecimiento");
-            var lista = [];
-           $scope.listado = estService.query(function(data){
-                        lista=data;
-                        for (var index = 0; index < lista.length; index++) {  
-                            //if(lista[index].razonSocial == $scope.establecimiento){
-                            if($scope.establecimiento.indexOf(lista[index].razonSocial) > -1){    
-                                 
-                                aux={nombreEstablecimiento:lista[index].razonSocial, telefono:lista[index].telefono, direccion:lista[index].direccion,
-                                        numCancha:lista[index].canchas[0].idCancha, precio:lista[index].canchas[0].precio,nit:lista[index].nit,
-                                        calificacionPromedio:lista[index].calificacionPromedio
-                                    };
-                                    $scope.establecimientos.push(aux);
-                            }
-                        } $scope.estable=$scope.establecimientos;
-                    });   
-       };
+        function buscarEstablecimiento() {
+            
+            //var nitXUrl = "";
+            $scope.nitXUrl = location.href.split("=")[1];
+            $scope.userActivo = JSON.parse(localStorage.userActivo);
+            
+            
+            $scope.estab = getEstablecimientobyNit.get({nit : $scope.nitXUrl}, function(data){                                
+                $scope.lista=data;
+            });
+            
+            
+       }
        
-       $scope.Puntaje = function (valor) {
-            $scope.calificacion = valor;
-                    alert("Tu puntuación para el lugar: " + aux.nombreEstablecimiento + " fue: " + $scope.calificacion);
-       };       
+       window.onload =buscarEstablecimiento();
        
        $scope.Calificacion = function () {
-            var oCalificacion = {"idCalificacion":1,
+           
+           if(document.getElementById("star-1").checked = true){
+                $scope.calificacion = 1;
+           }
+           if(document.getElementById("star-2").checked = true){
+               $scope.calificacion = 2;
+           }
+           if(document.getElementById("star-3").checked = true){
+               $scope.calificacion = 3;
+           }
+           if(document.getElementById("star-4").checked = true){
+               $scope.calificacion = 4;
+           }
+           if(document.getElementById("star-5").checked = true){
+               $scope.calificacion = 5;
+           }
+           
+            var oCalificacion = {
                 "puntaje": $scope.calificacion, 
                 "observacion":$scope.Observacion, 
-            "nitEstablecimiento":aux.nit};
+                "nit":$scope.nitXUrl,
+                "usuarioId":$scope.userActivo.idCliente};
             console.log(oCalificacion);    
             
             postService.save(oCalificacion, function(){

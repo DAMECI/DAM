@@ -51,4 +51,8 @@ angular.module('myApp.InfoEstablecimiento', ['ngRoute'])
       $scope.reservar = function (pagina, idCancha) {
             location.href="#" + pagina + "?IDCancha=" + idCancha;
       };      
+      
+      
+      
+      
 }]);
