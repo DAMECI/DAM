@@ -9,6 +9,29 @@
 
 /* Reset */
 
+/* For this slider, disable the 'origin' size. */
+#connect .noUi-origin {
+	right: auto;
+	width: 0;
+}
+
+/* Position the bar and color it. */
+#connect .connect {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: #80C9F5;
+	box-shadow: inset 0 0 3px rgba(51,51,51,0.45);
+}
+
+/* When the slider is moved by tap,
+   transition the connect bar like the handle. */
+#connect.noUi-state-tap .connect {
+-webkit-transition: left 300ms, right 300ms;
+	transition: left 300ms, right 300ms;
+}
+
+
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
@@ -2166,10 +2189,6 @@
 
 	label {
 		color: #151515;
-		display: block;
-		font-size: 0.9em;
-		font-weight: 300;
-		margin: 0 0 1em 0;
 	}
 
 	input[type="text"],
@@ -2229,7 +2248,7 @@
 		}
 
 		.select-wrapper:before {
-			color: rgba(255, 255, 255, 0.3);
+			color: #1C1C1C;
 			content: '\f078';
 			display: block;
 			height: 3em;
@@ -2669,6 +2688,7 @@
 			padding: 0.75em 0.75em;
 		}
 
+
 		table th {
 			color: #ffffff;
 			font-size: 0.9em;
@@ -2693,10 +2713,12 @@
 				border: solid 1px rgba(255, 255, 255, 0.3);
 				border-left-width: 0;
 				border-top-width: 0;
+				background-color: #fff;
 			}
 
 				table.alt tbody tr td:first-child {
 					border-left-width: 1px;
+					background-color: #fff;
 				}
 
 			table.alt tbody tr:first-child td {
@@ -2725,9 +2747,9 @@
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		background-color: transparent;
+		background-color: #4acaa8;
 		border-radius: 4px;
-		border: 0;
+		border: 1;
 		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
 		color: #ffffff !important;
 		cursor: pointer;
@@ -2736,7 +2758,7 @@
 		height: 3em;
 		line-height: 3em;
 		padding: 0 2.25em;
-		text-align: center;
+		text-align: cent	er;
 		text-decoration: none;
 		white-space: nowrap;
 	}
@@ -4016,3 +4038,64 @@
 					}
 
 	}
+
+        
+        
+        .flat-slider.ui-corner-all,
+.flat-slider .ui-corner-all {
+  border-radius: 0;
+}
+
+.flat-slider.ui-slider {
+  border: 0;
+  background: #f7d2cc;
+  border-radius: 7px;
+}
+
+.flat-slider.ui-slider-horizontal {
+  height: 6px;
+}
+
+.flat-slider.ui-slider-vertical {
+  height: 15em;
+  width: 6px;
+}
+
+.flat-slider .ui-slider-handle {
+  width: 20px;
+  height: 20px;
+  background: #38b11f;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.flat-slider.ui-slider-horizontal .ui-slider-handle {
+  top: 50%;
+  margin-top: -10px;
+}
+
+.flat-slider.ui-slider-vertical .ui-slider-handle {
+  left: 50%;
+  margin-left: -10px;
+}
+
+.flat-slider .ui-slider-handle:hover {
+  opacity: .8;
+}
+
+.flat-slider .ui-slider-range {
+  border: 0;
+  border-radius: 7;
+  background: #f99;
+}
+
+.flat-slider.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 6px;
+}
+
+.flat-slider.ui-slider-vertical .ui-slider-range {
+  left: 0;
+  width: 6px;
+}
