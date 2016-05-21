@@ -60,5 +60,9 @@ config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvide
     $scope.BotonMisReservas = function () {
          location.href="#listReservas";
      };
-    
+   
+    $scope.BotonHome = function () {
+         location.href="#Visualizar";
+     };
+     
 }]);
